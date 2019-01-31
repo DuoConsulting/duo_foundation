@@ -1,0 +1,212 @@
+// Text Inputs
+//
+// These input types create a text field: text, date, datetime, datetime-local,
+// email, month, number, password, search, tel, time, url, and week.
+//
+// Markup:
+// <input type="text" placeholder="Text Input" />
+//
+// Weight: 10
+//
+// Styleguide base.form-elements.text-input
+
+// Number Inputs
+//
+// In most desktop browsers, number elements will have up/down
+// controls inside them, which increment and decrement the number inside the
+// field.
+//
+// Markup:
+// <label>
+//   How many puppies?
+//   <input type="number" value="100">
+// </label>
+//
+// Weight: 20
+//
+// Styleguide base.form-elements.number-input
+
+// Textareas
+//
+// Markup:
+// <label>
+//   What books did you read over summer break?
+//   <textarea placeholder="None"></textarea>
+// </label>
+//
+// Weight: 30
+//
+// Styleguide base.form-elements.textarea
+
+// Select Menus
+//
+// Markup:
+// <label>Select Menu
+//   <select>
+//     <option value="husker">Husker</option>
+//     <option value="starbuck">Starbuck</option>
+//     <option value="hotdog">Hot Dog</option>
+//     <option value="apollo">Apollo</option>
+//   </select>
+// </label>
+//
+// Weight: 40
+//
+// Styleguide base.form-elements.select
+
+// Multiselects
+//
+// Add the multiple attribute to allow more than one option to be selected.
+// Hold down the Ctrl (windows) / Command (Mac) button to select multiple
+// options.
+//
+// Markup:
+// <label>Multiple Select Menu
+//   <select multiple>
+//     <option value="husker">Husker</option>
+//     <option value="starbuck">Starbuck</option>
+//     <option value="hotdog">Hot Dog</option>
+//     <option value="apollo">Apollo</option>
+//   </select>
+// </label>
+//
+// Weight: 50
+//
+// Styleguide base.form-elements.multiselect
+
+// Checkboxes and Radios
+//
+// Wrap a group of checkboxes or radio buttons in a fieldset element, and give
+// them a common label using the legend element. Each individual control
+// should also have its own label, created using a typical label.
+//
+// Markup:
+// <div class="grid-x grid-padding-x">
+//   <fieldset class="large-5 cell">
+//     <legend>Choose Your Favorite</legend>
+//     <input type="radio" name="pokemon" value="Red" id="pokemonRed" required><label for="pokemonRed">Red</label>
+//     <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
+//     <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
+//   </fieldset>
+//   <fieldset class="large-7 cell">
+//     <legend>Check these out</legend>
+//     <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+//     <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+//     <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
+//   </fieldset>
+// </div>
+//
+// Weight: 60
+//
+// Styleguide base.form-elements.checkradio
+
+// Fieldsets
+//
+// To encourage their use as an accessibility tool, the <fieldset> element is no
+// longer styled by default. Those styles are now contained in the .fieldset class.
+//
+// Markup:
+// <fieldset class="fieldset">
+//   <legend>Check these out</legend>
+//   <input id="checkbox12" type="checkbox"><label for="checkbox12">Checkbox 1</label>
+//   <input id="checkbox22" type="checkbox"><label for="checkbox22">Checkbox 2</label>
+//   <input id="checkbox32" type="checkbox"><label for="checkbox32">Checkbox 3</label>
+// </fieldset>
+//
+// Weight: 70
+//
+// Styleguide base.form-elements.fieldset
+
+// Help Text
+//
+// Place help text below a field to clarify its purpose. Whenever you use help
+// text, give the text a unique ID, and add the attribute aria-describedby to
+// the input. Doing so associates the helper text to the input. A screen reader
+// then can read the helper text when the user focusses on the input.
+//
+// Markup:
+// <label>Password
+//   <input type="password" aria-describedby="passwordHelpText">
+// </label>
+// <p class="help-text" id="passwordHelpText">Your password must have at least
+// 10 characters, a number, and an Emoji.</p>
+//
+// Weight: 80
+//
+// Styleguide base.form-elements.helptext
+
+// Label Positioning
+//
+// Sometimes you want a form with labels to the left of your inputs. You can put
+// the label inside a different cell or column to the left of the input. Then
+// use the class .text-right or .float-right (or add text-align: right yourself)
+// to realign the label. Add the .middle class to vertically align the label
+// with its input.
+//
+// Markup:
+// <form>
+//   <div class="grid-x grid-padding-x">
+//     <div class="small-3 cell">
+//       <label for="right-label" class="text-right">Label</label>
+//     </div>
+//     <div class="small-9 cell">
+//       <input type="text" id="right-label" placeholder="Right-aligned text input">
+//     </div>
+//   </div>
+// </form>
+// <form>
+//   <div class="grid-x grid-padding-x">
+//     <div class="small-3 cell">
+//       <label for="middle-label" class="text-right middle">Label</label>
+//     </div>
+//     <div class="small-9 cell">
+//       <input type="text" id="middle-label" placeholder="Right- and middle-aligned text input">
+//     </div>
+//   </div>
+// </form>
+//
+// Weight: 90
+//
+// Styleguide base.form-elements.label-position
+
+// Inline Labels and Buttons
+//
+// To attach extra text or controls to the left or right of an input field, wrap
+// the elements in an .input-group container, then add these classes to the
+// elements inside:
+// <ul>
+// <li>.input-group-field on the text field.</li>
+// <li>.input-group-label on a text label.</li>
+// <li>.input-group-button on a button. Place the button inside this
+// wrapper.</li>
+// </ul>
+//
+// Markup:
+// <div class="input-group">
+//   <span class="input-group-label">$</span>
+//   <input class="input-group-field" type="number">
+//   <div class="input-group-button">
+//     <input type="submit" class="button" value="Submit">
+//   </div>
+// </div>
+//
+// Weight: 100
+//
+// Styleguide base.form-elements.inline
+
+// File Upload Button
+//
+// Use &lt;input type="file"&gt; to create a file upload button. For security
+// reasons, most browsers don't let you style file inputs. To work around that,
+// we can style a form label as a button, and point it to the input. To
+// properly mask the input, the .show-for-sr class is added.
+//
+// Markup:
+// <label for="exampleFileUpload" class="button">Upload File</label>
+// <input type="file" id="exampleFileUpload" class="show-for-sr">
+//
+// Weight: 110
+//
+// Styleguide base.form-elements.file-upload
+
+

@@ -1,0 +1,191 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Link;
+use Drupal\block\Entity\Block;
+
+/**
+ * Load template files
+ */
+require_once('inc/menu.inc');
+require_once('inc/theme.inc');
+
+/**
+ * Implements hook_preprocess_block()
+ */
+function duo_foundation_preprocess_block(&$variables) {
+  // Convenience variable for block headers.
+  $title_class = &$variables['title_attributes']['class'];
+
+  // Generic block header classes.
+  $title_class[] = 'block-title';
+
+  $region = isset($variables['configuration']['region']) ? $variables['configuration']['region'] : '';
+
+  if ($region == 'header') {
+    $title_class[] = 'visually-hidden';
+    $variables['attributes']['class'][] = 'header';
+  }
+
+  // Pass block region value to content so this can be used in
+  // duo_foundation_theme_suggestions_menu_alter.
+  // See inc/theme.inc.
+  if (isset($variables['elements']['#id'])) {
+    $region = Block::load($variables['elements']['#id'])->getRegion();
+    $variables['content']['#attributes']['data-region'] = $region;
+    
+    // Add a unique class for each block for styling.
+    $variables['attributes']['class'][] = $variables['attributes']['id'];
+  }
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function duo_foundation_preprocess_field(&$variables, $hook) {
+}
+
+/**
+ * Implements template_preprocess_html().
+ *
+ * Adds additional classes
+ */
+function duo_foundation_preprocess_html(&$variables) {
+  /* @var Drupal\Core\Language\LanguageInterface */
+  $language = \Drupal::languageManager()->getCurrentLanguage();
+  $site_language = $language->getId();
+  $request = \Drupal::request();
+
+  // Add language body class.
+  $variables['attributes']['class'][] = 'lang-' . $site_language;
+
+  // Classes for body element. Allows advanced theming based on context
+  $is_front_page = \Drupal::service('path.matcher')->isFrontPage();
+  if (!$is_front_page) {
+    $path = trim($request->getRequestUri(), '/');
+    // Add unique class for each website section.
+    $arg = explode('/', $path);
+    $section = $arg[0];
+    if ($arg[0] == 'node' && isset($arg[1])) {
+      if ($arg[1] == 'add') {
+        $section = 'node-add';
+      }
+      elseif (isset($arg[2]) && is_numeric($arg[1]) && ($arg[2] == 'edit' || $arg[2] == 'delete')) {
+        $section = 'node-' . $arg[2];
+      }
+    }
+    $variables['attributes']['class'][] = \Drupal\Component\Utility\Html::getClass('section-' . $section);
+  }
+
+  // Store the menu item since it has some useful information.
+  if ($request->attributes->get('view_id')) {
+    $variables['attributes']['class'][] = 'views-page';
+  }
+  elseif ($request->attributes->get('panel')) {
+    $variables['attributes']['class'][] = 'panels-page';
+  }
+}
+
+/**
+ * Implements template_preprocess_node
+ *
+ * Add template suggestions and classes
+ */
+function duo_foundation_preprocess_node(&$variables) {
+}
+
+/**
+ * Implements template_preprocess_page
+ *
+ * Add convenience variables and template suggestions
+ */
+function duo_foundation_preprocess_page(&$variables) {
+  $site_name = isset($variables['site_name']) ? $variables['site_name'] : \Drupal::config('system.site')->get('name');
+
+  $variables['logo_img'] = '';
+
+  $logo = theme_get_setting('logo.url');
+
+  if (!empty($logo)) {
+    $elements = array(
+      '#theme' => 'image',
+      '#uri' => $logo,
+      '#attributes' => array(
+        'alt' => strip_tags($site_name) . ' ' . t('logo'),
+        'title' => strip_tags($site_name) . ' ' . t('Home'),
+        'class' => array('logo'),
+      )
+    );
+
+    $variables['logo_img'] = $elements;
+  }
+
+  $title = strip_tags($site_name) . ' ' . t('Home');
+  $url = \Drupal\Core\Url::fromRoute('<front>');
+  $url->setOption('attributes', array('title' => $title));
+
+  $variables['linked_logo'] = '';
+  if (!empty($variables['logo_img'])) {
+    $variables['linked_logo'] = Link::fromTextAndUrl($variables['logo_img'], $url)->toString();
+  }
+
+  $variables['linked_site_name'] = '';
+  if (!empty($site_name)) {
+    $variables['linked_site_name'] = Link::fromTextAndUrl($site_name, $url)->toString();
+  }
+
+  // Convenience variables
+  if (isset($variables['page']['sidebar_first'])) {
+    $left = $variables['page']['sidebar_first'];
+  }
+  if (isset($variables['page']['sidebar_second'])) {
+    $right = $variables['page']['sidebar_second'];
+  }
+
+  // Dynamic sidebars
+  if (!empty($left) && !empty($right)) {
+    $variables['main_grid'] = 'medium-6 small-order-2';
+    $variables['sidebar_first_grid'] = 'medium-3 small-order-1';
+    $variables['sidebar_sec_grid'] = 'medium-3 small-order-3';
+  }
+  elseif (empty($left) && !empty($right)) {
+    $variables['main_grid'] = 'medium-9 small-order-1';
+    $variables['sidebar_first_grid'] = '';
+    $variables['sidebar_sec_grid'] = 'medium-3 small-order-2';
+  }
+  elseif (!empty($left) && empty($right)) {
+    $variables['main_grid'] = 'medium-9 small-order-2';
+    $variables['sidebar_first_grid'] = 'medium-3 small-order-1';
+    $variables['sidebar_sec_grid'] = '';
+  }
+  else {
+    $variables['main_grid'] = '';
+    $variables['sidebar_first_grid'] = '';
+    $variables['sidebar_sec_grid'] = '';
+  }
+
+  // Add classes to highlighted region.
+  if (!empty($variables['page']['highlighted'])) {
+    $variables['page']['highlighted']['#attributes']['class'][] = 'region-highlighted';
+    $variables['page']['highlighted']['#attributes']['class'][] = 'panel';
+    $variables['page']['highlighted']['#attributes']['class'][] = 'callout';
+  }
+
+  // Make sure site_name is always set, in case there's only a default.
+  $variables['site_name'] = $site_name;
+
+  // Set the grid size based on the content type.
+  $variables['fullscreen'] = FALSE;
+
+  if (isset($variables['node'])) {
+    if ($variables['node']->getType() == 'flexpage') {
+      $variables['fullscreen'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function duo_foundation_preprocess_views_view(&$variables) {}

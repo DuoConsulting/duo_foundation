@@ -1,0 +1,243 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - linked_logo: The logo image, linked to <front>.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - linked_site_name: The name of the site that also links to <front>.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+ * - hide_site_name: A flag indicating if the site name has been toggled off on
+ *   the theme settings page. If hidden, the "visually-hidden" class is added
+ *   to make the site name visually hidden, but still accessible.
+ * - hide_site_slogan: A flag indicating if the site slogan has been toggled off
+ *   on the theme settings page. If hidden, the "visually-hidden" class is
+ *   added to make the site slogan visually hidden, but still accessible.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - messages: Status and error messages. Should be displayed prominently.
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.meta_header
+ * - page.header
+ * - page.help
+ * - page.highlighted
+ * - page.content
+ * - page.sidebar_first
+ * - page.sidebar_second
+ * - page.footer_first
+ * - page.footer_middle
+ * - page.footer_last
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+
+<div class="off-canvas-wrapper">
+  {% if page.left_off_canvas %}
+    <aside id="left-off-canvas-menu" class="off-canvas position-left" role="complementary" data-off-canvas>
+      <button class="close-button" aria-label="Close menu" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      {{ page.left_off_canvas }}
+    </aside>
+  {% endif %}
+
+  {% if page.right_off_canvas %}
+    <aside id="right-off-canvas-menu" class="off-canvas position-right" role="complementary" data-off-canvas>
+      <button class="close-button" aria-label="Close menu" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      {{ page.right_off_canvas }}
+    </aside>
+  {% endif %}
+
+  <div class="off-canvas-content" data-off-canvas-content>    
+    <div class="title-bar">
+      {% if page.left_off_canvas %}
+        <div class="title-bar-left">
+          <button class="menu-icon" type="button" data-open="left-off-canvas-menu"></button>
+        </div>
+      {% endif %}
+
+      {% if page.right_off_canvas %}
+        <div class="title-bar-right">
+          <button class="menu-icon" type="button" data-open="right-off-canvas-menu"></button>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if page.meta_header %}
+      {% if meta_header_grid %}
+        <div class="grid-container">
+      {% endif %}
+      {{ page.meta_header }}
+      {% if meta_header_grid %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <header role="banner" aria-label="{{ 'Site header'|t }}">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+          {% if linked_site_name or linked_logo %}
+            {% if linked_logo %}
+              <div class="large-2 cell">
+                {{ linked_logo }}
+              </div>
+            {% endif %}
+            {% if linked_site_name %}
+              <div class="large-10 cell">
+                {% if is_front %}
+                  <h1 id="site-name">{{ linked_site_name }}</h1>
+                {% else %}
+                  <div id="site-name">{{ linked_site_name }}</div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endif %}
+          {% if page.header %}
+            <div class="large-12 cell">
+              {{ page.header }}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if page.top_bar_left or page.top_bar_right %}
+          <div class="top-bar">
+            {% if page.top_bar_left %}
+              <div class="top-bar-left">
+                {{ page.top_bar_left }}
+              </div>
+            {% endif %}
+            {% if page.top_bar_right %}
+              <div class="top-bar-right">
+                {{ page.top_bar_right }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+        <div class="{{ site_slogan ? 'large-6' : 'large-4 medium-order-2' }} cell hide-for-small-only">
+          <p>
+            {% if logged_in %}
+              <a href="{{ path('user.page') }}">{{ 'My Account'|t }}</a>
+              <a href="{{ path('user.logout') }}">{{ 'Logout'|t }}</a>
+            {% else %}
+              <a href="{{ path('user.login') }}">{{ 'Login'|t }}</a>
+              <a href="{{ path('user.register') }}">{{ 'Sign Up'|t }}</a>
+            {% endif %}
+          </p>
+        </div>
+        {% if site_slogan %}
+          <div class="large-6 cell hide-for-small medium-order-2">
+            {{ site_slogan }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="show-for-small-only">
+          <p>
+            {% if logged_in %}
+              <a class="button" href="{{ path('user.page') }}">{{ 'My Account'|t }}</a>
+              <a class="button" href="{{ path('user.logout') }}">{{ 'Logout'|t }}</a>
+            {% else %}
+              <a class="button" href="{{ path('user.login') }}">{{ 'Login'|t }}</a>
+              <a class="button" href="{{ path('user.register') }}">{{ 'Sign Up'|t }}</a>
+            {% endif %}
+          </p>
+      </div>
+    </div>
+
+    {% if messages %}
+    <div class="grid-container">
+      {{ messages }}
+    </div>
+    {% endif %}
+
+    {% if page.help %}
+    <div class="grid-container">
+      {{ page.help }}
+    </div>
+    {% endif %}
+
+    {% if page.highlighted %}
+      <div class="grid-container">
+        {% spaceless %}
+          {{ page.highlighted }}
+        {% endspaceless %}
+      </div>
+    {% endif %}
+
+    <div class="grid-container{% if fullscreen %} fluid{% endif %}">
+      <div class="grid-x grid-margin-x">
+        <main id="main" class="{{ main_grid }} cell">
+          <a id="main-content"></a>
+          {% if breadcrumb %} {{ breadcrumb }} {% endif %}
+          <section>
+            {{ page.content }}
+          </section>
+        </main>
+        {% if page.sidebar_first %}
+          <div id="sidebar-first" class="{{ sidebar_first_grid }} cell sidebar">
+            {{ page.sidebar_first }}
+          </div>
+        {% endif %}
+        {% if page.sidebar_second %}
+          <div id="sidebar-second" class="{{ sidebar_sec_grid }} cell sidebar">
+            {{ page.sidebar_second }}
+          </div>
+        {% endif %}
+      </div>
+      {% if page.footer_first or page.footer_middle or page.footer_last %}
+        <footer class="grid-x grid-margin-x">
+          {% if page.footer_first %}
+            <div id="footer-first" class="large-4 cell">
+              {{ page.footer_first }}
+            </div>
+          {% endif %}
+          {% if page.footer_middle %}
+            <div id="footer-middle" class="large-4 cell">
+              {{ page.footer_middle }}
+            </div>
+          {% endif %}
+          {% if page.footer_last %}
+            <div id="footer-last" class="large-4 cell">
+              {{ page.footer_last }}
+            </div>
+          {% endif %}
+        </footer>
+      {% endif %}
+    </div>
+    <div class="grid-container">
+      &copy; {{ "now"|date('Y') }} {{ site_name }} {{ 'All rights reserved.'|t }}
+    </div>
+  </div>
+</div>

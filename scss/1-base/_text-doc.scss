@@ -1,0 +1,209 @@
+// Paragraphs
+//
+// Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm.
+//
+// .lead - A slightly-larger-than-normal block of text, useful for decks, blurbs, or other descriptive text.
+//
+// Markup:
+// <p class="{{modifier_class}}"">This is a paragraph. Paragraphs are preset with a font size, line height
+// and spacing to match the overall vertical rhythm. To show what a paragraph
+// looks like this needs a little more content so, did you know that there are
+// storms occurring on Jupiter that are larger than the Earth? Pretty cool.
+// Wrap strong around type to <strong>make it bold!</strong>.
+// You can also use em to <em>italicize your words</em>.</p>
+//
+// Weight: 10
+//
+// Styleguide base.text.paragraphs
+
+// Headings
+//
+// Each heading has a small-screen size and a large-screen size.
+//
+// .subheader - Lighten up your headers by adding a class of .subheader to any header element.
+//
+// Markup:
+// <h1 class="{{modifier_class}}">h1. This is a very large header.</h1>
+// <h2 class="{{modifier_class}}">h2. This is a large header.</h2>
+// <h3 class="{{modifier_class}}">h3. This is a medium header.</h3>
+// <h4 class="{{modifier_class}}">h4. This is a moderate header.</h4>
+// <h5 class="{{modifier_class}}">h5. This is a small header.</h5>
+// <h6 class="{{modifier_class}}">h6. This is a tiny header.</h6>
+//
+// Weight: 20
+//
+// Styleguide base.text.headings
+
+// Links
+//
+// Links are very standard, and the color is preset to the site's primary color.
+//
+// Markup:
+// <p>Links are very standard, and the color is preset to the site's primary color.
+// <a href="global.html">Learn more about lorem ipsum.</a></p>
+//
+// Weight: 30
+//
+// Styleguide base.text.links
+
+// Horizontal Lines
+//
+// Markup:
+// <hr />
+//
+// Weight: 40
+//
+// Styleguide base.text.horizontal
+
+// Unordered Lists
+//
+// .no-bullet - Add the class .no-bullet to remove the bullets.
+//
+// Markup:
+// <ul class="{{modifier_class}}">
+//   <li>List item with a much longer description or more content.</li>
+//   <li>List item</li>
+//   <li>List item
+//     <ul>
+//       <li>Nested list item</li>
+//       <li>Nested list item</li>
+//       <li>Nested list item</li>
+//     </ul>
+//   </li>
+//   <li>List item</li>
+//   <li>List item</li>
+//   <li>List item</li>
+// </ul>
+//
+// Weight: 50
+//
+// Styleguide base.text.ul
+
+// Ordered Lists
+//
+// .no-bullet - Add the class .no-bullet to remove the numbers.
+//
+// Markup:
+// <ol class="{{modifier_class}}">
+//   <li>Cheese (essential)</li>
+//   <li>Pepperoni</li>
+//   <li>Bacon
+//     <ol>
+//       <li>Normal bacon</li>
+//       <li>Canadian bacon</li>
+//     </ol>
+//   </li>
+//   <li>Sausage</li>
+//   <li>Onions</li>
+//   <li>Mushrooms</li>
+// </ol>
+//
+// Weight: 60
+//
+// Styleguide base.text.ol
+
+// Definition Lists
+//
+// A definition list is used to display name-value pairs, like metadata
+// or a dictionary definition. Each term is paired with one or more
+// definitions.
+//
+// Markup:
+// <dl>
+//   <dt>Time</dt>
+//   <dd>The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.</dd>
+//   <dt>Space</dt>
+//   <dd>A continuous area or expanse that is free, available, or unoccupied.</dd>
+//   <dd>The dimensions of height, depth, and width within which all things exist and move.</dd>
+// </dl>
+//
+// Weight: 70
+//
+// Styleguide base.text.dl
+
+// Blockquotes
+//
+// Markup:
+// <blockquote>
+//   Those people who think they know everything are a great annoyance to those of us who do.
+//   <cite>Isaac Asimov</cite>
+// </blockquote>
+//
+// Weight: 80
+//
+// Styleguide base.text.blockquote
+
+// Abbreviations
+//
+// Use the abbr tag to annotate a shortened term. Abbreviations must always have
+// a title attribute which clarifies the full term.
+//
+// Markup:
+// <p>In my dream last night, I saw <abbr title="John Ronald Reuel">J. R. R.</abbr>
+// Tolkien and George <abbr title="Raymond Richard">R. R.</abbr> Martin hanging
+// out on Sunset <abbr title="Boulevard">Blvd</abbr>.</p>
+//
+// Weight: 90
+//
+// Styleguide base.text.abbr
+
+// Code
+//
+// Format references to code with the <code>&lt;code&gt;</code> tag. In order for angle
+// brackets to render correctly, you need to change them to &amp;lt; and &amp;gt;.
+//
+// Markup:
+// Remember to escape angle brackets when printing HTML: <code>&lt;div&gt;</code>
+//
+// Weight: 100
+//
+// Styleguide base.text.code
+
+// Keystrokes
+//
+// Use the <code>&lt;kbd&gt;</code> element to annotate a key stroke or combination.
+//
+// Markup:
+// <p>Press <kbd>Cmd+Q</kbd> (or <kbd>Ctrl+Q</kbd> on Windows) to play Half-Life 3.</p>
+//
+// Weight: 110
+//
+// Styleguide base.text.kbd
+
+// Typescale
+//
+// Adjust font-size by overriding an element’s default size. This can be useful
+// to size a paragraph or heading using the existing header sizes.
+//
+// Markup:;
+// <h2 class="h1">Heading 2 as Heading 1</h2>
+// <h3 class="h2">Heading 3 as Heading 2</h3>
+// <h4 class="h3">Heading 4 as Heading 3</h4>
+// <h5 class="h4">Heading 5 as Heading 4</h5>
+// <h6 class="h5">Heading 6 as Heading 5</h6>
+// <p class="h1">Paragraph as Heading 1</p>
+// <p class="h2">Paragraph as Heading 2</p>
+// <p class="h3">Paragraph as Heading 3</p>
+// <p class="h4">Paragraph as Heading 4</p>
+// <p class="h5">Paragraph as Heading 5</p>
+// <p class="h6">Paragraph as Heading 6</p>
+//
+// Weight: 120
+//
+// Styleguide base.text.scale
+
+// Statistics
+//
+// If you're building a dashboard, you might need to display some important
+// numbers real big. Just add the .stat class to any element to amp up the
+// font size.
+//
+// Markup:
+// <p>Days without merge conflict</p>
+// <div class="stat">128</div>
+//
+// Weight: 130
+//
+// Styleguide base.text.stats
+
+

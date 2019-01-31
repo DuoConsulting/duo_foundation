@@ -1,0 +1,13 @@
+<ul class="tabs" data-tabs id="example-tabs">
+  {% for key, item in tabs %}
+    <li class="tabs-title{% if key == 0 %} is-active{% endif %}"><a href="#panel{{ key }}"{% if key == 0 %} aria-selected="true"{% endif %}>{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
+
+<div class="tabs-content" data-tabs-content="example-tabs">
+  {% for key, item in tabs %}
+    <div class="tabs-panel{% if key == 0 %} is-active{% endif %}" id="panel{{ key }}">
+      {{ item.content }}
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Duo Foundation Style Guide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="./styleguide-styles.css">
+
+</head>
+<body id="kss-node" class="kss-fullscreen-mode">
+
+<div class="kss-wrapper">
+  <div class="kss-sidebar kss-style">
+    <header class="kss-header">
+      <h1 class="kss-doc-title">Duo Foundation Style Guide</h1>
+    </header>
+    <nav class="kss-nav" aria-label="Style Guide">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item">
+          <a class="kss-nav__menu-link" href="./">
+            Home
+          </a>
+        </li>
+              <li class="kss-nav__menu-item">
+          <a class="kss-nav__menu-link" href="section-init.html">
+            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Init</span>
+          </a>
+                  </li>
+              <li class="kss-nav__menu-item">
+          <a class="kss-nav__menu-link" href="section-base.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Base</span>
+          </a>
+                  </li>
+              <li class="kss-nav__menu-item">
+          <a class="kss-nav__menu-link" href="section-components.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">Components</span>
+          </a>
+                  </li>
+            </ul>
+    </nav>
+  </div>
+  <main class="kss-main" aria-label="content" id="kss-main">
+  <article>
+  
+    
+                <div id="kssref-base-text" class="kss-section kss-section--depth-2 is-fullscreen">
+        <div class="kss-style">
+                    <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-base-text">
+              <span class="kss-title__ref">
+                2.2
+                <span class="kss-title__permalink-hash">
+                  base.text
+                </span>
+              </span>
+              Typography
+            </a>
+          </h2>
+
+          
+          
+          
+                  </div>
+
+        
+                  <div class="kss-source kss-style">
+            Source: <code>1-base/_text.scss</code>, line 1
+          </div>
+              </div>
+        </article>
+  </main>
+</div>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/jquery.3.3.1.min.js"></script>
+<script>
+  $('.kss-nav__menu-sublink').on('click', function(e) {
+    e.preventDefault();
+    let path = 'item-' + $(this).attr('data-ref-uri') + '.html';
+
+    $.ajax({
+       url:path,
+       type:'GET',
+       success: function(data){
+          let newContent = $(data).find('#kss-main').html();
+          newContent = $(newContent).find('.is-fullscreen').removeClass('is-fullscreen');
+          $('#kss-main').html(newContent);
+          kssGuides.init();
+          $(document).foundation();
+       }
+    });
+  });
+
+  $('.kss-nav--depth-2 a').on('click', function(e) {
+    $('.kss-nav--depth-3').hide();
+    let children = $(this).parent().nextUntil('.kss-nav--depth-2');
+    children.show();
+  });
+</script>
+<script src="kss-assets/foundation.min.js"></script>
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script>
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  $(document).foundation();
+</script>
+
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

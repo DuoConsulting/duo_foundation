@@ -1,0 +1,16 @@
+{
+  "tabs": [
+    {
+      "title": "Tab 1",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In sunt dignissimos, <a href='#'>optio aliquam itaque odit</a>, animi iusto. Facilis quaerat eius sit et, temporibus maiores? Sapiente expedita cupiditate, cumque natus distinctio!</p>"
+    },
+    {
+      "title": "Tab 2",
+      "content": "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis."
+    },
+    {
+      "title": "Tab 3",
+      "content": "Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+    }
+  ]
+}

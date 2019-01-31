@@ -1,0 +1,21 @@
+{
+  "image": "<img src='../components/card/images/sample.jpg' alt='Guy in t-shirt' />",
+  "name":"Jim Smith",
+  "bio":"<p>You mean it controls your actions? You are a part of the Rebel Alliance and a traitor! <strong> Take her away!</strong> <em> You don't believe in the Force, do you?</em> Hokey religions and ancient weapons are no match for a good blaster at your side, kid.</p>",
+  "showBio": "View full biography",
+  "hideBio": "Hide biography",
+  "socialLinks": [
+    {
+      "icon": "instagram",
+      "url": "http://instagram.com"
+    },
+    {
+      "icon": "twitter",
+      "url": "http://twitter.com"
+    },
+    {
+      "icon": "youtube",
+      "url": "http://youtube.com"
+    }
+  ]
+}

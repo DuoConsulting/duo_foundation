@@ -1,0 +1,14 @@
+{
+  "title": "Duo Foundation Style Guide",
+  "builder": "styleguide-config/duo-kss-builder",
+  "extend-drupal8": true,
+  "placeholder": "[modifier class]",
+
+  "//": "These are relative to gulpfile.js (which calls kss).",
+  "source": ["./components", "./scss"],
+  "destination": "./styleguide",
+
+  "//": "'homepage.md' is relative to 'source'",
+  "homepage": "../styleguide-config/homepage.md",
+  "css": "./styleguide-styles.css"
+}

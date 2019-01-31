@@ -1,0 +1,131 @@
+// Basic
+//
+// Button style can be applied to links, button elements, and inputs.
+//
+// :hover - Hover state
+// :focus - Focused state
+// :active - Active state
+//
+// Markup:
+// <a href="about.html" class="button {{modifier_class}}">A link tag button</a>
+// <button type="button" class="button {{modifier_class}}">A button element</button>
+// <input type="submit" class="button {{modifier_class}}" value="An input button" />
+//
+// Weight: 10
+//
+// Styleguide base.button.basic
+
+// Sizing
+//
+// Additional classes can be added to a button to change its size and shape.
+//
+// Markup:
+// <a class="tiny button" href="#">Tiny</a>
+// <a class="small button" href="#">Small</a>
+// <a class="button" href="#">Basic</a>
+// <a class="large button" href="#">Large</a>
+// <a class="expanded button" href="#">Expanded</a>
+// <a class="small expanded button" href="#">Small and expanded</a>
+//
+// Weight: 20
+//
+// Styleguide base.button.sizing
+
+// Colors
+//
+// Add color classes to give buttons additional meaning.
+//
+// Markup:
+// <a class="button primary" href="#">Primary</a>
+// <a class="button secondary" href="#">Secondary</a>
+// <a class="button success" href="#">Success</a>
+// <a class="button alert" href="#">Alert</a>
+// <a class="button warning" href="#">Warning</a>
+//
+// Weight: 30
+//
+// Styleguide base.button.colors
+
+// Hollow
+//
+// Add the .hollow class to a button to give it a hollow style.
+//
+// Markup:
+// <button class="hollow button" href="#">Primary</button>
+// <button class="hollow button secondary" href="#">Secondary</button>
+// <button class="hollow button success" href="#">Success</button>
+// <button class="hollow button alert" href="#">Alert</button>
+// <button class="hollow button warning" href="#">Warning</button>
+// <button class="hollow button" href="#" disabled>Disabled</button>
+//
+// Weight: 40
+//
+// Styleguide base.button.hollow
+
+// Disabled
+//
+// The .disabled class will give buttons a faded appearance.
+//
+// Markup:
+// <a class="button disabled" href="#" aria-disabled>Disabled</a>
+// <button type="button" class="button primary" disabled>Disabled</button>
+// <button type="button" class="button secondary" disabled>Disabled</button>
+// <button type="button" class="button success" disabled>Disabled</button>
+// <button type="button" class="button alert" disabled>Disabled</button>
+// <button type="button" class="button warning" disabled>Disabled</button>
+//
+// Weight: 50
+//
+// Styleguide base.button.disabled
+
+// Clear
+//
+// Add the .clear class to a button to give it a clear style.
+//
+// Markup:
+// <a class="clear button" href="#">Primary</a>
+// <a class="clear button secondary" href="#">Secondary</a>
+// <a class="clear button success" href="#">Success</a>
+// <a class="clear button alert" href="#">Alert</a>
+// <a class="clear button warning" href="#">Warning</a>
+// <a class="clear button" href="#" disabled>Disabled</a>
+//
+// Weight: 60
+//
+// Styleguide base.button.clear
+
+// Dropdown Arrows
+//
+// Add a dropdown arrow to a button with the .dropdown class.
+//
+// Markup:
+// <button class="dropdown button tiny">Dropdown Button</button>
+// <button class="dropdown button small">Dropdown Button</button>
+// <button class="dropdown button">Dropdown Button</button>
+// <button class="dropdown button large">Dropdown Button</button>
+// <button class="dropdown button expanded">Dropdown Button</button>
+//
+// Weight: 70
+//
+// Styleguide base.button.arrows
+
+// Accessibility
+//
+// Make sure that the text of the button is descriptive. If for some reason,
+// your button contains no readable text (for example, just a symbol or icon),
+// add screen reader-only text to the button to clarify its purpose. The symbol
+// or icon should be wrapped in an element with the attribute
+// aria-hidden="true", to prevent screen readers from trying to pronounce
+// the symbol.
+//
+// Markup:
+// <button class="button" type="button">
+//   <!-- Screen readers will see "close" -->
+//   <span class="show-for-sr">Close</span>
+//   <!-- Visual users will see the X, but not the "Close" text -->
+//   <span aria-hidden="true"><i class="fi-x"></i></span>
+// </button>
+//
+// Weight: 80
+//
+// Styleguide base.button.accessibility

@@ -1,0 +1,72 @@
+// Pager
+//
+//
+// Markup:
+// <ul class="pagination pager__items js-pager__items">
+//   <li class="pager__item pager__item--first">
+//     <a href="#" title="Go to first page">
+//       <span class="show-for-sr">First page</span>
+//       <span aria-hidden="true">« First</span>
+//     </a>
+//   </li>
+//   <li class="pager__item pager__item--previous">
+//     <a href="#" title="Go to previous page" rel="prev">
+//       <span class="show-for-sr">Previous page</span>
+//       <span aria-hidden="true">‹‹</span>
+//     </a>
+//   </li>
+//   <li class="pager__item">
+//     <a href="#" title="Go to page 1">
+//       <span class="show-for-sr">
+//         Page
+//       </span>1
+//     </a>
+//   </li>
+//   <li class="pager__item is-active current">
+//     <span class="show-for-sr">
+//       Current page
+//     </span>2        
+//   </li>
+//   <li class="pager__item">
+//     <a href="#" title="Go to page 3">
+//       <span class="show-for-sr">
+//         Page
+//       </span>3
+//     </a>
+//   </li>
+//   <li class="pager__item">
+//     <a href="#" title="Go to page 4">
+//       <span class="show-for-sr">
+//         Page
+//       </span>4
+//     </a>
+//   </li>
+//   <li class="pager__item">
+//     <a href="#" title="Go to page 5">
+//       <span class="show-for-sr">Page</span>5
+//     </a>
+//   </li>
+//   <li class="pager__item">
+//     <a href="#" title="Go to page 6">
+//       <span class="show-for-sr">
+//         Page
+//       </span>6
+//     </a>
+//   </li>
+//   <li class="pager__item pager__item--next">
+//     <a href="#" title="Go to next page" rel="next">
+//       <span class="show-for-sr">Next page</span>
+//       <span aria-hidden="true">››</span>
+//     </a>
+//   </li>
+//   <li class="pager__item pager__item--last">
+//     <a href="#" title="Go to last page">
+//       <span class="show-for-sr">Last page</span>
+//       <span aria-hidden="true">Last »</span>
+//     </a>
+//   </li>
+// </ul>
+//
+// Weight: 10
+//
+// Styleguide components.pager

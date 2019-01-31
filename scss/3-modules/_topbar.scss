@@ -1,0 +1,17 @@
+// Style the search form, if embedded in the Top Bar.
+.top-bar {
+  input {
+    margin: 0;
+  }
+
+  .search-block-form {
+    form {
+      display: flex;
+    }
+
+    .form-item-keys,
+    .form-actions {
+      display: flex;
+    }
+  }
+}

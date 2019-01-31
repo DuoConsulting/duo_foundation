@@ -1,0 +1,47 @@
+{#
+/**
+ *******************************************************************************
+ * This template is here as an example of how you can include a component
+ * template in an actual template used by Drupal. Changes to card.twig will be
+ * reflected here and in the styleguide. This demo assumes you have created
+ * a paragraph component with the fields shown below.
+ *
+ * See:
+ *   components/
+ *     card/
+ *       card.twig
+ *       card.scss
+ *
+ */
+#}
+{{ attach_library('duo_foundation/card') }}
+
+{# set a variable for social media icons
+to later pass to the component template #}
+{%
+  set social = [
+    {
+      url: content.field_card_social_links.0['#url'].uri,
+      icon: content.field_card_social_links.0['#title'],
+    },
+    {
+      url: content.field_card_social_links.1['#url'].uri,
+      icon: content.field_card_social_links.1['#title'],
+    },
+    {
+      url: content.field_card_social_links.2['#url'].uri,
+      icon: content.field_card_social_links.2['#title'],
+    },
+  ]
+%}
+
+
+{# include card component template #}
+{%
+  include '@duo_components/card/card.twig' with {
+    image: content.field_card_photo,
+    name: content.field_card_name,
+    bio: content.field_card_bio,
+    socialLinks: social,
+  } only
+%}

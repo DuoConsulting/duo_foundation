@@ -1,0 +1,298 @@
+global:
+  version: 1.0
+  css:
+    base:
+      css/styles.css: {}
+  js:
+    js/scripts.js: {}
+  dependencies:
+    - core/jquery
+    - duo_foundation/foundation.core
+    # Include foundation plugins.
+    - duo_foundation/foundation.drilldown
+    - duo_foundation/foundation.dropdownMenu
+    - duo_foundation/foundation.offcanvas
+
+card:
+  css:
+    component:
+      css/components/card.css: {}
+  js:
+    components/card/card.js: {}
+  dependencies:
+    - core/jquery
+
+################################################################################
+# Foundation 6.5.3 core, utility libraries and plugins
+# Include plugins as needed, either globally or within template files
+################################################################################
+# Foundation core
+foundation.core:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.core.min.js: {}
+
+################################################################################
+# Foundation utility libraries
+################################################################################
+foundation.util.box:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.util.box.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.util.imageLoader:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.util.imageLoader.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.util.keyboard:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.util.keyboard.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.util.mediaQuery:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.util.mediaQuery.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.util.motion:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.util.motion.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.util.nest:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.util.nest.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.util.timer:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.util.timer.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.util.touch:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.util.touch.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.util.triggers:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.util.triggers.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+################################################################################
+# Foundation plugins
+################################################################################
+foundation.abide:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.abide.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.accordion:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.accordion.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+
+foundation.accordionMenu:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.accordionMenu.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+    - duo_foundation/foundation.util.nest
+
+foundation.drilldown:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.drilldown.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+    - duo_foundation/foundation.util.nest
+    - duo_foundation/foundation.util.box
+
+foundation.dropdown:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.dropdown.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+    - duo_foundation/foundation.util.box
+    - duo_foundation/foundation.util.triggers
+
+foundation.dropdownMenu:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.dropdownMenu.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+    - duo_foundation/foundation.util.nest
+    - duo_foundation/foundation.util.box
+
+foundation.equalizer:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.equalizer.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.mediaQuery
+    - duo_foundation/foundation.util.imageLoader
+
+foundation.interchange:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.interchange.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.mediaQuery
+
+foundation.magellan:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.magellan.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.smoothScroll
+
+foundation.offcanvas:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.offcanvas.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+    - duo_foundation/foundation.util.mediaQuery
+    - duo_foundation/foundation.util.triggers
+
+foundation.orbit:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.orbit.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+    - duo_foundation/foundation.util.motion
+    - duo_foundation/foundation.util.timer
+    - duo_foundation/foundation.util.imageLoader
+    - duo_foundation/foundation.util.touch
+
+foundation.responsiveAccordionTabs:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.responsiveAccordionTabs.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.motion
+    - duo_foundation/foundation.accordion
+    - duo_foundation/foundation.tabs
+
+foundation.responsiveMenu:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.responsiveMenu.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.triggers
+    - duo_foundation/foundation.util.mediaQuery
+    - duo_foundation/foundation.responsiveToggle
+
+foundation.responsiveToggle:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.responsiveToggle.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.mediaQuery
+    - duo_foundation/foundation.util.motion
+
+foundation.reveal:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.reveal.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+    - duo_foundation/foundation.util.triggers
+    - duo_foundation/foundation.util.mediaQuery
+    - duo_foundation/foundation.util.motion
+
+foundation.slider:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.slider.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+    - duo_foundation/foundation.util.triggers
+    - duo_foundation/foundation.util.touch
+    - duo_foundation/foundation.util.motion
+
+foundation.smoothScroll:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.smoothScroll.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+
+foundation.sticky:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.sticky.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.triggers
+    - duo_foundation/foundation.util.mediaQuery
+
+foundation.tabs:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.tabs.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.keyboard
+    - duo_foundation/foundation.util.imageLoader
+
+foundation.toggler:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.toggler.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.motion
+    - duo_foundation/foundation.util.triggers
+
+foundation.tooltip:
+  version: 6.5.3
+  js:
+    js/foundation/foundation.tooltip.min.js: {}
+  dependencies:
+    - duo_foundation/foundation.core
+    - duo_foundation/foundation.util.box
+    - duo_foundation/foundation.util.mediaQuery
+    - duo_foundation/foundation.util.triggers
