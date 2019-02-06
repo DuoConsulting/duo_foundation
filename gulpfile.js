@@ -40,6 +40,18 @@ options.scss = {
   ],
 };
 
+// Define the node-scss configuration for components.
+options.scssComponents = {
+  importer: importOnce,
+  outputStyle: 'compressed',
+  lintIgnore: ['scss/_settings.scss', 'scss/0-init/_drupal.scss'],
+  includePaths: [
+    options.rootPath.project + 'scss',
+    options.rootPath.project + 'node_modules/foundation-sites/scss',
+    options.rootPath.project + 'node_modules/motion-ui/src'
+  ],
+};
+
 // Define which browsers to add vendor prefixes for.
 options.autoprefixer = {
   browsers: [
@@ -122,7 +134,7 @@ gulp.task('components', ['clean:css'], function () {
       noCache: true,
       outputStyle: options.scss.outputStyle,
       sourceMap: true
-    }, options.scss)).on('error', $.sass.logError))
+    }, options.scssComponents)).on('error', $.sass.logError))
     .pipe($.autoprefixer(options.autoprefixer))
     .pipe($.rename({dirname: ''}))
     .pipe($.size({showFiles: true}))
@@ -153,11 +165,11 @@ gulp.task('drush:cc', function () {
 
 // Lint Sass.
 gulp.task('lint:sass', function () {
-  return gulp.src(options.theme.scss + '**/*.scss')
+  return gulp.src([options.theme.scss + '**/*.scss', options.theme.components + '**/*.scss'])
     // use gulp-cached to check only modified files.
     .pipe($.sassLint({
       files: {
-        include: $.cached('scsslint'),
+        include: $.cached('sasslint'),
         ignore: options.scss.lintIgnore
       }
     }))
