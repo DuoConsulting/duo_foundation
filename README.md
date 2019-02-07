@@ -123,3 +123,5 @@ In your terminal, change to the theme's root directory. Run the following comman
 To have gulp automatically watch and compile your SASS files, and compile the styleguide run the following:
 
   `gulp watch`
+
+Running `gulp watch` also sets up LiveReload so that your browser will be refreshed every time there's a change in the CSS. You'll need to install the LiveReload plugin for this to work: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en

@@ -122,7 +122,8 @@ gulp.task('sass', ['clean:css'], function () {
     .pipe($.rename({dirname: ''}))
     .pipe($.size({showFiles: true}))
     .pipe($.sourcemaps.write('./maps'))
-    .pipe(gulp.dest(options.theme.css));
+    .pipe(gulp.dest(options.theme.css))
+    .pipe($.livereload());
 });
 
 // Build CSS for all components.
@@ -139,7 +140,8 @@ gulp.task('components', ['clean:css'], function () {
     .pipe($.rename({dirname: ''}))
     .pipe($.size({showFiles: true}))
     .pipe($.sourcemaps.write('../maps'))
-    .pipe(gulp.dest(options.theme.css + '/components'));
+    .pipe(gulp.dest(options.theme.css + '/components'))
+    .pipe($.livereload());
 });
 
 // Clean CSS files.
