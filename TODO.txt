@@ -1,1 +1,2 @@
 add default content for sticky top bar to template
+add livereload to gulp (and add notes to readme)
