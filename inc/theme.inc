@@ -12,7 +12,7 @@ function duo_foundation_theme_suggestions_menu_alter(&$suggestions, array $varia
       $suggestions[] = 'menu__off_canvas';
     }
     else {
-      $suggestions[] = 'menu__' . $variables['attributes']['region'];  
+      $suggestions[] = 'menu__' . $variables['attributes']['data-region'];  
     }
   }
 }
