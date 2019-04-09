@@ -115,8 +115,7 @@ gulp.task('sass', ['clean:css'], function () {
     // Allow the options object to override the defaults for the task.
     .pipe($.sass(extend(true, {
       noCache: true,
-      outputStyle: options.scss.outputStyle,
-      sourceMap: true
+      outputStyle: options.scss.outputStyle
     }, options.scss)).on('error', $.sass.logError))
     .pipe($.autoprefixer(options.autoprefixer))
     .pipe($.rename({dirname: ''}))
@@ -133,8 +132,7 @@ gulp.task('components', ['clean:css'], function () {
     // Allow the options object to override the defaults for the task.
     .pipe($.sass(extend(true, {
       noCache: true,
-      outputStyle: options.scss.outputStyle,
-      sourceMap: true
+      outputStyle: options.scss.outputStyle
     }, options.scssComponents)).on('error', $.sass.logError))
     .pipe($.autoprefixer(options.autoprefixer))
     .pipe($.rename({dirname: ''}))
