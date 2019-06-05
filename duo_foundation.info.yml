@@ -49,3 +49,10 @@ component-libraries:
   duo_components:
     paths:
       - components
+
+# Remove libraries provided by the duo_layouts module. We don't need them and
+# instead use our built-in Foundation classes.
+libraries-override:
+  duo_layouts/twocol_section: false
+  duo_layouts/threecol_section: false
+  duo_layouts/fourcol_section: false

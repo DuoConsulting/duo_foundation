@@ -186,6 +186,67 @@ function duo_foundation_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_layout().
+ */
+function duo_foundation_preprocess_layout(&$variables) {
+  // Preprocess layouts based on settings managed by the duo_layouts module.
+  // Specifically, we're looking at the column widths specified for multi-column
+  // layouts, and providing the corresponding Foundation classes to the
+  // templates.
+  if (isset($variables['settings']['column_widths'])) {
+    $widths = $variables['settings']['column_widths'];
+
+    switch ($widths) {
+      case '50-50':
+        $variables['class_first']  = 'medium-6';
+        $variables['class_second'] = 'medium-6';
+        break;
+      case '33-67':
+        $variables['class_first']  = 'medium-4';
+        $variables['class_second'] = 'medium-8';
+        break;
+      case '67-33':
+        $variables['class_first']  = 'medium-8';
+        $variables['class_second'] = 'medium-4';
+        break;
+      case '25-75':
+        $variables['class_first']  = 'medium-3';
+        $variables['class_second'] = 'medium-9';
+        break;
+      case '75-25':
+        $variables['class_first']  = 'medium-9';
+        $variables['class_second'] = 'medium-3';
+        break;
+      case '25-50-25':
+        $variables['class_first']  = 'medium-3';
+        $variables['class_second'] = 'medium-6';
+        $variables['class_third']  = 'medium-3';
+        break;
+      case '33-34-33':
+        $variables['class_first']  = 'medium-4';
+        $variables['class_second'] = 'medium-4';
+        $variables['class_third']  = 'medium-4';
+        break;
+      case '25-25-50':
+        $variables['class_first']  = 'medium-3';
+        $variables['class_second'] = 'medium-3';
+        $variables['class_third']  = 'medium-6';
+        break;
+      case '50-25-25':
+        $variables['class_first']  = 'medium-6';
+        $variables['class_second'] = 'medium-3';
+        $variables['class_third']  = 'medium-3';
+        break;
+      default:
+        $variables['class_first']  = '';
+        $variables['class_second'] = '';
+        $variables['class_third']  = '';
+        break;
+    }
+  }
+}
+
+/**
  * Implements template_preprocess_views_view().
  */
 function duo_foundation_preprocess_views_view(&$variables) {}

@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Override the template for a two-column layout.
+ * See the duo_layouts module.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <div{{ attributes.addClass('grid-x', 'grid-margin-x') }}>
+
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass('cell', class_first) }}>
+        {{ content.first }}
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div {{ region_attributes.second.addClass('cell', class_second) }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}
