@@ -253,7 +253,7 @@
 %layout--vertical-tabs,
 .layout--vertical-tabs {
   background-color: $white;
-  border: 1px solid $border-grey;
+  border: 1px solid $medium-gray;
 
   .vertical.tabs,
   .tabs-content {
@@ -262,7 +262,7 @@
 
   > div[class*='medium']:first-child {
     @include breakpoint(medium) {
-      border-right: 1px solid $border-grey;  
+      border-right: 1px solid $medium-gray;  
     }
   }
 }
