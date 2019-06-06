@@ -21,6 +21,10 @@ module.exports = {
     // lintIgnore: '',
   },
 
+  scssComponents: {
+    outputStyle: 'expanded',
+  },
+
   /*
 
   // If your files are on a network share, you may want to turn on polling for

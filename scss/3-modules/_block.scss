@@ -1,0 +1,702 @@
+// These styles apply to blocks defined by the duo_blocks module.
+
+// Variables
+//-----------------------------------------------------------------------------
+$stat-border: $medium-gray;
+$stat-padding: 75px;
+
+// Body components
+//-----------------------------------------------------------------------------
+.paragraph .field--name-field-c-body > *:last-child {
+  margin-bottom: 0;
+}
+// End body components
+//-----------------------------------------------------------------------------
+
+
+// Image components
+//-----------------------------------------------------------------------------
+.paragraph--type--c-image {
+  text-align: center;
+}
+// End image components
+//-----------------------------------------------------------------------------
+
+
+// Fields
+//-----------------------------------------------------------------------------
+.field--name-field-c-image-caption {
+  max-width: rem-calc(800px);
+  margin-left: auto;
+  margin-right: auto;
+
+  p {
+    font-size: 0.9em; // Always a little smaller
+    margin-bottom: 0;
+  }
+}
+
+.field--name-field-c-video {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem-calc(600px);
+  text-align: center;
+}
+
+.field--name-field-c-cta-text {
+  margin-bottom: rem-calc(20px);
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.field--name-field-c-cta-link {
+  display: flex;
+
+  .c-align-center & {
+    justify-content: center;
+  }
+
+  .c-align-right & {
+    justify-content: flex-end;
+  }
+
+  a {
+    @extend %button;
+    display: block;
+    margin: rem-calc(0 10px);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.field--name-field-c-icon {
+  font-size: rem-calc(32px);
+}
+// End fields
+//-----------------------------------------------------------------------------
+
+
+// CTAs
+//------------------------------------------------------------------------------
+.paragraph--type--c-cta {
+  @extend %layout__content--compact;
+
+  h3 {
+    margin-bottom: 0;
+  }
+}
+// End CTAs
+//------------------------------------------------------------------------------
+
+
+// Heros
+//------------------------------------------------------------------------------
+.paragraph--type--c-hero {
+  @media #{$small-up} {
+    height: rem-calc($hero-height);  
+  }
+  display: table;
+  max-width: none;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  height: rem-calc(0.55 * $hero-height);
+
+  h1 {
+    margin-bottom: $hero-h1-margin-bottom;
+  }
+
+  h2 {
+    @media #{$desktop} {
+      font-size: rem-calc($hero-h2-font-size-lg);
+    }
+    font-size: rem-calc($hero-h2-font-size-sm);
+    margin-bottom: $hero-h2-margin-bottom;
+  }
+}
+
+.hero-content {
+  display: table-cell;
+  vertical-align: middle;
+
+  .field {
+    text-align: center;
+  }
+}
+
+.field-name-field-c-hero-title h1 {
+  @media #{$small-up} {
+    margin-bottom: rem-calc(30px);
+  }
+  margin-bottom: rem-calc(18px);
+}
+
+.field-name-field-c-hero-subtitle {
+  font-weight: 300;
+}
+
+.field--name-field-c-hero-cta a {
+  @extend %button;
+}
+
+.field-name-field-c-hero-primary-cta,
+.paragraphs-item-c-hero .field-name-field-c-video {
+  @media #{$small-up} {
+    margin-top: rem-calc(50px);
+  }
+  margin-top: rem-calc(30px);
+}
+// End heros
+//------------------------------------------------------------------------------
+
+
+// Video components
+//------------------------------------------------------------------------------
+.field--name-field-c-video-ref {
+  .field__item + .field__item {
+    margin-top: rem-calc(20px);
+  }
+}
+// End video components
+//-----------------------------------------------------------------------------
+
+
+// Contact lists
+//------------------------------------------------------------------------------
+.paragraph--type--c-contact-list {
+  .field--name-field-profile-email {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+  }
+
+  &.cl-c-align-center {
+    .field--name-field-c-contact-list-link,
+    .field--name-field-c-contact-list-title {
+      text-align: center;
+    }
+  }
+}
+
+.node--type-flexpage {
+  .field--name-field-c-contact-list-refs {
+    @media #{$small-up} {
+      @include flex-container();  
+    }
+    
+    > .field__item {
+      @media #{$small-down} {
+        margin-bottom: rem-calc(40px);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      @media #{$small-up} {
+        @include flex-element();
+        @include flex-element-50();
+      }
+    }
+  }
+}
+
+.node--type-simplepage {
+  .field--name-field-c-contact-list-refs {
+    @media #{$large-up} {
+      @include flex-container();  
+    }
+    
+    > .field__item {
+      @media #{$large-down} {
+        margin-bottom: rem-calc(40px);
+      }
+
+      @media #{$large-up} {
+        @include flex-element();
+        @include flex-element-50();
+      }
+    }
+  }
+}
+
+.contact-card {
+  display: flex;
+  line-height: normal;
+
+  .contact-card__left {
+    flex: 0 0 #{rem-calc(140px)};
+    margin-right: rem-calc(16px);
+    max-width: rem-calc(140px);
+  }
+}
+
+.field--name-field-c-contact-list-title {
+  margin-bottom: 1.25em;
+}
+
+.field--name-field-c-contact-leading-title {
+  
+  color: $dark-gray;
+  margin-bottom: 1em;
+  padding: 0.375em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.field--name-field-c-contact-list-link {
+  margin-top: 1.25em;
+  
+  background-color: $light-gray;
+  font-size: 1.1em;
+}
+// End contact lists
+//------------------------------------------------------------------------------
+
+
+// Accordions
+//------------------------------------------------------------------------------
+// Prevent FOUC
+html.fouc-js .js-accordion {
+  display: none;
+}
+
+.fp-accordion__panel > .fp-accordion__title + .paragraph {
+  padding: rem-calc(16px 20px 20px);
+}
+
+.fp-accordion__panel[aria-hidden=true] {
+  display: block;
+  margin: 0;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  transition-delay: 300ms, 0s, 0s;
+  visibility: hidden;
+}
+
+.fp-accordion__panel {
+  display: block;
+  margin: 0;
+  max-height: 100em;
+  opacity: 1;
+  overflow: hidden;
+  padding: 0;
+  transition-delay: 0s;
+  transition: visibility 0s ease, max-height 300ms ease, opacity 300ms ease ;
+  visibility: visible;
+}
+
+.fp-accordion__header {
+  @media #{$desktop} {
+    font-size: rem-calc(18px);
+  }
+  background: $clear;
+  border: none;
+  border-radius: 0;
+  border-top: 1px solid $border;
+  color: $accent;
+  display: flex;
+  font-size: rem-calc(14px);
+  font-weight: $normal;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: rem-calc(20px);
+  text-align: left;
+  width: 100%;
+
+  &:first-child {
+    border: none;
+  }
+
+  &:hover, &:focus {
+    border-color: $border;
+    background: rgba($black, 0.05);
+    color: $accent;
+  }
+}
+
+/* title opened */
+.fp-accordion__header:after {
+  @extend %fa;
+  color: $accent;
+  font-size: rem-calc(16px);
+  padding-left: rem-calc(16px);
+  position: relative;
+  top: -1px;  
+}
+
+
+.fp-accordion__header[aria-expanded="true"] {
+  background: rgba($black, 0.05);
+}
+.fp-accordion__header[aria-expanded="true"]:after {
+  content: '\f068';
+}
+
+/* title closed */
+.fp-accordion__header[aria-expanded="false"]:after {
+  content: '\f067';
+}
+
+.fp-accordion__title {
+  @extend %sr-only;
+}
+
+// Fields in panels
+.fp-accordion__panel {
+  .field--name-body {
+    margin: rem-calc(0 0 20px);
+  }
+}
+// End accordions
+//------------------------------------------------------------------------------
+
+
+// Tabs
+//------------------------------------------------------------------------------
+.invisible { // This class is assigned to the headers by the script
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.js-tabcontent[aria-hidden="true"] {
+  display: none;
+}
+ 
+.tabs__tabcontent:focus {
+  outline: 1px dotted;
+}
+
+.tabs-bordered {
+  .tabs__standard_ul {
+    @media #{$small-up} {
+      border: none;
+    }
+    border: 1px solid $tabs-border-color;
+  }
+
+  .tabs__standard__li {
+    &:last-child a {
+      @media #{$small-up} {
+        border-right: 1px solid $tabs-border-color;  
+      }
+      @media #{$small-down} {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .tabs__standard__a {
+    @media #{$small-up} {
+      border: 1px solid $tabs-border-color;
+      border-right: none;
+    }
+    background: $tabs-link-bg;
+    border-bottom: 1px solid $tabs-border-color;
+  }
+
+  .tabs__standard__a:focus,
+  .tabs__standard__a:hover,
+  .tabs__standard__a:active,
+  .tabs__standard__a[aria-selected="true"] {
+    background-color: $tabs-link-active-bg;
+  }
+
+  .tabs__standard__a[aria-selected="true"] {
+    @media #{$small-up} {
+      border-bottom-color: transparent;  
+    }
+    border-top: 2px solid $tabs-link-border-active;
+  }
+
+  .tabs__standard__tabcontent {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: rem-calc(20px);
+    padding-bottom: rem-calc(20px);
+  }
+}
+
+.tabs-clean {
+  .tabs__standard_ul {
+    @media #{$small-up} {
+      border: none;
+      border-bottom: 2px solid $tabs-border-color;
+      padding-bottom: rem-calc(10px);
+    }
+    border: 1px solid $tabs-border-color;
+  }
+
+  .tabs__standard__li {
+    &:last-child a {
+      @media #{$small-up} {
+        border-right: none;
+      }
+      @media #{$small-down} {
+        border-bottom: none;
+      }
+    }
+
+    &:first-child a {
+      @media #{$small-up} {
+        border-left: none;  
+      }
+    }
+  }
+
+  .tabs__standard__a {
+    @media #{$small-up} {
+      border: none;
+      border-left: 1px solid $tabs-border-color;
+    }
+    border-bottom: 1px solid $tabs-border-color;
+  }
+}
+
+.tabs__standard_ul {
+  @media #{$small-up} {
+    display: flex;
+    justify-content: center;
+  }
+  display: block;
+  margin: 0 0 2em;
+  padding: 0;
+  width: 100%;
+}
+
+.tabs__standard__li {
+  @media #{$small-up} {
+    display: flex; // So that the included a tag fills the entire li.
+    font-size: rem-calc($tabs-item-font-size-lg);
+  }
+  display: block;
+  font-size: rem-calc($tabs-item-font-size-sm);
+  margin: 0;
+  text-align: center;
+}
+
+.tabs__standard__a {
+  @media #{$small-up} {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding: rem-calc($tabs-link-padding-lg);
+  }
+  color: $tabs-link-color;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  line-height: 1.1;
+  padding: rem-calc($tabs-link-padding-sm);
+  text-transform: $tabs-link-text-transform;
+}
+
+.tabs__standard__a:focus,
+.tabs__standard__a:hover,
+.tabs__standard__a:active,
+.tabs__standard__a[aria-selected="true"] {
+  color: $tabs-link-active-color;
+}
+
+.tabs__standard__a:focus {
+  outline: 1px solid transparent;
+}
+
+.tabs__standard__tabcontent {
+  + .tabs__standard__tabcontent {
+    margin-top: rem-calc(20px);
+
+    &[role="tabpanel"] {
+      margin-top: 0; // When JS is enabled, no top margin.
+    }
+  }
+}
+// End tabs
+//------------------------------------------------------------------------------
+
+
+// Stats
+//------------------------------------------------------------------------------
+.paragraph--type--c-stats + .paragraph--type--c-stats {
+  @media #{$small-up} {
+    margin-top: rem-calc(($stat-padding) * 0.75);
+    padding-top: rem-calc(($stat-padding) * 0.75);
+  }
+  @media #{$medium-up} {
+    margin-top: rem-calc($stat-padding);
+    padding-top: rem-calc($stat-padding);
+  } 
+  border-top: 1px solid $stat-border;
+  margin-top: rem-calc(($stat-padding) * 0.5);
+  padding-top: rem-calc(($stat-padding) * 0.5);
+}
+
+.c-stats-v {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: rem-calc(-20px);
+  margin-right: rem-calc(-20px);
+  margin-top: rem-calc(-37.5px);
+  overflow: hidden; // Ensure that the negative top margin (for wrapping) does not collapse with section headings
+
+  > .paragraph {
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-top: rem-calc(37.5px);
+    padding-left: rem-calc(20px);
+    padding-right: rem-calc(20px);
+  }
+}
+
+// Because horizontal status use a table layout, we cannot use margins
+// to space out the stats. We have to use only padding instead.
+.c-stats-h > .paragraph {
+  @media #{$small-up} {
+    display: table-row;
+    padding-bottom: 0;
+  }
+  padding-bottom: rem-calc(($stat-padding) * 0.5); 
+
+  .field--name-field-c-stat-statistic {
+    @media #{$small-up} {
+      padding-right: rem-calc(40px);
+    }
+  }
+
+  .stat__content {
+    @media #{$small-up} {
+      display: table-cell;
+      vertical-align: top;
+    }
+  }
+
+  .stat__statistic {
+    @media #{$small-up} {
+      display: table-cell;
+      margin-bottom: 0;
+      width: 35%;
+      vertical-align: top;
+    }
+  }
+
+  .stat__statistic,
+  .stat__content {
+    @media #{$small-up} {
+      padding-bottom: rem-calc(($stat-padding) * 0.75);
+    }
+    @media #{$medium-up} {
+      padding-bottom: rem-calc($stat-padding);
+    }
+  }
+
+  + .paragraph {
+    @media #{$small-up} {
+      border-top: none;
+      padding-top: 0;
+    }
+    border-top: 1px solid $stat-border;
+    padding-top: rem-calc(($stat-padding) * 0.5);
+
+    .stat__statistic,
+    .stat__content {
+      @media #{$small-up} {
+        border-top: 1px solid $stat-border;
+        padding-top: rem-calc(($stat-padding) * 0.75);
+      }
+      @media #{$medium-up} {
+        padding-top: rem-calc($stat-padding);
+      }
+    }
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+
+    .stat__statistic,
+    .stat__content {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.stat__statistic {
+  color: map-safe-get($foundation-palette, primary);
+  line-height: 0.85;
+  margin-bottom: rem-calc(40px);
+
+  .field--name-field-c-icon {
+    margin-bottom: rem-calc(40px);
+    text-align: center;
+
+    + .field--name-field-c-stat-statistic {
+      font-size: 0.7em;
+      text-align: center;
+    }
+  }
+}
+
+.stat__statistic,
+.stat__statistic .field--name-field-c-icon {
+  @media #{$medium-up} {
+    font-size: rem-calc(140px);
+  }
+  font-size: rem-calc(90px);  
+}
+
+.field--name-field-c-stat-title {
+  text-align: $stats-title-alignment;
+}
+
+.paragraph--type--c-flexblock-column {
+  .stat__statistic,
+  .stat__statistic .field--name-field-c-icon {
+    @media #{$medium-up} {
+      font-size: rem-calc(110px);
+    }
+    font-size: rem-calc(60px);
+  }
+}
+
+// Styles
+.c-stats-style-bordered {
+  .field--name-field-c-icon {
+    @media #{$medium-up} {
+      font-size: rem-calc(100px);
+      height: rem-calc(195px);      
+      width: rem-calc(195px);
+    }
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid $border;
+    display: flex;
+    font-size: rem-calc(70px);
+    height: rem-calc(140px);
+    justify-content: center;
+    margin: 0 auto;
+    width: rem-calc(140px);
+  }
+
+  .field--name-field-c-stat-statistic {
+    margin-top: rem-calc(30px);
+  }
+}
+// End stats
+//------------------------------------------------------------------------------

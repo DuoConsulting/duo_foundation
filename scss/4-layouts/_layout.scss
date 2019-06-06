@@ -1,0 +1,416 @@
+// Most of the styles here are related to classes added by the duo_layouts
+// See duo_layouts and see related layouts in /templates/layouts.
+
+// Variables
+//------------------------------------------------------------------------------
+$layout--bgd-color-1: white;
+$layout--bgd-color-2: white;
+$layout--bgd-color-3: white;
+$layout--bgd-color-4: white;
+$layout-maxwidth: $global-width;
+$layout-padding: rem-calc(75px);
+
+$border-color: $medium-gray;
+
+$test: 5rem;
+
+// Layout
+//------------------------------------------------------------------------------
+.layout__container {
+  // Some content types need this to contain the max width of the content.
+  // For those content types, this container should behave like .grid-container,
+  // i.e. @include xy-grid-container;
+}
+
+// When more than one block is in a given layout section.
+.layout__region {
+  > .block + .block {
+    @media #{$small-up} {
+      margin-top: $layout-padding * 0.75;
+    }
+    @media #{$medium-up} {
+      margin-top: $layout-padding;
+    }
+    margin-top: $layout-padding * 0.5;
+  }
+}
+
+// TODO
+// // Alignment
+// .c-align-left {
+//   text-align: left;
+// }
+
+// .c-align-right {
+//   text-align: right;
+// }
+
+// .c-align-center {
+//   text-align: center;
+// }
+
+// Paragraph headings
+.layout__heading {
+  margin: 0 0 1.05em;
+}
+
+// Padding
+.layout--padding-top-default {
+  @media #{$small-up} {
+    padding-top: $layout-padding * 0.75;
+  }
+  @media #{$medium-up} {
+    padding-top: $layout-padding;
+  }
+  padding-top: $layout-padding * 0.5;
+}
+
+.layout--padding-bottom-default {
+  @media #{$small-up} {
+    padding-bottom: $layout-padding * 0.75;
+  }
+  @media #{$medium-up} {
+    padding-bottom: $layout-padding;
+  }
+  padding-bottom: $layout-padding * 0.5;
+}
+
+.layout--padding-top-half {
+  @media #{$small-up} {
+    padding-top: ($layout-padding / 2) * 0.75;
+  }
+  @media #{$medium-up} {
+    padding-top: $layout-padding / 2;
+  }
+  padding-top: ($layout-padding / 2) * 0.5;
+}
+
+.layout--padding-bottom-half {
+  @media #{$small-up} {
+    padding-bottom: ($layout-padding / 2) * 0.75;
+  }
+  @media #{$medium-up} {
+    padding-bottom: $layout-padding / 2;
+  }
+  padding-bottom: ($layout-padding / 2) * 0.5;
+}
+
+.layout--padding-top-quarter {
+  @media #{$small-up} {
+    padding-top: ($layout-padding / 4) * 0.75;
+  }
+  @media #{$medium-up} {
+    padding-top: $layout-padding / 4;
+  }
+  padding-top: ($layout-padding / 4) * 0.5;
+}
+
+.layout--padding-bottom-quarter {
+  @media #{$small-up} {
+    padding-bottom: ($layout-padding / 4) * 0.75;
+  }
+  @media #{$medium-up} {
+    padding-bottom: $layout-padding / 4;
+  }
+  padding-bottom: ($layout-padding / 4) * 0.5;
+}
+
+.layout--padding-top-zero {
+  padding-top: 0;
+}
+
+.layout--padding-bottom-zero {
+  padding-bottom: 0;
+}
+
+// Widths
+@for $width from 1 through 10 {
+  .layout--width-#{$width}0 .layout__container {
+    max-width: #{$width * ($layout-maxwidth / 10)};
+  }
+}
+
+.layout--width-fs {
+  .layout__container {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .layout__heading {
+    @include xy-grid-container();
+  }
+}
+// End layout
+//------------------------------------------------------------------------------
+
+// TBD
+// // Simple sections and sidebar sections (used on simplepage content type)
+// //------------------------------------------------------------------------------
+// .paragraph--type--c-simple-section {
+//   @media #{$small-up} {
+//     padding: (($layout-padding / 2) * 0.75) 0;
+//   }
+//   @media #{$medium-up} {
+//     padding: ($layout-padding / 2) 0;
+//   }
+//   padding: (($layout-padding / 2) * 0.5) 0;
+
+//   &:first-child {
+//     padding-top: 0;
+//   }
+
+//   &:last-child {
+//     padding-bottom: 0;
+//   }
+// }
+// // End simple sections and sidebar sections
+// //------------------------------------------------------------------------------
+
+
+// Background and text colors
+//------------------------------------------------------------------------------
+// TODO
+// .layout--bgd-color-1 {
+//   @extend #{$bg1-text};
+// }
+
+// .layout--bgd-color-2 {
+//   @extend #{$bg2-text};
+// }
+
+// .layout--bgd-color-3 {
+//   @extend #{$bg3-text};
+// }
+
+// .layout--bgd-color-4 {
+//   @extend #{$bg4-text};
+// }
+
+// // Include the paragraph class in case someone really wants to override the
+// // text colors applied above.
+// .paragraph--type--c-section.c-text-dark {
+//   @extend .text-dark;
+// }
+
+// .paragraph--type--c-section.c-text-light {
+//   @extend .text-light;
+// }
+
+.layout--bgd-color-1 {
+  background-color: $layout--bgd-color-1;
+}
+
+.layout--bgd-color-2 {
+  background-color: $layout--bgd-color-2;
+}
+
+.layout--bgd-color-3 {
+  background-color: $layout--bgd-color-3;
+}
+
+.layout--bgd-color-4 {
+  background-color: $layout--bgd-color-4;
+}
+
+.c-bgd-image,
+.c-bgd-video {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+
+  &:before {
+    content: ' ';
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .layout__container {
+    position: relative;
+    z-index: 20;
+  }
+
+  &.layout--bgd-color-1 {
+    &:before {
+      background-color: $layout--bgd-color-1;
+    }
+  }
+
+  &.layout--bgd-color-2 {
+    &:before {
+      background-color: $layout--bgd-color-2;
+    }
+  }
+
+  &.layout--bgd-color-3 {
+    &:before {
+      background-color: $layout--bgd-color-3;
+    }
+  }
+
+  &.layout--bgd-color-4 {
+    &:before {
+      background-color: $layout--bgd-color-4;
+    }
+  }
+}
+
+.c-bgd-image-parallax {
+  background-attachment: fixed;
+}
+
+.c-bgd-video {
+  &.c-bgd-image {
+    @media #{$small-up} {
+      // Because for some reason Chrome shows a couple pixels of the background image below the video
+      background-image: none !important;
+
+      .field--name-field-c-bgd-image {
+        display: none;
+      }
+    }
+  }
+}
+
+.field--name-field-c-bgd-video {
+  @media #{$small-up} {
+    display: block;
+  }
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  video {
+    height: auto !important; // To override inline styles assigned by module
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: auto !important; // To override inline styles assigned by module
+  }
+}
+
+// Background images
+.field--name-field-c-bgd-image {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+  }
+}
+
+// IE doesn't support object-fit:cover, If object-fit is supported, and if we
+// are not displaying a parallax background, then hide the background image.
+html.object-fit .c-bgd-image.c-bgd-image-no-parallax {
+  background-image: none !important; // To override inline style applied by duo_components.module
+}
+
+// If object fit is not supported, or if we are using parallax, hide the image
+// field.
+html.no-object-fit .c-bgd-image .field--name-field-c-bgd-image,
+.c-bgd-image.c-bgd-image-parallax .field--name-field-c-bgd-image {
+  display: none;
+}
+// End background and text colors
+//------------------------------------------------------------------------------
+
+
+// Flexblocks
+//-----------------------------------------------------------------------------
+// TODO
+// // Vertical alignment
+// .c-fb-align-top {
+//   align-items: stretch; // Same as default
+// }
+
+// .c-fb-align-bottom {
+//   align-items: flex-end;
+// }
+
+// .c-fb-align-middle {
+//   align-items: center;
+// }
+
+// .c-fb-align-baseline {
+//   align-items: baseline;
+// }
+
+// // Horizontal spacing
+// .c-fb-justify-start {
+//   justify-content: flex-start;
+// }
+
+// .c-fb-justify-end {
+//   justify-content: flex-end;
+// }
+
+// .c-fb-justify-center {
+//   justify-content: center;
+// }
+
+// .c-fb-justify-sb {
+//   justify-content: space-between;
+// }
+
+// .c-fb-justify-sa {
+//   justify-content: space-around;
+// }
+
+
+// TBD
+// // Styles
+// .c-fb-style-outer-border {
+//   // This style has the limitation that any columns which wrap to a second line
+//   // do not have the correct top margins.
+//   border: 1px solid $border-color;
+//   margin-left: 0;
+//   margin-right: 0;
+//   margin-top: 0;
+//   padding: rem-calc(20px 10px);
+
+//   .paragraph--type--c-flexblock-column {
+//     @media #{$small-up} {
+//       padding: rem-calc(0 10px);
+//       margin-top: 0;
+//     }
+//   }
+// }
+
+// .c-fb-style-inner-borders {
+//   border-top: 1px solid $border-color;
+//   border-left: 1px solid $border-color;
+//   margin-left: 0;
+//   margin-right: 0;
+//   margin-top: 0;
+
+//   .paragraph--type--c-flexblock-column {
+//     border-bottom: 1px solid $border-color;
+//     border-right: 1px solid $border-color;
+//     margin-top: 0;
+//     padding: rem-calc(20px);
+//   }
+// }
+// End flexblocks
+//-----------------------------------------------------------------------------

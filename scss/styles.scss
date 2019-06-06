@@ -119,14 +119,14 @@
 // Components
 @import '2-components/components';
 @import '2-components/menu_block';
-// @import '2-components/block';
-// @import '2-components/node';
 
 // Modules
+// @import '3-modules/block';
 @import '3-modules/topbar';
 
 // Layouts
-// @import '4-layouts/fullwidth-grid';
+@import '4-layouts/layout';
+@import '4-layouts/layout-helpers';
 
 // Pages
 // @import '5-pages/homepage';

@@ -1,0 +1,300 @@
+// Layout placeholders and helper classes
+
+// Create semantic classes that we can use as shortcuts for certain layouts.
+// This keeps us from having to add 'grid-x grid-margin-x', 'cell small-12',
+// etc. classes all over the place.
+
+// First, a layout with margin gutters.
+%layout,
+.layout {
+  @include xy-grid();
+  @include xy-gutters($negative: true);
+
+  // Apply bottom margins at smaller breakpoints.
+  > article,
+  > div {
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+    margin-bottom: $global-margin;
+
+    &:last-child {
+      margin-bottom: 0;
+    }    
+  }
+}
+
+// By default, we don't want margins below all the grid elements. But if we
+// expect the elements to wrap into multiple rows, then we probably want them to
+// have bottom margins.
+%layout--margins,
+.layout--margins {
+  &.layout--40-60,
+  &.layout--25-75,
+  &.layout--2col {
+    > article:nth-child(n+3),
+    > div:nth-child(n+3) {
+      @include breakpoint(medium) {
+        margin-top: $global-margin;  
+      }
+    }
+  }
+}
+
+%layout--full,
+.layout--full {
+  > article,
+  > div {
+    // See https://github.com/zurb/foundation-sites/issues/11507
+    @include breakpoint(medium) {
+      @include xy-cell(12);  
+    }
+    @include xy-cell(12);
+  }
+}
+
+%layout--2col,
+.layout--2col {
+  > article,
+  > div {
+    @include breakpoint(medium) {
+      @include xy-cell(6);
+    }
+    @include xy-cell(12);
+  }
+
+  // Use nth-of-type to set top margin because some grids include a heading
+  // element before all the actual grid elements.
+  > article:nth-of-type(n+3),
+  > div:nth-of-type(n+3) {
+    @include breakpoint(medium) {
+      margin-top: $global-margin;  
+    }
+  }
+}
+
+%layout--3col,
+.layout--3col {
+  > article,
+  > div {
+    @include breakpoint(medium) {
+      @include xy-cell(4);  
+    }
+    @include xy-cell(12);
+  }
+
+  > article:nth-of-type(n+4),
+  > div:nth-of-type(n+4) {
+    @include breakpoint(medium) {
+      margin-top: $global-margin;  
+    }
+  }
+}
+
+// A layout with 3 columns on large screens and 2 columns on small-medium
+// screens.
+%layout--3-2col,
+.layout--3-2col {
+  > article,
+  > div {
+    @include breakpoint(small-medium only) {
+      @include xy-cell(6);  
+    }
+    @include breakpoint(medium) {
+      @include xy-cell(4);  
+    }
+    @include xy-cell(12);
+  }
+
+  > article:nth-of-type(n+4),
+  > div:nth-of-type(n+4) {
+    @include breakpoint(medium) {
+      margin-top: $global-margin;  
+    }
+  }
+
+  > article:nth-of-type(n+3),
+  > div:nth-of-type(n+3) {
+    @include breakpoint(small-medium only) {
+      margin-top: $global-margin;  
+    }
+  }
+}
+
+%layout--4col,
+.layout--4col {
+  > article,
+  > div {
+    @include breakpoint(medium) {
+      @include xy-cell(3);  
+    }
+    @include xy-cell(12);
+  }
+
+  > article:nth-of-type(n+5),
+  > div:nth-of-type(n+5) {
+    @include breakpoint(medium) {
+      margin-top: $global-margin;  
+    }
+  }  
+}
+
+%layout--25-75,
+.layout--25-75 {
+  > article:first-child,
+  > div:first-child {
+    @include breakpoint(medium) {
+      @include xy-cell(3);  
+    }
+    @include xy-cell(12);
+  }
+
+  > article:last-child,
+  > div:last-child {
+    @include breakpoint(medium) {
+      @include xy-cell(9);  
+    }
+    @include xy-cell(12);
+  }
+}
+
+%layout--40-60,
+.layout--40-60 {
+  > article:first-child,
+  > div:first-child {
+    @include breakpoint(medium) {
+      @include xy-cell(5);  
+    }
+    @include xy-cell(12);
+  }
+
+  > article:last-child,
+  > div:last-child {
+    @include breakpoint(medium) {
+      @include xy-cell(7);  
+    }
+    @include xy-cell(12);
+  }
+}
+
+
+// Second, a layout with padded gutters.
+%layout-padded,
+.layout-padded {
+  @include xy-grid();
+}
+
+%layout-padded--full,
+.layout-padded--full {
+  > article,
+  > div {
+    // See https://github.com/zurb/foundation-sites/issues/11507
+    @include breakpoint(medium) {
+      @include xy-cell(12, $gutter-type: 'padding');  
+    }
+    @include xy-cell(12, $gutter-type: 'padding');
+  }
+}
+
+%layout-padded--2col,
+.layout-padded--2col {
+  > article,
+  > div {
+    @include breakpoint(medium) {
+      @include xy-cell(6, $gutter-type: 'padding');
+    }
+    @include xy-cell(12, $gutter-type: 'padding');
+  }
+}
+
+%layout-padded--3col,
+.layout-padded--3col {
+  > article,
+  > div {
+    @include breakpoint(medium) {
+      @include xy-cell(4, $gutter-type: 'padding');  
+    }
+    @include xy-cell(12, $gutter-type: 'padding');
+  }
+}
+
+%layout-padded--4col,
+.layout-padded--4col {
+  > article,
+  > div {
+    @include breakpoint(medium) {
+      @include xy-cell(3, $gutter-type: 'padding');  
+    }
+    @include xy-cell(12, $gutter-type: 'padding');
+  }
+}
+
+%layout-padded--40-60,
+.layout-padded--40-60 {
+  > article:first-child,
+  > div:first-child {
+    @include breakpoint(medium) {
+      @include xy-cell(5, $gutter-type: 'padding');  
+    }
+    @include xy-cell(12, $gutter-type: 'padding');
+  }
+
+  > article:last-child,
+  > div:last-child {
+    @include breakpoint(medium) {
+      @include xy-cell(7, $gutter-type: 'padding');  
+    }
+    @include xy-cell(12, $gutter-type: 'padding');
+  }
+}
+
+
+// Some additional styles for layout with vertical tabs.
+%layout--vertical-tabs,
+.layout--vertical-tabs {
+  background-color: $white;
+  border: 1px solid $border-grey;
+
+  .vertical.tabs,
+  .tabs-content {
+    border: 0;
+  }
+
+  > div[class*='medium']:first-child {
+    @include breakpoint(medium) {
+      border-right: 1px solid $border-grey;  
+    }
+  }
+}
+
+
+// Containers
+// Use these to keep content from getting too wide.
+%container--xlarge,
+.container--xlarge {
+  max-width: rem-calc(980px);
+}
+
+%container--large,
+.container--large {
+  max-width: rem-calc(740px);
+}
+
+%container--small,
+.container--small {
+  max-width: rem-calc(540px);
+}
+
+
+// A section just needs bottom margin.
+.section {
+  margin-bottom: 2 * $global-margin;
+}
+
+.section--medium {
+  margin-bottom: 1.5 * $global-margin;
+}
+
+.section--small {
+  margin-bottom: 1 * $global-margin;
+}
