@@ -1,12 +1,12 @@
-// Layout placeholders and helper classes
+// Grid placeholders and helper classes
 
 // Create semantic classes that we can use as shortcuts for certain layouts.
 // This keeps us from having to add 'grid-x grid-margin-x', 'cell small-12',
 // etc. classes all over the place.
 
-// First, a layout with margin gutters.
-%layout,
-.layout {
+// First, a grid with margin gutters.
+%grid,
+.grid {
   @include xy-grid();
   @include xy-gutters($negative: true);
 
@@ -27,11 +27,11 @@
 // By default, we don't want margins below all the grid elements. But if we
 // expect the elements to wrap into multiple rows, then we probably want them to
 // have bottom margins.
-%layout--margins,
-.layout--margins {
-  &.layout--40-60,
-  &.layout--25-75,
-  &.layout--2col {
+%grid--margins,
+.grid--margins {
+  &.grid--40-60,
+  &.grid--25-75,
+  &.grid--2col {
     > article:nth-child(n+3),
     > div:nth-child(n+3) {
       @include breakpoint(medium) {
@@ -41,8 +41,8 @@
   }
 }
 
-%layout--full,
-.layout--full {
+%grid--full,
+.grid--full {
   > article,
   > div {
     // See https://github.com/zurb/foundation-sites/issues/11507
@@ -53,8 +53,8 @@
   }
 }
 
-%layout--2col,
-.layout--2col {
+%grid--2col,
+.grid--2col {
   > article,
   > div {
     @include breakpoint(medium) {
@@ -73,8 +73,8 @@
   }
 }
 
-%layout--3col,
-.layout--3col {
+%grid--3col,
+.grid--3col {
   > article,
   > div {
     @include breakpoint(medium) {
@@ -91,10 +91,10 @@
   }
 }
 
-// A layout with 3 columns on large screens and 2 columns on small-medium
+// A grid with 3 columns on large screens and 2 columns on small-medium
 // screens.
-%layout--3-2col,
-.layout--3-2col {
+%grid--3-2col,
+.grid--3-2col {
   > article,
   > div {
     @include breakpoint(small-medium only) {
@@ -121,8 +121,8 @@
   }
 }
 
-%layout--4col,
-.layout--4col {
+%grid--4col,
+.grid--4col {
   > article,
   > div {
     @include breakpoint(medium) {
@@ -139,8 +139,8 @@
   }  
 }
 
-%layout--25-75,
-.layout--25-75 {
+%grid--25-75,
+.grid--25-75 {
   > article:first-child,
   > div:first-child {
     @include breakpoint(medium) {
@@ -158,8 +158,8 @@
   }
 }
 
-%layout--40-60,
-.layout--40-60 {
+%grid--40-60,
+.grid--40-60 {
   > article:first-child,
   > div:first-child {
     @include breakpoint(medium) {
@@ -178,14 +178,14 @@
 }
 
 
-// Second, a layout with padded gutters.
-%layout-padded,
-.layout-padded {
+// Second, a grid with padded gutters.
+%grid-padded,
+.grid-padded {
   @include xy-grid();
 }
 
-%layout-padded--full,
-.layout-padded--full {
+%grid-padded--full,
+.grid-padded--full {
   > article,
   > div {
     // See https://github.com/zurb/foundation-sites/issues/11507
@@ -196,8 +196,8 @@
   }
 }
 
-%layout-padded--2col,
-.layout-padded--2col {
+%grid-padded--2col,
+.grid-padded--2col {
   > article,
   > div {
     @include breakpoint(medium) {
@@ -207,8 +207,8 @@
   }
 }
 
-%layout-padded--3col,
-.layout-padded--3col {
+%grid-padded--3col,
+.grid-padded--3col {
   > article,
   > div {
     @include breakpoint(medium) {
@@ -218,8 +218,8 @@
   }
 }
 
-%layout-padded--4col,
-.layout-padded--4col {
+%grid-padded--4col,
+.grid-padded--4col {
   > article,
   > div {
     @include breakpoint(medium) {
@@ -229,8 +229,8 @@
   }
 }
 
-%layout-padded--40-60,
-.layout-padded--40-60 {
+%grid-padded--40-60,
+.grid-padded--40-60 {
   > article:first-child,
   > div:first-child {
     @include breakpoint(medium) {
@@ -249,9 +249,9 @@
 }
 
 
-// Some additional styles for layout with vertical tabs.
-%layout--vertical-tabs,
-.layout--vertical-tabs {
+// Some additional styles for grid with vertical tabs.
+%grid--vertical-tabs,
+.grid--vertical-tabs {
   background-color: $white;
   border: 1px solid $medium-gray;
 

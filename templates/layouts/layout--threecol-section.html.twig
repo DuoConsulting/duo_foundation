@@ -16,7 +16,9 @@
 
     <div class="layout__container">
       
-      <h2 class="layout__heading">{{ content.heading }}</h2>
+      {% if content.heading %}
+        <h2 class="layout__heading">{{ content.heading }}</h2>
+      {% endif %}
 
       <div class="layout__content grid-x grid-margin-x">
 
