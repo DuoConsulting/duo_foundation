@@ -1,0 +1,45 @@
+// CTAs
+//------------------------------------------------------------------------------
+
+@import 'foundation';
+@import 'settings';
+
+.block--cta {
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .field--name-field-links {
+    display: flex;
+
+    .text-align-center & {
+      justify-content: center;
+    }
+
+    .text-align-right & {
+      justify-content: flex-end;
+    }
+
+    a {
+      @include button();
+      margin: 0 0.75em;
+      // padding: 0.25em 0.5em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .field--body {
+    margin-bottom: 1.5em;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

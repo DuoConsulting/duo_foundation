@@ -22,6 +22,11 @@ card:
   dependencies:
     - core/jquery
 
+block--cta:
+  css:
+    component:
+      css/components/block--cta.css: {}
+
 ################################################################################
 # Foundation 6.5.3 core, utility libraries and plugins
 # Include plugins as needed, either globally or within template files
