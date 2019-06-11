@@ -8595,6 +8595,15 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
   padding-left: 0.875rem;
 }
 
+.user-nav {
+  font-size: 0.75rem;
+}
+
+.user-nav a {
+  display: inline-block;
+  padding: 0.375rem 0.625rem;
+}
+
 .top-bar-outer {
   background-color: #3E4D51;
   border-top: 1px solid #e6e6e6;
@@ -9049,6 +9058,29 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
 
 .section--small {
   margin-bottom: 1rem;
+}
+
+.flex-align-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.flex-align-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-align-justify {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-align-spaced {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .node--type-flexpage .layout__container {

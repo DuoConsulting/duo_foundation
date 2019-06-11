@@ -165,9 +165,9 @@
     </header>
 
     <div class="grid-container">
-      <div class="grid-x grid-margin-x">
-        <div class="{{ site_slogan ? 'large-6' : 'large-4 medium-order-2' }} cell hide-for-small-only">
-          <p>
+      <div class="grid-x grid-margin-x text-align-right">
+        <div class="cell hide-for-small-only">
+          <p class="user-nav">
             {% if logged_in %}
               <a href="{{ path('user.page') }}">{{ 'My Account'|t }}</a>
               <a href="{{ path('user.logout') }}">{{ 'Logout'|t }}</a>
@@ -177,11 +177,6 @@
             {% endif %}
           </p>
         </div>
-        {% if site_slogan %}
-          <div class="large-6 cell hide-for-small medium-order-2">
-            {{ site_slogan }}
-          </div>
-        {% endif %}
       </div>
       <div class="show-for-small-only">
           <p>

@@ -298,3 +298,21 @@
 .section--small {
   margin-bottom: 1 * $global-margin;
 }
+
+// Helper classes for aligning flexbox content. Foundation provides its own
+// classes but they conflict with Drupal classes.
+.flex-align-right {
+  justify-content: flex-end;
+}
+
+.flex-align-center {
+  justify-content: center;
+}
+
+.flex-align-justify {
+  justify-content: space-between;
+}
+
+.flex-align-spaced {
+  justify-content: space-around;
+}

@@ -27,3 +27,13 @@
 #site-name {
   @extend .h1;
 }
+
+// The user links in the top right
+.user-nav {
+  font-size: rem-calc(12px);
+
+  a {
+    display: inline-block;
+    padding: rem-calc(6px 10px);
+  }
+}
