@@ -103,6 +103,9 @@ $print-transparent-backgrounds: true;
 @include add-foundation-colors;
 $print-hrefs: true;
 
+// Custom colors
+$bg-gray: #3E4D51;
+
 // 2. Breakpoints
 // --------------
 
@@ -848,7 +851,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: transparent;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;

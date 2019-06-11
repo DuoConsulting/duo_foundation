@@ -14,18 +14,6 @@
   display: flex;
 }
 
-.text-align-center .block--cta .field--name-field-links {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.text-align-right .block--cta .field--name-field-links {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
 .block--cta .field--name-field-links a {
   display: inline-block;
   vertical-align: middle;
@@ -69,6 +57,18 @@
 
 .block--cta .field--body > *:last-child {
   margin-bottom: 0;
+}
+
+.block--cta.text-align-center .field--name-field-links {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.block--cta.text-align-right .field--name-field-links {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 /*# sourceMappingURL=../maps/block--cta.css.map */

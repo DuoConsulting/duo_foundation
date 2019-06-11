@@ -14,28 +14,25 @@ libraries:
 
 regions:
   meta_header: 'Meta Header'
-  header: Header
   top_bar_left: 'Top Bar Left'
   top_bar_right: 'Top Bar Right'
+  header: Header
   help: Help
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
+  page_top: 'Page Top'
+  page_bottom: 'Page Bottom'
   highlighted: Highlighted
+  content_top: 'Content Top' 
   content: Content
   sidebar_first: 'Left Sidebar'
   sidebar_second: 'Right Sidebar'
-  footer_first: 'Footer first column'
-  footer_middle: 'Footer middle column'
-  footer_last: 'Footer last column'
-  left_off_canvas: 'Left off canvas'
-  right_off_canvas: 'Right off canvas'
+  footer_first: 'Footer First Column'
+  footer_middle: 'Footer Middle Column'
+  footer_last: 'Footer Last Column'
+  left_off_canvas: 'Left Off Canvas'
+  right_off_canvas: 'Right Off Canvas'
 regions_hidden:
   page_top: 'Page Top'
-  page_bottom: 'Page bottom'
-
-# Hidden regions
-# regions_hidden[]: Page top
-# regions_hidden[]: Page bottom
+  page_bottom: 'Page Bottom'
 
 features:
   - logo
@@ -57,3 +54,4 @@ libraries-override:
   duo_layouts/twocol_section: false
   duo_layouts/threecol_section: false
   duo_layouts/fourcol_section: false
+  duo_blocks/blocks: false

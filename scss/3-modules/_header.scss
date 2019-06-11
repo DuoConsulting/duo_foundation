@@ -1,1 +1,29 @@
+// Header
 
+// Logo and title
+.header-top {
+  background-color: $bg-gray;
+  padding: 1em 0;
+
+  a {
+    color: $white;
+  }
+
+  .hamburger {
+    @include hamburger($white, $light-gray, 20px, 12px, 1px, 3);
+  }
+}
+
+.header-top__menu.cell {
+  align-items: center;
+  display: flex;
+  margin-right: rem-calc(14px);
+}
+
+.header-top__menu-inner {
+  padding-left: rem-calc(14px);
+}
+
+#site-name {
+  @extend .h1;
+}

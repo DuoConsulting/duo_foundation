@@ -12,14 +12,6 @@
   .field--name-field-links {
     display: flex;
 
-    .text-align-center & {
-      justify-content: center;
-    }
-
-    .text-align-right & {
-      justify-content: flex-end;
-    }
-
     a {
       @include button();
       margin: 0 0.75em;
@@ -41,5 +33,13 @@
     > *:last-child {
       margin-bottom: 0;
     }
+  }
+
+  &.text-align-center .field--name-field-links {
+    justify-content: center;
+  }
+
+  &.text-align-right .field--name-field-links {
+    justify-content: flex-end;
   }
 }

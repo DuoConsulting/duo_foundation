@@ -11,9 +11,9 @@
 %}
 {%
   include '@duo_components/block--cta/block--cta.twig' with {
-    alignment: content.field_text_alignment.0.value,
+    alignment: content.field_text_alignment.0['#markup'],
     title: content.field_cta_title,
-    body: content.field_body,
+    body: content.body,
     links: content.field_links,
     defaults: classes,
     title_prefix: title_prefix,

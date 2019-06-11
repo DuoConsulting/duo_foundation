@@ -1,3 +1,8 @@
+.top-bar-outer {
+  background-color: $bg-gray;
+  border-top: 1px solid $light-gray;
+}
+
 // Style the search form, if embedded in the Top Bar.
 .top-bar {
   input {
@@ -13,5 +18,9 @@
     .form-actions {
       display: flex;
     }
+  }
+
+  a {
+    color: $white;
   }
 }

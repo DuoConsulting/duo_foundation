@@ -43,6 +43,23 @@ All Foundation libraries are defined in duo_foundation.libraries.yml. Include th
 
 `{{ attach_library('duo_foundation/foundation.accordion') }}`
 
+### Block placement
+
+*WORK IN PROGRESS*. To get started, try placing the following blocks in the following regions:
+* Top Bar Left
+  * Main navigation
+* Highlighted 
+  * Status messages
+* Content Top
+  * Page title
+  * Tabs
+  * Help
+  * Primary admin actions
+* Content
+  * Main page content
+* Right Off Canvas
+  * Main navigation
+
 ## Styleguide
 
 The gulp file included with this theme is configured to compile a KSS styleguide (https://github.com/kss-node/kss-node) on `gulp watch`. The styleguide can be found in the `./styleguide` directory.
