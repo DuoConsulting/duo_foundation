@@ -70,7 +70,7 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
+  primary: #10C48D,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
@@ -104,7 +104,10 @@ $print-transparent-backgrounds: true;
 $print-hrefs: true;
 
 // Custom colors
-$bg-gray: #3E4D51;
+$bg-dark:  #2D4C57;
+$bg-light: #F8F7F5;
+$bg-green: #D0E3CC;
+$bg-gray: #D3D0CB;
 
 // 2. Breakpoints
 // --------------

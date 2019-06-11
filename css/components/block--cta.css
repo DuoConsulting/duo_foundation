@@ -29,7 +29,7 @@
   line-height: 1;
   text-align: center;
   cursor: pointer;
-  background-color: #1779ba;
+  background-color: #10C48D;
   color: #fefefe;
   margin: 0 0.75em;
 }
@@ -39,7 +39,7 @@
 }
 
 .block--cta .field--name-field-links a:hover, .block--cta .field--name-field-links a:focus {
-  background-color: #14679e;
+  background-color: #0ea778;
   color: #fefefe;
 }
 

@@ -98,3 +98,27 @@ body.toolbar-fixed {
     }
   }
 }
+
+// Layout builder overrides.
+
+// Layout builder link colors.
+// We need this because otherwise blocks with certain background colors have
+// their own text colors applied.
+.layout .layout-builder__link,
+.layout-builder__link {
+  color: $body-font-color !important;
+}
+
+// Organize the various forms, messages, etc on the layout screen.
+.node-layout-builder-form {
+  > .form-actions,
+  > .layout-builder__message,
+  > .js-form-type-vertical-tabs {
+    @include xy-grid-container();
+  }
+
+  > .field--name-layout-builder__layout {
+    margin-bottom: 3em;
+    margin-top: 3em;
+  }
+}

@@ -6,3 +6,54 @@
 
 // Import typography documentation
 @import 'text-doc';
+
+.text-light * {
+  border-color: $white !important;
+  color: $white !important;
+
+  .contextual-links a {
+    color: $body-font-color !important;
+  }
+
+  a,
+  a:focus,
+  a:hover {
+    color: $white !important;
+  }
+
+  a:focus,
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .field--type-text-long,
+  .field--type-text-with-summary,
+  .links {
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.text-dark * {
+  border-color: $dark-gray !important;
+  color: $dark-gray !important;
+
+  .contextual-links a {
+    color: $body-font-color !important;
+  }
+
+  a,
+  a:focus,
+  a:hover {
+    color: $dark-gray !important;
+  }
+
+  .field--type-text-long,
+  .field--type-text-with-summary,
+  .links {
+    a {
+      text-decoration: underline;
+    }
+  }
+}

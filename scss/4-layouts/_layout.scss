@@ -3,10 +3,10 @@
 
 // Variables
 //------------------------------------------------------------------------------
-$layout--bgd-color-1: white;
-$layout--bgd-color-2: white;
-$layout--bgd-color-3: white;
-$layout--bgd-color-4: white;
+$layout--bgd-color-1: $bg-dark;
+$layout--bgd-color-2: $bg-light;
+$layout--bgd-color-3: $bg-green;
+$layout--bgd-color-4: $bg-gray;
 $layout-maxwidth: $global-width;
 $layout-padding: rem-calc(75px);
 $border-color: $medium-gray;
@@ -170,22 +170,10 @@ $border-color: $medium-gray;
 
 // Background and text colors
 //------------------------------------------------------------------------------
-// TODO
-// .layout--bgd-color-1 {
-//   @extend #{$bg1-text};
-// }
 
-// .layout--bgd-color-2 {
-//   @extend #{$bg2-text};
-// }
-
-// .layout--bgd-color-3 {
-//   @extend #{$bg3-text};
-// }
-
-// .layout--bgd-color-4 {
-//   @extend #{$bg4-text};
-// }
+.layout--bgd-color-1 {
+  @extend .text-light;
+}
 
 // // Include the paragraph class in case someone really wants to override the
 // // text colors applied above.
