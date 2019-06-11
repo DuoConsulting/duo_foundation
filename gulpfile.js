@@ -56,7 +56,7 @@ options.scssComponents = {
 options.autoprefixer = {
   browsers: [
     'last 2 versions',
-    'ie >= 9'
+    'ie >= 11'
   ]
 };
 

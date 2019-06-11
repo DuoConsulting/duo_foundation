@@ -6349,13 +6349,11 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   z-index: 1;
   display: block;
   -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
           transform: translateX(-100%);
 }
 
 .drilldown .is-drilldown-submenu.is-closing {
   -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
           transform: translateX(100%);
 }
 
@@ -6967,7 +6965,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .off-canvas.is-open {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
@@ -7006,7 +7003,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .off-canvas-absolute.is-open {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
@@ -7017,25 +7013,21 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   overflow-y: auto;
   width: 250px;
   -webkit-transform: translateX(-250px);
-      -ms-transform: translateX(-250px);
           transform: translateX(-250px);
 }
 
 .off-canvas-content .off-canvas.position-left {
   -webkit-transform: translateX(-250px);
-      -ms-transform: translateX(-250px);
           transform: translateX(-250px);
 }
 
 .off-canvas-content .off-canvas.position-left.is-transition-overlap.is-open {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
 .off-canvas-content.is-open-left.has-transition-push {
   -webkit-transform: translateX(250px);
-      -ms-transform: translateX(250px);
           transform: translateX(250px);
 }
 
@@ -7051,25 +7043,21 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   overflow-y: auto;
   width: 250px;
   -webkit-transform: translateX(250px);
-      -ms-transform: translateX(250px);
           transform: translateX(250px);
 }
 
 .off-canvas-content .off-canvas.position-right {
   -webkit-transform: translateX(250px);
-      -ms-transform: translateX(250px);
           transform: translateX(250px);
 }
 
 .off-canvas-content .off-canvas.position-right.is-transition-overlap.is-open {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
 .off-canvas-content.is-open-right.has-transition-push {
   -webkit-transform: translateX(-250px);
-      -ms-transform: translateX(-250px);
           transform: translateX(-250px);
 }
 
@@ -7085,25 +7073,21 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   overflow-x: auto;
   height: 250px;
   -webkit-transform: translateY(-250px);
-      -ms-transform: translateY(-250px);
           transform: translateY(-250px);
 }
 
 .off-canvas-content .off-canvas.position-top {
   -webkit-transform: translateY(-250px);
-      -ms-transform: translateY(-250px);
           transform: translateY(-250px);
 }
 
 .off-canvas-content .off-canvas.position-top.is-transition-overlap.is-open {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
 .off-canvas-content.is-open-top.has-transition-push {
   -webkit-transform: translateY(250px);
-      -ms-transform: translateY(250px);
           transform: translateY(250px);
 }
 
@@ -7119,25 +7103,21 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   overflow-x: auto;
   height: 250px;
   -webkit-transform: translateY(250px);
-      -ms-transform: translateY(250px);
           transform: translateY(250px);
 }
 
 .off-canvas-content .off-canvas.position-bottom {
   -webkit-transform: translateY(250px);
-      -ms-transform: translateY(250px);
           transform: translateY(250px);
 }
 
 .off-canvas-content .off-canvas.position-bottom.is-transition-overlap.is-open {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
 .off-canvas-content.is-open-bottom.has-transition-push {
   -webkit-transform: translateY(-250px);
-      -ms-transform: translateY(-250px);
           transform: translateY(-250px);
 }
 
@@ -7148,7 +7128,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .off-canvas-content {
   -webkit-transform: none;
-      -ms-transform: none;
           transform: none;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
@@ -7160,20 +7139,17 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .off-canvas-content.has-transition-push {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
 .off-canvas-content .off-canvas.is-open {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
 @media screen and (min-width: 30.0625em) {
   .position-left.reveal-for-small-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7185,7 +7161,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-left.reveal-for-small-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-left {
@@ -7196,7 +7171,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-right.reveal-for-small-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7208,7 +7182,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-right.reveal-for-small-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-right {
@@ -7219,7 +7192,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-top.reveal-for-small-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7231,7 +7203,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-top.reveal-for-small-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-top {
@@ -7242,7 +7213,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-bottom.reveal-for-small-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7254,7 +7224,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-bottom.reveal-for-small-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-bottom {
@@ -7268,7 +7237,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 @media print, screen and (min-width: 48.0625em) {
   .position-left.reveal-for-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7280,7 +7248,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-left.reveal-for-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-left {
@@ -7291,7 +7258,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-right.reveal-for-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7303,7 +7269,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-right.reveal-for-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-right {
@@ -7314,7 +7279,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-top.reveal-for-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7326,7 +7290,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-top.reveal-for-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-top {
@@ -7337,7 +7300,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-bottom.reveal-for-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7349,7 +7311,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-bottom.reveal-for-medium {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-bottom {
@@ -7363,7 +7324,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 @media print, screen and (min-width: 64.0625em) {
   .position-left.reveal-for-large {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7375,7 +7335,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-left.reveal-for-large {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-left {
@@ -7386,7 +7345,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-right.reveal-for-large {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7398,7 +7356,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-right.reveal-for-large {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-right {
@@ -7409,7 +7366,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-top.reveal-for-large {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7421,7 +7377,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-top.reveal-for-large {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-top {
@@ -7432,7 +7387,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-bottom.reveal-for-large {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7444,7 +7398,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-bottom.reveal-for-large {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-bottom {
@@ -7458,7 +7411,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 @media screen and (min-width: 75.0625em) {
   .position-left.reveal-for-xlarge {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7470,7 +7422,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-left.reveal-for-xlarge {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-left {
@@ -7481,7 +7432,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-right.reveal-for-xlarge {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7493,7 +7443,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-right.reveal-for-xlarge {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-right {
@@ -7504,7 +7453,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-top.reveal-for-xlarge {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7516,7 +7464,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-top.reveal-for-xlarge {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-top {
@@ -7527,7 +7474,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .position-bottom.reveal-for-xlarge {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     z-index: 12;
     -webkit-transition: none;
@@ -7539,7 +7485,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
   .off-canvas-content .position-bottom.reveal-for-xlarge {
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas-content.has-reveal-bottom {
@@ -7565,7 +7510,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     -webkit-box-shadow: none;
             box-shadow: none;
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas.in-canvas-for-small-medium .close-button {
@@ -7588,7 +7532,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     -webkit-box-shadow: none;
             box-shadow: none;
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas.in-canvas-for-medium .close-button {
@@ -7611,7 +7554,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     -webkit-box-shadow: none;
             box-shadow: none;
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas.in-canvas-for-large .close-button {
@@ -7634,7 +7576,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     -webkit-box-shadow: none;
             box-shadow: none;
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .off-canvas.in-canvas-for-xlarge .close-button {
@@ -9410,7 +9351,6 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
   position: absolute;
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
-      -ms-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   width: auto !important;
 }
