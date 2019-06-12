@@ -54,4 +54,3 @@ libraries-override:
   duo_layouts/twocol_section: false
   duo_layouts/threecol_section: false
   duo_layouts/fourcol_section: false
-  duo_blocks/blocks: false
