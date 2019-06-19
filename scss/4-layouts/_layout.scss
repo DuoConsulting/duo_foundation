@@ -17,7 +17,7 @@ $border-color: $medium-gray;
   // Some content types need this to contain the max width of the content.
   // For those content types, this container should behave like .grid-container,
   // i.e. @include xy-grid-container;
-  .node--type-flexpage & {
+  .node--type-layout & {
     @include xy-grid-container();
   }
 }

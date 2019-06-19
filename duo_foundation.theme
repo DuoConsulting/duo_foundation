@@ -179,7 +179,7 @@ function duo_foundation_preprocess_page(&$variables) {
   $variables['fullscreen'] = FALSE;
 
   if (isset($variables['node'])) {
-    if ($variables['node']->getType() == 'flexpage') {
+    if ($variables['node']->getType() == 'layout') {
       $variables['fullscreen'] = TRUE;
     }
   }

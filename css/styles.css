@@ -9166,7 +9166,7 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
       justify-content: space-around;
 }
 
-.node--type-flexpage .layout__container {
+.node--type-layout .layout__container {
   padding-right: 0.625rem;
   padding-left: 0.625rem;
   max-width: 75rem;
@@ -9175,7 +9175,7 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
 }
 
 @media print, screen and (min-width: 48.0625em) {
-  .node--type-flexpage .layout__container {
+  .node--type-layout .layout__container {
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
   }
