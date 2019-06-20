@@ -9,13 +9,12 @@
     margin-bottom: 0;
   }
 
-  .field--name-field-links {
+  .field--name-field-cta-links {
     display: flex;
 
     a {
       @include button();
       margin: 0 0.75em;
-      // padding: 0.25em 0.5em;
 
       &:first-child {
         margin-left: 0;
@@ -27,7 +26,7 @@
     }
   }
 
-  .field--body {
+  .field--name-body {
     margin-bottom: 1.5em;
 
     > *:last-child {
@@ -35,11 +34,11 @@
     }
   }
 
-  &.text-align-center .field--name-field-links {
+  &.text-align-center .field--name-field-cta-links {
     justify-content: center;
   }
 
-  &.text-align-right .field--name-field-links {
+  &.text-align-right .field--name-field-cta-links {
     justify-content: flex-end;
   }
 }

@@ -8,13 +8,13 @@
   margin-bottom: 0;
 }
 
-.block--cta .field--name-field-links {
+.block--cta .field--name-field-cta-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.block--cta .field--name-field-links a {
+.block--cta .field--name-field-cta-links a {
   display: inline-block;
   vertical-align: middle;
   margin: 0 0 1rem 0;
@@ -34,38 +34,38 @@
   margin: 0 0.75em;
 }
 
-[data-whatinput='mouse'] .block--cta .field--name-field-links a {
+[data-whatinput='mouse'] .block--cta .field--name-field-cta-links a {
   outline: 0;
 }
 
-.block--cta .field--name-field-links a:hover, .block--cta .field--name-field-links a:focus {
+.block--cta .field--name-field-cta-links a:hover, .block--cta .field--name-field-cta-links a:focus {
   background-color: #0ea778;
   color: #fefefe;
 }
 
-.block--cta .field--name-field-links a:first-child {
+.block--cta .field--name-field-cta-links a:first-child {
   margin-left: 0;
 }
 
-.block--cta .field--name-field-links a:last-child {
+.block--cta .field--name-field-cta-links a:last-child {
   margin-right: 0;
 }
 
-.block--cta .field--body {
+.block--cta .field--name-body {
   margin-bottom: 1.5em;
 }
 
-.block--cta .field--body > *:last-child {
+.block--cta .field--name-body > *:last-child {
   margin-bottom: 0;
 }
 
-.block--cta.text-align-center .field--name-field-links {
+.block--cta.text-align-center .field--name-field-cta-links {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.block--cta.text-align-right .field--name-field-links {
+.block--cta.text-align-right .field--name-field-cta-links {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;

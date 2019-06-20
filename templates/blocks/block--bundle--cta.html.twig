@@ -11,10 +11,10 @@
 %}
 {%
   include '@duo_components/block--cta/block--cta.twig' with {
-    alignment: content.field_text_alignment.0['#markup'],
-    title: content.field_cta_title,
+    alignment: content.field_cta_text_alignment.0['#markup'],
+    title: label,
     body: content.body,
-    links: content.field_links,
+    links: content.field_cta_links,
     defaults: classes,
     title_prefix: title_prefix,
     title_suffix: title_suffix,
