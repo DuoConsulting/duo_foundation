@@ -1,6 +1,6 @@
 {
   "name": "DuoConsulting/duo_foundation",
-  "type": "drupal-theme",
+  "type": "drupal-custom-theme",
   "description": "Base Drupal theme based on Zurb Foundation 6.x.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
