@@ -12,7 +12,7 @@
  */
 #}
 {% if content %}
-  <div{{ attributes }}>
+  <div{{ attributes }} {% if attributes.background_image_url %}style="background-image: url({{ attributes.background_image_url }})"{% endif %}>
 
     <div class="layout__container">
       

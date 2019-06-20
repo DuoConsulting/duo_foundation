@@ -51,6 +51,7 @@ component-libraries:
 # instead use our built-in Foundation classes. Also remove CSS provided by the
 # duo_blocks module.
 libraries-override:
+  duo_layouts/singlecol_section: false
   duo_layouts/twocol_section: false
   duo_layouts/threecol_section: false
   duo_layouts/fourcol_section: false
