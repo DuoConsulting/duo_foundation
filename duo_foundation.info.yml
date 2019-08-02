@@ -47,11 +47,26 @@ component-libraries:
     paths:
       - components
 
-# Remove libraries provided by the duo_layouts module. We don't need them and
-# instead use our built-in Foundation classes. Also remove CSS provided by the
-# duo_blocks module.
+# Remove some styles provided by the duo_layouts module. We don't need them and
+# instead use our built-in Foundation classes.
 libraries-override:
-  duo_layouts/singlecol_section: false
-  duo_layouts/twocol_section: false
-  duo_layouts/threecol_section: false
-  duo_layouts/fourcol_section: false
+  duo_layouts/singlecol_section:
+    css:
+      theme:
+        css/layout-spacing.css: false
+        layouts/singlecol_section/singlecol-section.css: false
+  duo_layouts/twocol_section:
+    css:
+      theme:
+        css/layout-spacing.css: false
+        layouts/twocol_section/twocol-section.css: false
+  duo_layouts/threecol_section:
+    css:
+      theme:
+        css/layout-spacing.css: false
+        layouts/threecol_section/threecol-section.css: false
+  duo_layouts/fourcol_section:
+    css:
+      theme:
+        css/layout-spacing.css: false
+        layouts/fourcol_section/fourcol-section.css: false

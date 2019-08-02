@@ -170,7 +170,6 @@ $border-color: $medium-gray;
 
 // Background and text colors
 //------------------------------------------------------------------------------
-
 .layout--bgd-color-1 {
   @extend .text-light;
 }
@@ -201,30 +200,8 @@ $border-color: $medium-gray;
   background-color: $layout--bgd-color-4;
 }
 
-.c-bgd-image,
-.c-bgd-video {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  z-index: 0;
-
-  &:before {
-    content: ' ';
-    height: 100%;
-    left: 0;
-    opacity: 0.75;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-  }
-
-  .layout__container {
-    position: relative;
-    z-index: 20;
-  }
-
+.layout--image,
+.layout--video {
   &.layout--bgd-color-1 {
     &:before {
       background-color: $layout--bgd-color-1;
@@ -248,78 +225,6 @@ $border-color: $medium-gray;
       background-color: $layout--bgd-color-4;
     }
   }
-}
-
-.c-bgd-image-parallax {
-  background-attachment: fixed;
-}
-
-.c-bgd-video {
-  &.c-bgd-image {
-    @media #{$small-up} {
-      // Because for some reason Chrome shows a couple pixels of the background image below the video
-      background-image: none !important;
-
-      .field--name-field-c-bgd-image {
-        display: none;
-      }
-    }
-  }
-}
-
-.field--name-field-c-bgd-video {
-  @media #{$small-up} {
-    display: block;
-  }
-  display: none;
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-
-  video {
-    height: auto !important; // To override inline styles assigned by module
-    left: 50%;
-    min-height: 100%;
-    min-width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: auto !important; // To override inline styles assigned by module
-  }
-}
-
-// Background images
-.field--name-field-c-bgd-image {
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-
-  img {
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-  }
-}
-
-// IE doesn't support object-fit:cover, If object-fit is supported, and if we
-// are not displaying a parallax background, then hide the background image.
-html.object-fit .c-bgd-image.c-bgd-image-no-parallax {
-  background-image: none !important; // To override inline style applied by duo_components.module
-}
-
-// If object fit is not supported, or if we are using parallax, hide the image
-// field.
-html.no-object-fit .c-bgd-image .field--name-field-c-bgd-image,
-.c-bgd-image.c-bgd-image-parallax .field--name-field-c-bgd-image {
-  display: none;
 }
 // End background and text colors
 //------------------------------------------------------------------------------
