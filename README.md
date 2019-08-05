@@ -50,11 +50,12 @@ All Foundation libraries are defined in duo_foundation.libraries.yml. Include th
   * Main navigation
 * Highlighted 
   * Status messages
-* Content Top
-  * Page title
-  * Tabs
   * Help
+* Tools
+  * Tabs
   * Primary admin actions
+* Page Title
+  * Page title
 * Content
   * Main page content
 * Right Off Canvas

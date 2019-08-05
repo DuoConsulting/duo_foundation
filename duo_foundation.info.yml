@@ -13,15 +13,13 @@ libraries:
 # Regions are output in the page.html.twig
 
 regions:
-  meta_header: 'Meta Header'
   top_bar_left: 'Top Bar Left'
   top_bar_right: 'Top Bar Right'
-  header: Header
-  help: Help
   page_top: 'Page Top'
   page_bottom: 'Page Bottom'
   highlighted: Highlighted
-  content_top: 'Content Top' 
+  tools: Tools
+  title: 'Page Title'
   content: Content
   sidebar_first: 'Left Sidebar'
   sidebar_second: 'Right Sidebar'

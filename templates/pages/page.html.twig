@@ -95,16 +95,6 @@
     </div>
     #}
 
-    {% if page.meta_header %}
-      {% if meta_header_grid %}
-        <div class="grid-container">
-      {% endif %}
-      {{ page.meta_header }}
-      {% if meta_header_grid %}
-        </div>
-      {% endif %}
-    {% endif %}
-
     <header role="banner" aria-label="{{ 'Site header'|t }}">
       {% if linked_site_name or linked_logo %}
         <div class="header-top">
@@ -129,16 +119,6 @@
                   <button class="hamburger" type="button" data-open="right-off-canvas-menu"><span class="show-for-sr">Menu</span></button>
                 </div>
               </div>              
-            </div>
-          </div>
-        </div>
-      {% endif %}
-      
-      {% if page.header %}
-        <div class="grid-container">
-          <div class="grid-x grid-margin-x">
-            <div class="large-12 cell">
-              {{ page.header }}
             </div>
           </div>
         </div>
@@ -197,12 +177,6 @@
     </div>
     {% endif %}
 
-    {% if page.help %}
-    <div class="grid-container">
-      {{ page.help }}
-    </div>
-    {% endif %}
-
     {% if page.highlighted %}
       <div class="grid-container">
         {% spaceless %}
@@ -211,7 +185,12 @@
       </div>
     {% endif %}
 
-    
+    {% if page.tools %}
+      <div class="grid-container">
+        {{ page.tools }}
+      </div>
+    {% endif %}
+
     {% if not fullscreen %}
       {# Normal, non-fullscreen pages #}
       <div class="grid-container">
@@ -219,7 +198,11 @@
           <main id="main" class="{{ main_grid }} cell">
             <a id="main-content"></a>
             {% if breadcrumb %} {{ breadcrumb }} {% endif %}
-            {{ page.content_top }}
+
+            {% if page.title and not hide_title %}  
+              {{ page.title }}
+            {% endif %}
+
             {{ page.content }}
           </main>
           
@@ -259,11 +242,14 @@
       <a id="main-content"></a>
       <main id="main" class="cell">
         <div class="grid-container">
-          {% if breadcrumb %} {{ breadcrumb }} {% endif %}  
-          {{ page.content_top }}
+          {% if breadcrumb %} {{ breadcrumb }} {% endif %}
+
+          {% if page.title and not hide_title %}  
+            {{ page.title }}
+          {% endif %}
         </div>
 
-        {{ page. content}}
+        {{ page.content }}
       </main>
 
       {% if page.footer_first or page.footer_middle or page.footer_last %}
