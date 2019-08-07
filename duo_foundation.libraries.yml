@@ -1,7 +1,8 @@
 global:
   version: 1.0
   css:
-    base:
+    theme:
+      '//fonts.googleapis.com/css?family=Montserrat&display=swap': { type: external, minified: true }
       css/styles.css: {}
   js:
     js/scripts.js: {}
