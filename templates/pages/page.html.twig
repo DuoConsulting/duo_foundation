@@ -38,19 +38,10 @@
  *   comment/reply/12345).
  *
  * Regions:
- * - page.meta_header
- * - page.header
- * - page.help
- * - page.highlighted
- * - page.content
- * - page.sidebar_first
- * - page.sidebar_second
- * - page.footer_first
- * - page.footer_middle
- * - page.footer_last
+ * - See .info.yml file for this theme.
  *
  * @see template_preprocess_page()
- * @see bartik_preprocess_page()
+ * @see duo_foundation_preprocess_page()
  * @see html.html.twig
  */
 #}
@@ -163,13 +154,13 @@
     </header>
 
     {% if messages %}
-    <div class="grid-container">
+    <div class="margin-top grid-container">
       {{ messages }}
     </div>
     {% endif %}
 
     {% if page.highlighted %}
-      <div class="grid-container">
+      <div class="margin-top grid-container">
         {% spaceless %}
           {{ page.highlighted }}
         {% endspaceless %}
@@ -177,7 +168,7 @@
     {% endif %}
 
     {% if page.tools %}
-      <div class="grid-container">
+      <div class="margin-top grid-container">
         {{ page.tools }}
       </div>
     {% endif %}
