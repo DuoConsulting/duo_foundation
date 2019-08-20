@@ -11550,6 +11550,21 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
   display: none;
 }
 
+.header-meta {
+  background-color: #365b68;
+}
+
+.user-nav {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+}
+
+.user-nav a {
+  color: #fefefe;
+  display: inline-block;
+  padding: 0.375rem 0.625rem;
+}
+
 .header-top {
   background-color: #2D4C57;
   padding: 1em 0;
@@ -11599,15 +11614,6 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
 
 .header-top__menu-inner {
   padding-left: 0.875rem;
-}
-
-.user-nav {
-  font-size: 0.75rem;
-}
-
-.user-nav a {
-  display: inline-block;
-  padding: 0.375rem 0.625rem;
 }
 
 .top-bar-outer {

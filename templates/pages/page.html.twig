@@ -96,6 +96,24 @@
     #}
 
     <header role="banner" aria-label="{{ 'Site header'|t }}">
+      <div class="header-meta">
+        <div class="grid-container">
+          <div class="grid-x grid-margin-x text-align-right">
+            <div class="cell">
+              <nav class="user-nav" aria-label="{{ 'User login and logout links'|t }}">
+                {% if logged_in %}
+                  <a href="{{ path('user.page') }}">{{ 'My Account'|t }}</a>
+                  <a href="{{ path('user.logout') }}">{{ 'Logout'|t }}</a>
+                {% else %}
+                  <a href="{{ path('user.login') }}">{{ 'Login'|t }}</a>
+                  <a href="{{ path('user.register') }}">{{ 'Sign Up'|t }}</a>
+                {% endif %}
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {% if linked_site_name or linked_logo %}
         <div class="header-top">
           <div class="grid-container">
@@ -143,33 +161,6 @@
         </div>
       {% endif %}
     </header>
-
-    <div class="grid-container">
-      <div class="grid-x grid-margin-x text-align-right">
-        <div class="cell hide-for-small-only">
-          <p class="user-nav">
-            {% if logged_in %}
-              <a href="{{ path('user.page') }}">{{ 'My Account'|t }}</a>
-              <a href="{{ path('user.logout') }}">{{ 'Logout'|t }}</a>
-            {% else %}
-              <a href="{{ path('user.login') }}">{{ 'Login'|t }}</a>
-              <a href="{{ path('user.register') }}">{{ 'Sign Up'|t }}</a>
-            {% endif %}
-          </p>
-        </div>
-      </div>
-      <div class="show-for-small-only">
-          <p>
-            {% if logged_in %}
-              <a class="button" href="{{ path('user.page') }}">{{ 'My Account'|t }}</a>
-              <a class="button" href="{{ path('user.logout') }}">{{ 'Logout'|t }}</a>
-            {% else %}
-              <a class="button" href="{{ path('user.login') }}">{{ 'Login'|t }}</a>
-              <a class="button" href="{{ path('user.register') }}">{{ 'Sign Up'|t }}</a>
-            {% endif %}
-          </p>
-      </div>
-    </div>
 
     {% if messages %}
     <div class="grid-container">

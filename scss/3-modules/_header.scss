@@ -1,5 +1,22 @@
 // Header
 
+// User login
+.header-meta {
+  background-color: lighten($bg-dark, 5%);
+}
+
+// The user links in the top right
+.user-nav {
+  font-size: rem-calc(12px);
+  margin-bottom: 0;
+
+  a {
+    color: $white;
+    display: inline-block;
+    padding: rem-calc(6px 10px);
+  }
+}
+
 // Logo and title
 .header-top {
   background-color: $bg-dark;
@@ -26,14 +43,4 @@
 
 #site-name {
   @extend .h1;
-}
-
-// The user links in the top right
-.user-nav {
-  font-size: rem-calc(12px);
-
-  a {
-    display: inline-block;
-    padding: rem-calc(6px 10px);
-  }
 }
