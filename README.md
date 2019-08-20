@@ -48,8 +48,9 @@ All Foundation libraries are defined in duo_foundation.libraries.yml. Include th
 *WORK IN PROGRESS*. To get started, try placing the following blocks in the following regions:
 * Top Bar Left
   * Main navigation
-* Highlighted 
+* Messages
   * Status messages
+* Highlighted
   * Help
 * Tools
   * Tabs

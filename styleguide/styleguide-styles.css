@@ -11623,6 +11623,12 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
   display: none;
 }
 
+.footer {
+  background-color: #2D4C57;
+  color: #fefefe;
+  padding: 4rem 0;
+}
+
 .header-meta {
   background-color: #365b68;
 }

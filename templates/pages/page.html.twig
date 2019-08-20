@@ -31,7 +31,6 @@
  *   added to make the site slogan visually hidden, but still accessible.
  *
  * Page content (in order of occurrence in the default page.html.twig):
- * - messages: Status and error messages. Should be displayed prominently.
  * - node: Fully loaded node, if there is an automatically-loaded node
  *   associated with the page and the node ID is the second argument in the
  *   page's path (e.g. node/12345 and node/12345/revisions, but not
@@ -153,13 +152,13 @@
       {% endif %}
     </header>
 
-    {% if messages %}
-    <div class="margin-top grid-container">
-      {{ messages }}
-    </div>
+    {% if page.messages|render|trim %}
+      <div class="grid-container">
+        {{ page.messages }}
+      </div>
     {% endif %}
 
-    {% if page.highlighted %}
+    {% if page.highlighted|render|trim %}
       <div class="margin-top grid-container">
         {% spaceless %}
           {{ page.highlighted }}
@@ -167,7 +166,7 @@
       </div>
     {% endif %}
 
-    {% if page.tools %}
+    {% if page.tools|render|trim %}
       <div class="margin-top grid-container">
         {{ page.tools }}
       </div>
@@ -222,41 +221,48 @@
     {% else %}
       {# Fullscreen pages, e.g. layout pages #}
       <a id="main-content"></a>
-      <main id="main" class="cell">
-        <div class="grid-container">
-          {% if breadcrumb %} {{ breadcrumb }} {% endif %}
+      <main id="main" class="cell">        
+        {% if breadcrumb %} 
+          <div class="grid-container">
+            {{ breadcrumb }}
+          </div>
+        {% endif %}
 
-          {% if page.title and not hide_title %}  
+        {% if page.title and not hide_title %}  
+          <div class="grid-container">
             {{ page.title }}
-          {% endif %}
-        </div>
+          </div>
+        {% endif %}
 
         {{ page.content }}
       </main>
-
-      {% if page.footer_first or page.footer_middle or page.footer_last %}
-        <footer class="grid-x grid-margin-x">
-          {% if page.footer_first %}
-            <div id="footer-first" class="large-4 cell">
-              {{ page.footer_first }}
-            </div>
-          {% endif %}
-          {% if page.footer_middle %}
-            <div id="footer-middle" class="large-4 cell">
-              {{ page.footer_middle }}
-            </div>
-          {% endif %}
-          {% if page.footer_last %}
-            <div id="footer-last" class="large-4 cell">
-              {{ page.footer_last }}
-            </div>
-          {% endif %}
-        </footer>
-      {% endif %}
     {% endif %}
 
-    <div class="grid-container">
-      &copy; {{ "now"|date('Y') }} {{ site_name }} {{ 'All rights reserved.'|t }}
-    </div>
+    <footer class="footer">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+        {% if page.footer_first %}
+          <div id="footer-first" class="large-4 cell">
+            {{ page.footer_first }}
+          </div>
+        {% endif %}
+
+        {% if page.footer_middle %}
+          <div id="footer-middle" class="large-4 cell">
+            {{ page.footer_middle }}
+          </div>
+        {% endif %}
+
+        {% if page.footer_last %}
+          <div id="footer-last" class="large-4 cell">
+            {{ page.footer_last }}
+          </div>
+        {% endif %}
+
+        <div class="cell">
+          &copy; {{ "now"|date('Y') }} {{ site_name }} {{ 'All rights reserved.'|t }}
+        </div>
+      </div>
+    </footer>
   </div>
 </div>

@@ -17,6 +17,7 @@ regions:
   top_bar_right: 'Top Bar Right'
   page_top: 'Page Top'
   page_bottom: 'Page Bottom'
+  messages: Messages
   highlighted: Highlighted
   tools: Tools
   title: 'Page Title'
