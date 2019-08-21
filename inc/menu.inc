@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Any code related to menus.
+ */
+
 use Drupal\Core\Link;
 
 /**
@@ -29,9 +34,9 @@ function duo_foundation_menu_local_tasks(&$variables) {
  */
 function duo_foundation_menu_local_task(&$variables) {
   $link = $variables['element']['#link'];
-  $link_text = array(
+  $link_text = [
     '#markup' => $link['title'],
-  );
+  ];
 
   if (!empty($variables['element']['#active'])) {
     // Add text to indicate active tab for non-visual users.
@@ -39,7 +44,7 @@ function duo_foundation_menu_local_task(&$variables) {
   }
 
   $state = !empty($variables['element']['#active']) ? 'active' : 'secondary';
-  $link['url']->setOption('attributes', array('class' => array('button', $state)));
+  $link['url']->setOption('attributes', ['class' => ['button', $state]]);
 
   $a_tag = Link::fromTextAndUrl($link_text, $link['url'])->toString();
 
@@ -53,7 +58,7 @@ function duo_foundation_menu_local_task(&$variables) {
  */
 function duo_foundation_preprocess_menu__off_canvas(&$variables) {
   $blocks = \Drupal::service('block.repository')->getVisibleBlocksPerRegion();
-  foreach (array('left', 'right') as $direction) {
+  foreach (['left', 'right'] as $direction) {
     if (!empty($blocks[$direction . '_off_canvas'])) {
       foreach ($blocks[$direction . '_off_canvas'] as $block) {
         $plugin = $block->getPlugin();

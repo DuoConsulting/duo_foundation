@@ -1,18 +1,23 @@
 <?php
 
-use Drupal\node\Entity\Node;
-use Drupal\node\NodeInterface;
+/**
+ * @file
+ * The .theme file.
+ */
+
 use Drupal\Core\Link;
 use Drupal\block\Entity\Block;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Url;
 
 /**
- * Load template files
+ * Load template files.
  */
-require_once('inc/menu.inc');
-require_once('inc/theme.inc');
+require_once 'inc/menu.inc';
+require_once 'inc/theme.inc';
 
 /**
- * Implements hook_preprocess_block()
+ * Implements hook_preprocess_block().
  */
 function duo_foundation_preprocess_block(&$variables) {
   // Convenience variable for block headers.
@@ -34,7 +39,7 @@ function duo_foundation_preprocess_block(&$variables) {
   if (isset($variables['elements']['#id'])) {
     $region = Block::load($variables['elements']['#id'])->getRegion();
     $variables['content']['#attributes']['data-region'] = $region;
-    
+
     // Add a unique class for each block for styling.
     $variables['attributes']['class'][] = $variables['attributes']['id'];
   }
@@ -49,7 +54,7 @@ function duo_foundation_preprocess_field(&$variables, $hook) {
 /**
  * Implements template_preprocess_html().
  *
- * Adds additional classes
+ * Adds additional classes.
  */
 function duo_foundation_preprocess_html(&$variables) {
   /* @var Drupal\Core\Language\LanguageInterface */
@@ -60,7 +65,7 @@ function duo_foundation_preprocess_html(&$variables) {
   // Add language body class.
   $variables['attributes']['class'][] = 'lang-' . $site_language;
 
-  // Classes for body element. Allows advanced theming based on context
+  // Classes for body element. Allows advanced theming based on context.
   $is_front_page = \Drupal::service('path.matcher')->isFrontPage();
   if (!$is_front_page) {
     $path = trim($request->getRequestUri(), '/');
@@ -75,7 +80,7 @@ function duo_foundation_preprocess_html(&$variables) {
         $section = 'node-' . $arg[2];
       }
     }
-    $variables['attributes']['class'][] = \Drupal\Component\Utility\Html::getClass('section-' . $section);
+    $variables['attributes']['class'][] = Html::getClass('section-' . $section);
   }
 
   // Store the menu item since it has some useful information.
@@ -88,17 +93,17 @@ function duo_foundation_preprocess_html(&$variables) {
 }
 
 /**
- * Implements template_preprocess_node
+ * Implements template_preprocess_node().
  *
- * Add template suggestions and classes
+ * Add template suggestions and classes.
  */
 function duo_foundation_preprocess_node(&$variables) {
 }
 
 /**
- * Implements template_preprocess_page
+ * Implements template_preprocess_page().
  *
- * Add convenience variables and template suggestions
+ * Add convenience variables and template suggestions.
  */
 function duo_foundation_preprocess_page(&$variables) {
   $site_name = isset($variables['site_name']) ? $variables['site_name'] : \Drupal::config('system.site')->get('name');
@@ -108,22 +113,22 @@ function duo_foundation_preprocess_page(&$variables) {
   $logo = theme_get_setting('logo.url');
 
   if (!empty($logo)) {
-    $elements = array(
+    $elements = [
       '#theme' => 'image',
       '#uri' => $logo,
-      '#attributes' => array(
+      '#attributes' => [
         'alt' => strip_tags($site_name) . ' ' . t('logo'),
         'title' => strip_tags($site_name) . ' ' . t('Home'),
-        'class' => array('logo'),
-      )
-    );
+        'class' => ['logo'],
+      ],
+    ];
 
     $variables['logo_img'] = $elements;
   }
 
   $title = strip_tags($site_name) . ' ' . t('Home');
-  $url = \Drupal\Core\Url::fromRoute('<front>');
-  $url->setOption('attributes', array('title' => $title));
+  $url = Url::fromRoute('<front>');
+  $url->setOption('attributes', ['title' => $title]);
 
   $variables['linked_logo'] = '';
   if (!empty($variables['logo_img'])) {
@@ -135,7 +140,7 @@ function duo_foundation_preprocess_page(&$variables) {
     $variables['linked_site_name'] = Link::fromTextAndUrl($site_name, $url)->toString();
   }
 
-  // Convenience variables
+  // Convenience variables.
   if (isset($variables['page']['sidebar_first'])) {
     $left = $variables['page']['sidebar_first'];
   }
@@ -143,7 +148,7 @@ function duo_foundation_preprocess_page(&$variables) {
     $right = $variables['page']['sidebar_second'];
   }
 
-  // Dynamic sidebars
+  // Dynamic sidebars.
   if (!empty($left) && !empty($right)) {
     $variables['main_grid'] = 'medium-6 small-order-2';
     $variables['sidebar_first_grid'] = 'medium-3 small-order-1';
@@ -201,42 +206,51 @@ function duo_foundation_preprocess_layout(&$variables) {
         $variables['class_first']  = 'medium-6';
         $variables['class_second'] = 'medium-6';
         break;
+
       case '33-67':
         $variables['class_first']  = 'medium-4';
         $variables['class_second'] = 'medium-8';
         break;
+
       case '67-33':
         $variables['class_first']  = 'medium-8';
         $variables['class_second'] = 'medium-4';
         break;
+
       case '25-75':
         $variables['class_first']  = 'medium-3';
         $variables['class_second'] = 'medium-9';
         break;
+
       case '75-25':
         $variables['class_first']  = 'medium-9';
         $variables['class_second'] = 'medium-3';
         break;
+
       case '25-50-25':
         $variables['class_first']  = 'medium-3';
         $variables['class_second'] = 'medium-6';
         $variables['class_third']  = 'medium-3';
         break;
+
       case '33-34-33':
         $variables['class_first']  = 'medium-4';
         $variables['class_second'] = 'medium-4';
         $variables['class_third']  = 'medium-4';
         break;
+
       case '25-25-50':
         $variables['class_first']  = 'medium-3';
         $variables['class_second'] = 'medium-3';
         $variables['class_third']  = 'medium-6';
         break;
+
       case '50-25-25':
         $variables['class_first']  = 'medium-6';
         $variables['class_second'] = 'medium-3';
         $variables['class_third']  = 'medium-3';
         break;
+
       default:
         $variables['class_first']  = '';
         $variables['class_second'] = '';
@@ -249,4 +263,5 @@ function duo_foundation_preprocess_layout(&$variables) {
 /**
  * Implements template_preprocess_views_view().
  */
-function duo_foundation_preprocess_views_view(&$variables) {}
+function duo_foundation_preprocess_views_view(&$variables) {
+}

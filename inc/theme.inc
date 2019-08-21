@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Any code related to theme suggestions, defining new theme hooks, etc.
+ */
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * Provide region based menu suggestions.
@@ -8,11 +13,11 @@
  */
 function duo_foundation_theme_suggestions_menu_alter(&$suggestions, array $variables) {
   if (isset($variables['attributes']['data-region'])) {
-    if (in_array($variables['attributes']['data-region'], array('right_off_canvas', 'left_off_canvas'))) {
+    if (in_array($variables['attributes']['data-region'], ['right_off_canvas', 'left_off_canvas'])) {
       $suggestions[] = 'menu__off_canvas';
     }
     else {
-      $suggestions[] = 'menu__' . $variables['attributes']['data-region'];  
+      $suggestions[] = 'menu__' . $variables['attributes']['data-region'];
     }
   }
 }
