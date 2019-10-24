@@ -1,19 +1,27 @@
+$opaque1: rgba(0, 0, 0, 0.15);
+$opaque2: rgba(0, 0, 0, 0.3);
+$red: #800000;
+$highlight: #e74c3c;
+$grey: #999;
+$white: #fff;
+$grey-alt: #ccc;
+
 .card {
   width: 300px;
-  background: #fff;
+  background: $white;
   transition: box-shadow 0.3s ease-in-out;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px 0 $opaque1;
   padding: 10px;
 
   // .red - This is the red state.
   &.red {
-    color: red;
+    color: $red;
   }
 }
 
 /* Add box shadow to entire card on hover */
 .card:hover {
-  box-shadow: 0 1px 35px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 35px 0 $opaque2;
 }
 
 /* Creates variation of card component in a wide format */
@@ -38,7 +46,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: $opaque2;
 }
 
 .card__media img {
@@ -58,8 +66,8 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: #e74c3c;
-  color: white;
+  background: $highlight;
+  color: $white;
   font-weight: bold;
 }
 
@@ -82,8 +90,8 @@
   font-weight: bold;
   letter-spacing: 0.06em;
   display: inline-block;
-  color: white;
-  background: #e74c3c;
+  color: $white;
+  background: $highlight;
   text-align: center;
   padding: 5px 15px;
   text-transform: uppercase;
@@ -91,13 +99,13 @@
 
 .card__content {
   padding: 40px 25px;
-  color: #999999;
+  color: $grey;
   transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
 }
 
 /* Changes padding on wide card */
 .card--wide .card__content {
-  padding: 20px 20px;
+  padding: 20px;
   width: calc(100% - 300px);
 }
 
@@ -125,11 +133,11 @@
 }
 
 .card__subtitle {
-  color: #e74c3c;
+  color: $highlight;
   font-weight: 300;
 }
 
 .card__meta {
-  color: #ccc;
+  color: $grey-alt;
   font-size: 14px;
 }

@@ -260,7 +260,7 @@
     border: 0;
   }
 
-  > div[class*='medium']:first-child {
+  > div[class*='medium']:first-child { // sass-lint:disable-line no-qualifying-elements
     @include breakpoint(medium) {
       border-right: 1px solid $medium-gray;  
     }

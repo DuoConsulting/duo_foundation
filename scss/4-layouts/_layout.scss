@@ -170,10 +170,6 @@ $border-color: $medium-gray;
 
 // Background and text colors
 //------------------------------------------------------------------------------
-.layout--bgd-color-1 {
-  @extend .text-light;
-}
-
 // // Include the paragraph class in case someone really wants to override the
 // // text colors applied above.
 // .paragraph--type--c-section.c-text-dark {
@@ -185,6 +181,7 @@ $border-color: $medium-gray;
 // }
 
 .layout--bgd-color-1 {
+  @extend .text-light; // sass-lint:disable-line placeholder-in-extend
   background-color: $layout--bgd-color-1;
 }
 
