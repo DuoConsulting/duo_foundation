@@ -9,6 +9,7 @@ use Drupal\Core\Link;
 use Drupal\block\Entity\Block;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 
 /**
  * Load template files.
@@ -90,6 +91,13 @@ function duo_foundation_preprocess_html(&$variables) {
   elseif ($request->attributes->get('panel')) {
     $variables['attributes']['class'][] = 'panels-page';
   }
+
+  // On node revision pages, we need to include the node type class on the body
+  // tag.
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.node.revision' &&
+      $node = Node::load(\Drupal::routeMatch()->getParameter('node'))) {
+    $variables['node_type'] = $node->getType();
+  }
 }
 
 /**
@@ -108,6 +116,20 @@ function duo_foundation_preprocess_node(&$variables) {
 function duo_foundation_preprocess_page(&$variables) {
   $site_name = isset($variables['site_name']) ? $variables['site_name'] : \Drupal::config('system.site')->get('name');
 
+  // On node pages, the node object is included in $variables. On revisions
+  // pages, we have to load the node object from its ID.
+  if (isset($variables['node'])) {
+    $route = \Drupal::routeMatch()->getRouteName();
+
+    if ($route == 'entity.node.canonical') {
+      $node = $variables['node'];
+    }
+    elseif ($route == 'entity.node.revision') {
+      $node = Node::load($variables['node']);
+    }
+  }
+
+  // Define the logo image.
   $variables['logo_img'] = '';
 
   $logo = theme_get_setting('logo.url');
@@ -183,8 +205,8 @@ function duo_foundation_preprocess_page(&$variables) {
   // Set the grid size based on the content type.
   $variables['fullscreen'] = FALSE;
 
-  if (isset($variables['node'])) {
-    if ($variables['node']->getType() == 'layout') {
+  if (isset($node)) {
+    if ($node->getType() == 'layout') {
       $variables['fullscreen'] = TRUE;
     }
   }
