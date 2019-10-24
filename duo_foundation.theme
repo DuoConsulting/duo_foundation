@@ -119,13 +119,12 @@ function duo_foundation_preprocess_page(&$variables) {
   // On node pages, the node object is included in $variables. On revisions
   // pages, we have to load the node object from its ID.
   if (isset($variables['node'])) {
-    $route = \Drupal::routeMatch()->getRouteName();
+    $node = $variables['node'];
 
-    if ($route == 'entity.node.canonical') {
-      $node = $variables['node'];
-    }
-    elseif ($route == 'entity.node.revision') {
-      $node = Node::load($variables['node']);
+    // If the node variable isn't a PHP object, then it's just a node id. That's
+    // what happens on revisions pages.
+    if (!is_object($node)) {
+      $node = Node::load($node);
     }
   }
 
