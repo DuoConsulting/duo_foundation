@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Display a Layout page. This template removes the printing of the title
+ * when it's not a full page because that interferes with viewing revisions.
+ *
+ * @see template_preprocess_node()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes|without('role') }}>
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {{ content }}
+
+</article>
