@@ -107,12 +107,17 @@ body.toolbar-fixed {
 .layout .layout-builder__link,
 .layout-builder__link {
   color: $body-font-color !important;
+  font-weight: $global-weight-bold;
+
+  &:hover,
+  &:focus {
+    color: $primary-color !important;
+  }
 }
 
 // Organize the various forms, messages, etc on the layout screen.
 .node-layout-builder-form {
   > .form-actions,
-  > .layout-builder__message,
   > .js-form-type-vertical-tabs {
     @include xy-grid-container();
   }
@@ -120,5 +125,109 @@ body.toolbar-fixed {
   > .field--name-layout-builder__layout {
     margin-bottom: 3em;
     margin-top: 3em;
+  }
+
+  .layout-builder__message {
+    display: none;
+  }
+}
+
+.layout-builder__add-section {
+  background: none;
+  outline: 0;
+}
+
+// This body class applies to any node layout screen.
+.section-node-layout {
+  // .main-content {
+  //   margin-top: rem-calc(20px) !important;
+  // }
+
+  .block-help {
+    display: none;
+  }
+}
+
+// Layout builder modal.
+#layout-builder-modal {
+  .label {
+    background: transparent;
+    color: inherit;
+  }
+
+  // No bottom margin on textareas because they are immediately followed by the
+  // text format dropdown.
+  .form-item.js-form-type-textarea {
+    margin-bottom: 0;
+  }
+
+  .paragraph-type-label {
+    font-weight: $global-weight-bold;
+  }
+
+  .paragraphs-dropdown-actions {
+    .button {
+      background: none;
+      border: 0;
+      border-radius: 0;
+
+      &:hover,
+      &:focus {
+        background-color: $light-gray;
+        box-shadow: none;
+      }
+    }    
+  }
+
+  select {
+    height: auto;
+  }
+}
+
+// The configuration form that appears in the right sidebar.
+.layout-builder-configure-section {
+  // The collapsible configuration sections.
+  summary[role="button"] {
+    cursor: pointer;
+  }
+}
+
+// Override the display of the throbber
+$throbber-bg: rgba(0, 0, 0, 0.05);
+
+.ajax-progress-throbber {
+  align-items: center;
+  background: $throbber-bg;
+  border-radius: rem-calc(10px);
+  display: flex;
+  height: rem-calc(150px);
+  justify-content: center;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: rem-calc(150px);
+
+  .throbber {
+    background-image: url('../images/loader.gif');
+    display: block;
+    height: 50px;
+    padding: 0;
+    width: 50px;
+    background-size: 100%;
+  }
+
+  #drupal-off-canvas & {
+    background-color: $throbber-bg;
+
+    * {
+      background-color: transparent;
+      color: $black;
+      font-weight: $global-weight-bold;
+    }
+
+    .throbber {
+      background-image: url('../images/loader.gif');
+    }
   }
 }

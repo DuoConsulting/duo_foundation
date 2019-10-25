@@ -77,7 +77,7 @@ function duo_foundation_preprocess_html(&$variables) {
       if ($arg[1] == 'add') {
         $section = 'node-add';
       }
-      elseif (isset($arg[2]) && is_numeric($arg[1]) && ($arg[2] == 'edit' || $arg[2] == 'delete')) {
+      elseif (isset($arg[2]) && is_numeric($arg[1]) && ($arg[2] == 'edit' || $arg[2] == 'delete' || $arg[2] == 'layout')) {
         $section = 'node-' . $arg[2];
       }
     }
