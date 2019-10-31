@@ -1,3 +1,19 @@
+// All styles related to page-level layout styles and styles for specific
+// layouts defined for layout-builder, display suite, etc.
+
+// Page-level layout styles.
+.off-canvas-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  flex-grow: 1;
+}
+
+
+// Layout-builder layout styles.
 // Most of the styles here are related to classes added by the duo_layouts
 // See duo_layouts and see related layouts in /templates/layouts.
 
@@ -34,20 +50,6 @@ $border-color: $medium-gray;
     margin-top: $layout-padding * 0.5;
   }
 }
-
-// TODO
-// // Alignment
-// .c-align-left {
-//   text-align: left;
-// }
-
-// .c-align-right {
-//   text-align: right;
-// }
-
-// .c-align-center {
-//   text-align: center;
-// }
 
 // Paragraph headings
 .layout__heading {
@@ -144,29 +146,6 @@ $border-color: $medium-gray;
 // End layout
 //------------------------------------------------------------------------------
 
-// TBD
-// // Simple sections and sidebar sections (used on simplepage content type)
-// //------------------------------------------------------------------------------
-// .paragraph--type--c-simple-section {
-//   @media #{$small-up} {
-//     padding: (($layout-padding / 2) * 0.75) 0;
-//   }
-//   @media #{$medium-up} {
-//     padding: ($layout-padding / 2) 0;
-//   }
-//   padding: (($layout-padding / 2) * 0.5) 0;
-
-//   &:first-child {
-//     padding-top: 0;
-//   }
-
-//   &:last-child {
-//     padding-bottom: 0;
-//   }
-// }
-// // End simple sections and sidebar sections
-// //------------------------------------------------------------------------------
-
 
 // Background and text colors
 //------------------------------------------------------------------------------
@@ -225,82 +204,3 @@ $border-color: $medium-gray;
 }
 // End background and text colors
 //------------------------------------------------------------------------------
-
-
-// Flexblocks
-//-----------------------------------------------------------------------------
-// TODO
-// // Vertical alignment
-// .c-fb-align-top {
-//   align-items: stretch; // Same as default
-// }
-
-// .c-fb-align-bottom {
-//   align-items: flex-end;
-// }
-
-// .c-fb-align-middle {
-//   align-items: center;
-// }
-
-// .c-fb-align-baseline {
-//   align-items: baseline;
-// }
-
-// // Horizontal spacing
-// .c-fb-justify-start {
-//   justify-content: flex-start;
-// }
-
-// .c-fb-justify-end {
-//   justify-content: flex-end;
-// }
-
-// .c-fb-justify-center {
-//   justify-content: center;
-// }
-
-// .c-fb-justify-sb {
-//   justify-content: space-between;
-// }
-
-// .c-fb-justify-sa {
-//   justify-content: space-around;
-// }
-
-
-// TBD
-// // Styles
-// .c-fb-style-outer-border {
-//   // This style has the limitation that any columns which wrap to a second line
-//   // do not have the correct top margins.
-//   border: 1px solid $border-color;
-//   margin-left: 0;
-//   margin-right: 0;
-//   margin-top: 0;
-//   padding: rem-calc(20px 10px);
-
-//   .paragraph--type--c-flexblock-column {
-//     @media #{$small-up} {
-//       padding: rem-calc(0 10px);
-//       margin-top: 0;
-//     }
-//   }
-// }
-
-// .c-fb-style-inner-borders {
-//   border-top: 1px solid $border-color;
-//   border-left: 1px solid $border-color;
-//   margin-left: 0;
-//   margin-right: 0;
-//   margin-top: 0;
-
-//   .paragraph--type--c-flexblock-column {
-//     border-bottom: 1px solid $border-color;
-//     border-right: 1px solid $border-color;
-//     margin-top: 0;
-//     padding: rem-calc(20px);
-//   }
-// }
-// End flexblocks
-//-----------------------------------------------------------------------------

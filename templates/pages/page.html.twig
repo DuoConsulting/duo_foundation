@@ -152,91 +152,93 @@
       {% endif %}
     </header>
 
-    {% if page.messages|render|trim %}
-      <div class="grid-container">
-        {{ page.messages }}
-      </div>
-    {% endif %}
+    <div class="main-wrapper">
+      {% if page.messages|render|trim %}
+        <div class="grid-container">
+          {{ page.messages }}
+        </div>
+      {% endif %}
 
-    {% if page.highlighted|render|trim %}
-      <div class="margin-top grid-container">
-        {% spaceless %}
-          {{ page.highlighted }}
-        {% endspaceless %}
-      </div>
-    {% endif %}
+      {% if page.highlighted|render|trim %}
+        <div class="margin-top grid-container">
+          {% spaceless %}
+            {{ page.highlighted }}
+          {% endspaceless %}
+        </div>
+      {% endif %}
 
-    {% if page.tools|render|trim %}
-      <div class="margin-top grid-container">
-        {{ page.tools }}
-      </div>
-    {% endif %}
+      {% if page.tools|render|trim %}
+        <div class="margin-top grid-container">
+          {{ page.tools }}
+        </div>
+      {% endif %}
 
-    {% if not fullscreen %}
-      {# Normal, non-fullscreen pages #}
-      <div class="grid-container">
-        <div class="grid-x grid-margin-x">
-          <main id="main" class="{{ main_grid }} cell">
-            <a id="main-content"></a>
-            {% if breadcrumb %} {{ breadcrumb }} {% endif %}
+      {% if not fullscreen %}
+        {# Normal, non-fullscreen pages #}
+        <div class="grid-container">
+          <div class="grid-x grid-margin-x">
+            <main id="main" class="{{ main_grid }} cell">
+              <a id="main-content"></a>
+              {% if breadcrumb %} {{ breadcrumb }} {% endif %}
 
-            {% if page.title and not hide_title %}  
-              {{ page.title }}
+              {% if page.title and not hide_title %}  
+                {{ page.title }}
+              {% endif %}
+
+              {{ page.content }}
+            </main>
+            
+            {% if page.sidebar_first %}
+              <div id="sidebar-first" class="{{ sidebar_first_grid }} cell sidebar">
+                {{ page.sidebar_first }}
+              </div>
             {% endif %}
-
-            {{ page.content }}
-          </main>
-          
-          {% if page.sidebar_first %}
-            <div id="sidebar-first" class="{{ sidebar_first_grid }} cell sidebar">
-              {{ page.sidebar_first }}
-            </div>
-          {% endif %}
-          {% if page.sidebar_second %}
-            <div id="sidebar-second" class="{{ sidebar_sec_grid }} cell sidebar">
-              {{ page.sidebar_second }}
-            </div>
+            {% if page.sidebar_second %}
+              <div id="sidebar-second" class="{{ sidebar_sec_grid }} cell sidebar">
+                {{ page.sidebar_second }}
+              </div>
+            {% endif %}
+          </div>
+          {% if page.footer_first or page.footer_middle or page.footer_last %}
+            <footer class="grid-x grid-margin-x">
+              {% if page.footer_first %}
+                <div id="footer-first" class="large-4 cell">
+                  {{ page.footer_first }}
+                </div>
+              {% endif %}
+              {% if page.footer_middle %}
+                <div id="footer-middle" class="large-4 cell">
+                  {{ page.footer_middle }}
+                </div>
+              {% endif %}
+              {% if page.footer_last %}
+                <div id="footer-last" class="large-4 cell">
+                  {{ page.footer_last }}
+                </div>
+              {% endif %}
+            </footer>
           {% endif %}
         </div>
-        {% if page.footer_first or page.footer_middle or page.footer_last %}
-          <footer class="grid-x grid-margin-x">
-            {% if page.footer_first %}
-              <div id="footer-first" class="large-4 cell">
-                {{ page.footer_first }}
-              </div>
-            {% endif %}
-            {% if page.footer_middle %}
-              <div id="footer-middle" class="large-4 cell">
-                {{ page.footer_middle }}
-              </div>
-            {% endif %}
-            {% if page.footer_last %}
-              <div id="footer-last" class="large-4 cell">
-                {{ page.footer_last }}
-              </div>
-            {% endif %}
-          </footer>
-        {% endif %}
-      </div>
-    {% else %}
-      {# Fullscreen pages, e.g. layout pages #}
-      <a id="main-content"></a>
-      <main id="main" class="cell">        
-        {% if breadcrumb %} 
-          <div class="grid-container">
-            {{ breadcrumb }}
-          </div>
-        {% endif %}
+      {% else %}
+        {# Fullscreen pages, e.g. layout pages #}
+        <a id="main-content"></a>
+        <main id="main" class="cell">        
+          {% if breadcrumb %} 
+            <div class="grid-container">
+              {{ breadcrumb }}
+            </div>
+          {% endif %}
 
-        {% if page.title and not hide_title %}  
-          <div class="grid-container">
-            {{ page.title }}
-          </div>
-        {% endif %}
+          {% if page.title and not hide_title %}  
+            <div class="grid-container">
+              {{ page.title }}
+            </div>
+          {% endif %}
 
-        {{ page.content }}
-      </main>
-    {% endif %}
+          {{ page.content }}
+        </main>
+      {% endif %}
+    </div>
 
     <footer class="footer">
       <div class="grid-container">
