@@ -2,7 +2,8 @@ global:
   version: 1.0
   css:
     theme:
-      '//fonts.googleapis.com/css?family=Montserrat&display=swap': { type: external, minified: true }
+      '//rsms.me/inter/inter.css': { type: external }
+      '//fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap': { type: external }
       css/styles.css: {}
   js:
     js/scripts.js: {}

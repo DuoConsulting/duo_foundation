@@ -63,6 +63,21 @@
 
 @import 'util/util';
 
+// -- Custom variables (not originally in Foundation)
+// --------------------------------------------------
+
+// Colors
+$bg-dark:  #0a0a0a;
+$bg-light: #F8F7F5;
+$bg-green: #D0E3CC;
+$bg-gray: #D3D0CB;
+$primary-alt: #3700b3;
+$secondary-alt: #018786;
+
+// Fonts
+$font-primary: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-alt: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 // 1. Global
 // ---------
 
@@ -70,10 +85,10 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #10C48D,
-  secondary: #767676,
+  primary: #6200ee,
+  secondary: #03dac6,
   success: #3adb76,
-  warning: #ffae00,
+  warning: #b00020,
   alert: #cc4b37,
 );
 $light-gray: #e6e6e6;
@@ -83,7 +98,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body-font-family: $font-primary;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -102,12 +117,6 @@ $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
 $print-hrefs: true;
-
-// Custom colors
-$bg-dark:  #2D4C57;
-$bg-light: #F8F7F5;
-$bg-green: #D0E3CC;
-$bg-gray: #D3D0CB;
 
 // 2. Breakpoints
 // --------------
@@ -139,7 +148,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: $font-alt;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;

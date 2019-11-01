@@ -1,18 +1,3 @@
-// All styles related to page-level layout styles and styles for specific
-// layouts defined for layout-builder, display suite, etc.
-
-// Page-level layout styles.
-.off-canvas-content {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.main-wrapper {
-  flex-grow: 1;
-}
-
-
 // Layout-builder layout styles.
 // Most of the styles here are related to classes added by the duo_layouts
 // See duo_layouts and see related layouts in /templates/layouts.

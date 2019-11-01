@@ -45,7 +45,7 @@
  */
 #}
 
-<div class="off-canvas-wrapper">
+<div class="off-canvas-wrapper clear-header">
   {% if page.left_off_canvas %}
     <aside id="left-off-canvas-menu" class="off-canvas position-left" role="complementary" data-off-canvas>
       <button class="close-button" aria-label="Close menu" type="button" data-close>
@@ -85,7 +85,8 @@
     </div>
     #}
 
-    <header role="banner" aria-label="{{ 'Site header'|t }}">
+    
+    <header role="banner" aria-label="{{ 'Site header'|t }}" class="header">
       <div class="header-meta">
         <div class="grid-container">
           <div class="grid-x grid-margin-x text-align-right">
@@ -116,9 +117,9 @@
               {% if linked_site_name %}
                 <div class="cell auto">
                   {% if is_front %}
-                    <h1 id="site-name">{{ linked_site_name }}</h1>
+                    <h1 id="site-name" class="h3">{{ linked_site_name }}</h1>
                   {% else %}
-                    <div id="site-name" class="h1">{{ linked_site_name }}</div>
+                    <div id="site-name" class="h3">{{ linked_site_name }}</div>
                   {% endif %}
                 </div>
               {% endif %}

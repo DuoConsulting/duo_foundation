@@ -7,6 +7,11 @@
 // Import typography documentation
 @import 'text-doc';
 
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  letter-spacing: -0.05em;
+}
+
 .text-light * {
   border-color: $white !important;
   color: $white !important;
