@@ -13,7 +13,7 @@
 
 // Fixed, transparent header. This class is applied to the off-canvas-wrapper.
 
-.path-frontpage {
+.path-frontpage:not(.user-logged-in) {
   .clear-header {
     .header {
       background: transparent;

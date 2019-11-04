@@ -12643,24 +12643,24 @@ h1, h2, h3, h4, h5, h6,
           flex-grow: 1;
 }
 
-.path-frontpage .clear-header .header {
+.path-frontpage:not(.user-logged-in) .clear-header .header {
   background: transparent;
   position: absolute;
   width: 100%;
   z-index: 1;
 }
 
-.path-frontpage .clear-header .header-meta,
-.path-frontpage .clear-header .header-top,
-.path-frontpage .clear-header .top-bar-outer {
+.path-frontpage:not(.user-logged-in) .clear-header .header-meta,
+.path-frontpage:not(.user-logged-in) .clear-header .header-top,
+.path-frontpage:not(.user-logged-in) .clear-header .top-bar-outer {
   background: transparent;
 }
 
-.path-frontpage .clear-header .header-top {
+.path-frontpage:not(.user-logged-in) .clear-header .header-top {
   padding-top: 0;
 }
 
-.path-frontpage .clear-header .top-bar-outer {
+.path-frontpage:not(.user-logged-in) .clear-header .top-bar-outer {
   border: 0;
 }
 
