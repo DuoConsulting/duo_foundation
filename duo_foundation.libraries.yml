@@ -30,6 +30,14 @@ block--cta:
       css/components/block--cta.css: {}
 
 ################################################################################
+# Vendor plugins
+################################################################################
+rellax:
+  version: 1.9.1
+  js:
+    js/vendors/rellax.min.js: {}
+
+################################################################################
 # Foundation 6.5.3 core, utility libraries and plugins
 # Include plugins as needed, either globally or within template files
 ################################################################################

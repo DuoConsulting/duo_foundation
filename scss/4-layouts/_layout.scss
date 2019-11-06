@@ -23,6 +23,15 @@ $border-color: $medium-gray;
   }
 }
 
+// Add margin between adjacent columns on small screens.
+.layout__content {
+  > .cell + .cell {
+    @include breakpoint(small-medium down) {
+      margin-top: rem-calc(32px);
+    }
+  }
+}
+
 // When more than one block is in a given layout section.
 .layout__region {
   > .block + .block {

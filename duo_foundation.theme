@@ -44,6 +44,12 @@ function duo_foundation_preprocess_block(&$variables) {
     // Add a unique class for each block for styling.
     $variables['attributes']['class'][] = $variables['attributes']['id'];
   }
+
+  // Attach the rellax library to heros.
+  if (isset($variables['derivative_plugin_id']) &&
+      $variables['derivative_plugin_id'] == 'hero') {
+    $variables['#attached']['library'][] = 'duo_foundation/rellax';
+  }
 }
 
 /**

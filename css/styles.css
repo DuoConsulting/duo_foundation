@@ -12476,6 +12476,12 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+@media screen and (max-width: 48.06125em) {
+  .layout__content > .cell + .cell {
+    margin-top: 2rem;
+  }
+}
+
 .layout__region > .block + .block {
   margin-top: 2.34375rem;
 }
