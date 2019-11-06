@@ -114,8 +114,9 @@
                   {{ linked_logo }}
                 </div>
               {% endif %}
+              
               {% if linked_site_name %}
-                <div class="cell auto">
+                <div class="cell auto large-shrink">
                   {% if is_front %}
                     <h1 id="site-name" class="h3">{{ linked_site_name }}</h1>
                   {% else %}
@@ -123,7 +124,18 @@
                   {% endif %}
                 </div>
               {% endif %}
-              <div class="cell shrink hide-for-medium header-top__menu">
+
+              {% if page.header %}
+                <div class="cell auto show-for-large header-top__navigation">
+                  {{ page.header }}
+                  
+                  <div class="header-top__button">
+                    <a href="#" class="button semi-transparent-light">{{ 'Take Action'|t }} <span class="fa fa-chevron-right"></span></a>
+                  </div>
+                </div>
+              {% endif %}
+
+              <div class="cell shrink hide-for-large header-top__menu">
                 <div class="header-top__menu-inner">
                   <button class="hamburger" type="button" data-open="right-off-canvas-menu"><span class="show-for-sr">Menu</span></button>
                 </div>

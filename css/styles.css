@@ -11756,6 +11756,32 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
   clip: auto;
 }
 
+.button {
+  text-transform: uppercase;
+}
+
+.button .fa {
+  left: 4px;
+  position: relative;
+  top: 1px;
+}
+
+.button.semi-transparent-light {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button.semi-transparent-light:hover, .button.semi-transparent-light:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.button.semi-transparent-dark {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.button.semi-transparent-dark:hover, .button.semi-transparent-dark:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   letter-spacing: -0.05em;
@@ -11905,6 +11931,51 @@ h1, h2, h3, h4, h5, h6,
 
 .header-top__menu-inner {
   padding-left: 0.875rem;
+}
+
+.header-top__navigation {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header-top__navigation .menu {
+  margin-right: 1.25rem;
+}
+
+.header-top__navigation .menu a {
+  font-size: 0.875rem;
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.header-top__navigation .menu a:after {
+  background-color: #6200ee;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 0.1875rem;
+  left: 1rem;
+  position: absolute;
+  -webkit-transition: width 250ms ease-in;
+  transition: width 250ms ease-in;
+  width: 0;
+}
+
+.header-top__navigation .menu a:hover:after, .header-top__navigation .menu a:focus:after {
+  width: 2.1875rem;
+}
+
+.header-top__navigation .button {
+  font-weight: bold;
+  margin: 0;
 }
 
 .top-bar-outer {

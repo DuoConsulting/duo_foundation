@@ -8,3 +8,31 @@
 
 // Import button documentation
 @import 'button-doc';
+
+.button {
+  text-transform: uppercase;
+
+  .fa {
+    left: 4px;
+    position: relative;
+    top: 1px;
+  }
+
+  &.semi-transparent-light {
+    background-color: rgba(255, 255, 255, 0.2);
+
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.3);      
+    }
+  }
+
+  &.semi-transparent-dark {
+    background-color: rgba(0, 0, 0, 0.2);
+
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.3);      
+    }
+  }
+}

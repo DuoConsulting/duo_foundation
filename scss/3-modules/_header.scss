@@ -40,3 +40,45 @@
 .header-top__menu-inner {
   padding-left: rem-calc(14px);
 }
+
+// Navigation in the header
+.header-top__navigation {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+
+  .menu {
+    margin-right: rem-calc(20px);
+
+    a {
+      font-size: rem-calc(14px);
+      font-weight: $global-weight-bold;
+      position: relative;
+      text-transform: uppercase;
+
+      &:after {
+        background-color: $primary-color;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: rem-calc(3px);
+        left: get-side($global-menu-padding, left);
+        position: absolute;
+        transition: width 250ms ease-in;
+        width: 0;
+      }
+
+      &:hover,
+      &:focus {
+        &:after {
+          width: rem-calc(35px);
+        }
+      }
+    }
+  }
+
+  .button {
+    font-weight: $global-weight-bold;
+    margin: 0;
+  }
+}
