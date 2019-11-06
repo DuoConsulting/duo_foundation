@@ -13,6 +13,7 @@ libraries:
 # Regions are output in the page.html.twig
 
 regions:
+  header: Header
   top_bar_left: 'Top Bar Left'
   top_bar_right: 'Top Bar Right'
   page_top: 'Page Top'
