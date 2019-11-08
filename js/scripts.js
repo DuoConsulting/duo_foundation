@@ -30,45 +30,6 @@
     // user scrolls up.
     headerUpDown();
 
-    // var $header = $('.header');
-    // var $window = $(window);
-    // var headerHeight = $header.outerHeight();
-    // var lastScrollTop = $window.scrollTop();
-    // var delta = 5;
-
-    // $('body:not(.path-frontpage) .main-wrapper').css('padding-top', headerHeight);
-    // $header.addClass('header--fixed');
-
-    // if (lastScrollTop > 0){
-    //   $header.addClass('header--down');
-    // }
-
-    // $window.on('scroll', Foundation.util.throttle(function(e){
-    //   var st = $(this).scrollTop();
-
-    //   // Make sure they scroll more than delta
-    //   if (Math.abs(lastScrollTop - st) <= delta)
-    //       return;
-      
-    //   // If they scrolled down and are past the header, add class .header--up.
-    //   // This is necessary so you never see what is "behind" the navbar.
-    //   if (st > lastScrollTop && st > headerHeight){
-    //     // Scroll Down
-    //     $header.removeClass('header--down').addClass('header--up').css('top', -1 * headerHeight);
-    //   } else {
-    //     // Scroll Up
-    //     if (st == 0) {
-    //       $header.removeClass('header--up').removeClass('header--down').css('top', 0);
-    //     }
-    //     // If did not scroll past the document (possible on mac)...
-    //     else if (st + $window.height() < $(document).height()) {
-    //       $header.removeClass('header--up').addClass('header--down').css('top', 0);
-    //     }
-    //   }
-      
-    //   lastScrollTop = st;
-    // }, 250));
-
   });
 
   // This function initializes behavior which will hide the header as the user
@@ -90,8 +51,6 @@
 
     $window.on('scroll', Foundation.util.throttle(function(e){
       var st = $(this).scrollTop();
-
-      console.log(st);
 
       // Make sure they scroll more than delta
       if (Math.abs(lastScrollTop - st) <= delta)
