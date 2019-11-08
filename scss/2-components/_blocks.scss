@@ -1,0 +1,22 @@
+// Generic block styles and styles for custom block types.
+
+// Stats
+.statistic__icon {
+  color: $secondary-color;
+}
+
+.statistic__title {
+  text-align: center;
+}
+
+.statistic__value {
+  margin-bottom: rem-calc(16px);
+}
+
+.statistic__statistic {
+  letter-spacing: -0.05em;
+}
+
+.statistic__text {
+  @extend %text--20;
+}

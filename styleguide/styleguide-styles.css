@@ -207,7 +207,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fefefe;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.2;
   color: #0a0a0a;
@@ -11842,6 +11842,13 @@ h1, h2, h3, h4, h5, h6,
   text-decoration: underline;
 }
 
+@media print, screen and (min-width: 48.0625em) {
+  .statistic__text,
+  .text--20 {
+    font-size: 1.25rem;
+  }
+}
+
 .margin-bottom {
   margin-bottom: 1rem;
 }
@@ -11856,6 +11863,22 @@ h1, h2, h3, h4, h5, h6,
 
 .padding-top {
   padding-top: 1rem;
+}
+
+.statistic__icon {
+  color: #03dac6;
+}
+
+.statistic__title {
+  text-align: center;
+}
+
+.statistic__value {
+  margin-bottom: 1rem;
+}
+
+.statistic__statistic {
+  letter-spacing: -0.05em;
 }
 
 .fouc-js .dropdown.menu ul {
@@ -12538,18 +12561,18 @@ body:not(.user-logged-in) .header.header--down {
 }
 
 .layout__region > .block + .block {
-  margin-top: 2.34375rem;
+  margin-top: 3.125rem;
 }
 
 @media screen {
   .layout__region > .block + .block {
-    margin-top: 3.51562rem;
+    margin-top: 4.6875rem;
   }
 }
 
 @media screen and (min-width: 40em) {
   .layout__region > .block + .block {
-    margin-top: 4.6875rem;
+    margin-top: 6.25rem;
   }
 }
 
@@ -12558,98 +12581,98 @@ body:not(.user-logged-in) .header.header--down {
 }
 
 .layout--padding-top-default {
-  padding-top: 2.34375rem;
+  padding-top: 3.125rem;
 }
 
 @media screen {
-  .layout--padding-top-default {
-    padding-top: 3.51562rem;
-  }
-}
-
-@media screen and (min-width: 40em) {
   .layout--padding-top-default {
     padding-top: 4.6875rem;
   }
 }
 
-.layout--padding-bottom-default {
-  padding-bottom: 2.34375rem;
-}
-
-@media screen {
-  .layout--padding-bottom-default {
-    padding-bottom: 3.51562rem;
+@media screen and (min-width: 40em) {
+  .layout--padding-top-default {
+    padding-top: 6.25rem;
   }
 }
 
-@media screen and (min-width: 40em) {
+.layout--padding-bottom-default {
+  padding-bottom: 3.125rem;
+}
+
+@media screen {
   .layout--padding-bottom-default {
     padding-bottom: 4.6875rem;
   }
 }
 
-.layout--padding-top-half {
-  padding-top: 1.17188rem;
-}
-
-@media screen {
-  .layout--padding-top-half {
-    padding-top: 1.75781rem;
+@media screen and (min-width: 40em) {
+  .layout--padding-bottom-default {
+    padding-bottom: 6.25rem;
   }
 }
 
-@media screen and (min-width: 40em) {
+.layout--padding-top-half {
+  padding-top: 1.5625rem;
+}
+
+@media screen {
   .layout--padding-top-half {
     padding-top: 2.34375rem;
   }
 }
 
-.layout--padding-bottom-half {
-  padding-bottom: 1.17188rem;
-}
-
-@media screen {
-  .layout--padding-bottom-half {
-    padding-bottom: 1.75781rem;
+@media screen and (min-width: 40em) {
+  .layout--padding-top-half {
+    padding-top: 3.125rem;
   }
 }
 
-@media screen and (min-width: 40em) {
+.layout--padding-bottom-half {
+  padding-bottom: 1.5625rem;
+}
+
+@media screen {
   .layout--padding-bottom-half {
     padding-bottom: 2.34375rem;
   }
 }
 
-.layout--padding-top-quarter {
-  padding-top: 0.58594rem;
-}
-
-@media screen {
-  .layout--padding-top-quarter {
-    padding-top: 0.87891rem;
+@media screen and (min-width: 40em) {
+  .layout--padding-bottom-half {
+    padding-bottom: 3.125rem;
   }
 }
 
-@media screen and (min-width: 40em) {
+.layout--padding-top-quarter {
+  padding-top: 0.78125rem;
+}
+
+@media screen {
   .layout--padding-top-quarter {
     padding-top: 1.17188rem;
   }
 }
 
+@media screen and (min-width: 40em) {
+  .layout--padding-top-quarter {
+    padding-top: 1.5625rem;
+  }
+}
+
 .layout--padding-bottom-quarter {
-  padding-bottom: 0.58594rem;
+  padding-bottom: 0.78125rem;
 }
 
 @media screen {
   .layout--padding-bottom-quarter {
-    padding-bottom: 0.87891rem;
+    padding-bottom: 1.17188rem;
   }
 }
 
 @media screen and (min-width: 40em) {
   .layout--padding-bottom-quarter {
-    padding-bottom: 1.17188rem;
+    padding-bottom: 1.5625rem;
   }
 }
 
