@@ -2,7 +2,7 @@
 
 // Stats
 .statistic__icon {
-  color: $secondary-color;
+  color: $primary-color;
 }
 
 .statistic__title {
@@ -19,4 +19,46 @@
 
 .statistic__text {
   @extend %text--20;
+}
+
+// CTAs
+.cta {
+  background-color: $primary-color;
+  color: $white;
+  padding: rem-calc(30px 60px);
+
+  .button {
+    background-color: transparent;
+    border-color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $black;
+    }
+  }
+}
+
+.cta__container {
+  @include breakpoint(medium) {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.cta__body {
+  @include breakpoint(medium) {
+    flex-grow: 1;
+    margin-bottom: 0;
+    padding-right: rem-calc(80px);    
+  }
+}
+
+.cta__links {
+  @include breakpoint(medium) {
+    flex-shrink: 0;  
+  }
+
+  .button {
+    margin-bottom: 0;
+  }
 }

@@ -146,6 +146,12 @@ body.toolbar-fixed {
   .block-help {
     display: none;
   }
+
+  // Sections with negative top margins should be reset to zero so that they
+  // don't interefer with layout builder links.
+  .layout__container {
+    margin-top: 0 !important;
+  }
 }
 
 // Layout builder modal.

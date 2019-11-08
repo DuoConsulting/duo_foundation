@@ -8644,6 +8644,10 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
   display: none;
 }
 
+.section-node-layout .layout__container {
+  margin-top: 0 !important;
+}
+
 #layout-builder-modal .label {
   background: transparent;
   color: inherit;
@@ -11783,6 +11787,14 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.button.semi-transparent-secondary {
+  background-color: rgba(3, 218, 198, 0.5);
+}
+
+.button.semi-transparent-secondary:hover, .button.semi-transparent-secondary:focus {
+  background-color: rgba(3, 218, 198, 0.6);
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   letter-spacing: -0.05em;
@@ -11866,7 +11878,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .statistic__icon {
-  color: #03dac6;
+  color: #6200ee;
 }
 
 .statistic__title {
@@ -11879,6 +11891,53 @@ h1, h2, h3, h4, h5, h6,
 
 .statistic__statistic {
   letter-spacing: -0.05em;
+}
+
+.cta {
+  background-color: #6200ee;
+  color: #fefefe;
+  padding: 1.875rem 3.75rem;
+}
+
+.cta .button {
+  background-color: transparent;
+  border-color: #fefefe;
+}
+
+.cta .button:hover, .cta .button:focus {
+  background-color: #0a0a0a;
+}
+
+@media print, screen and (min-width: 48.0625em) {
+  .cta__container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media print, screen and (min-width: 48.0625em) {
+  .cta__body {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin-bottom: 0;
+    padding-right: 5rem;
+  }
+}
+
+@media print, screen and (min-width: 48.0625em) {
+  .cta__links {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+}
+
+.cta__links .button {
+  margin-bottom: 0;
 }
 
 .fouc-js .dropdown.menu ul {
@@ -12684,6 +12743,57 @@ body:not(.user-logged-in) .header.header--down {
   padding-bottom: 0;
 }
 
+.layout--padding-top-n-default .layout__container {
+  margin-top: -3.125rem;
+  position: relative;
+}
+
+@media screen {
+  .layout--padding-top-n-default .layout__container {
+    margin-top: -4.6875rem;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .layout--padding-top-n-default .layout__container {
+    margin-top: -6.25rem;
+  }
+}
+
+.layout--padding-top-n-half .layout__container {
+  margin-top: -1.5625rem;
+  position: relative;
+}
+
+@media screen {
+  .layout--padding-top-n-half .layout__container {
+    margin-top: -2.34375rem;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .layout--padding-top-n-half .layout__container {
+    margin-top: -3.125rem;
+  }
+}
+
+.layout--padding-top-n-quarter .layout__container {
+  margin-top: -0.78125rem;
+  position: relative;
+}
+
+@media screen {
+  .layout--padding-top-n-quarter .layout__container {
+    margin-top: -1.17188rem;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .layout--padding-top-n-quarter .layout__container {
+    margin-top: -1.5625rem;
+  }
+}
+
 .layout--width-10 .layout__container {
   max-width: 7.5rem;
 }
@@ -12802,61 +12912,6 @@ body:not(.user-logged-in) .header.header--down {
 
 
 /*# sourceMappingURL=../maps/accordion.css.map */
-
-/**
- * Foundation for Sites by ZURB
- * Version 6.5.3
- * foundation.zurb.com
- * Licensed under MIT Open Source
- */
-.block--cta h3 {
-  margin-bottom: 0;
-}
-
-.block--cta .field--name-field-cta-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.block--cta .field--name-field-cta-links a {
-  background-color: #0a0a0a;
-  border-radius: 2em;
-  color: #fefefe;
-  display: inline-block;
-  margin: 0 0.75em;
-  padding: 0.5em 2em;
-}
-
-.block--cta .field--name-field-cta-links a:first-child {
-  margin-left: 0;
-}
-
-.block--cta .field--name-field-cta-links a:last-child {
-  margin-right: 0;
-}
-
-.block--cta .field--name-body {
-  margin-bottom: 1.5em;
-}
-
-.block--cta .field--name-body > *:last-child {
-  margin-bottom: 0;
-}
-
-.block--cta.text-align-center .field--name-field-cta-links {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.block--cta.text-align-right .field--name-field-cta-links {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-/*# sourceMappingURL=../maps/block--cta.css.map */
 
 .card {
   width: 300px;
