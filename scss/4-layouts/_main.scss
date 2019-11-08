@@ -10,30 +10,3 @@
 .main-wrapper {
   flex-grow: 1;
 }
-
-// Fixed, transparent header. This class is applied to the off-canvas-wrapper.
-
-.path-frontpage:not(.user-logged-in) {
-  .clear-header {
-    .header {
-      background: transparent;
-      position: absolute;
-      width: 100%;
-      z-index: 1;
-    }
-
-    .header-meta,
-    .header-top,
-    .top-bar-outer {
-      background: transparent;
-    }
-
-    .header-top {
-      padding-top: 0;
-    }
-
-    .top-bar-outer {
-      border: 0;
-    }
-  }
-}

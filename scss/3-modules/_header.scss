@@ -1,5 +1,60 @@
 // Header
 
+// Fix the header on the homepage before the up/down script runs.
+body:not(.user-logged-in).path-frontpage {
+  .header {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+// Assign styles to be used by the header up.down script.
+body:not(.user-logged-in) {
+  .header {
+    &.header--fixed {
+      position: fixed;
+      top: 0;
+      transition: top 500ms ease-in-out, background 500ms ease-in-out;
+      width: 100%;
+      z-index: 1;
+    } 
+
+    &.header--up {
+      top: -100%;
+    }
+
+    &.header--down {
+      background: rgba(0, 0, 0, 0.75);
+    }
+  }
+
+}
+
+// Fixed, transparent header. This class is applied to the off-canvas-wrapper.
+.path-frontpage:not(.user-logged-in) {
+  .clear-header {
+    .header {
+      width: 100%;
+      z-index: 1;
+    }
+
+    .header-meta,
+    .header-top,
+    .top-bar-outer {
+      background: transparent;
+    }
+
+    .header-top {
+      padding-top: 0;
+    }
+
+    .top-bar-outer {
+      border: 0;
+    }
+  }
+}
+
+
 // User login
 .header-meta {
   background-color: lighten($bg-dark, 5%);
@@ -78,7 +133,17 @@
   }
 
   .button {
-    font-weight: $global-weight-bold;
     margin: 0;
   }
+}
+
+.header-site-name {
+  margin-bottom: 0;
+}
+
+.logo {
+  @include breakpoint(medium) {
+    width: rem-calc(75px);
+  }
+  width: rem-calc(50px);
 }
