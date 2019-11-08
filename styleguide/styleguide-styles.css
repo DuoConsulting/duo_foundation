@@ -11940,6 +11940,18 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0;
 }
 
+.image img {
+  -webkit-transition: -webkit-transform 500ms ease-in;
+  transition: -webkit-transform 500ms ease-in;
+  transition: transform 500ms ease-in;
+  transition: transform 500ms ease-in, -webkit-transform 500ms ease-in;
+}
+
+.image img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .fouc-js .dropdown.menu ul {
   display: none;
 }

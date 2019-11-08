@@ -6,3 +6,8 @@
 
 // Import form elements documentation
 @import 'form-elements-doc';
+
+textarea,
+textarea[rows] {
+  height: rem-calc(130px);
+}

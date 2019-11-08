@@ -11,7 +11,7 @@ var $          = require('gulp-load-plugins')(),
   kssOptions = require('./styleguide-config/styleguide-config.json');
 
 var options = {};
-var autoReload = true; // Enables livereload
+var autoReload = false; // Enables livereload
 
 options.gulpWatchOptions = {};
 
@@ -82,8 +82,11 @@ var componentScssFiles = [
 // The default task.
 gulp.task('default', ['build']);
 
-// Build everything.
-gulp.task('build', ['sass', 'components', 'drush:cc', 'lint', 'styleguide', 'styleguide-css']);
+// Build everything, except the styleguide.
+gulp.task('build', ['sass', 'components', 'drush:cc', 'lint']);
+
+// Build everything, including the styleguide.
+gulp.task('build-styleguide', ['sass', 'components', 'drush:cc', 'lint', 'styleguide', 'styleguide-css']);
 
 // Default watch task.
 // @todo needs to add a javascript watch task.
@@ -93,8 +96,27 @@ gulp.task('watch', ['watch:css'], function() {
   }
 });
 
+// Watch and build everything, including the styleguide.
+// @todo needs to add a javascript watch task.
+gulp.task('watch-styleguide', ['watch-styleguide:css'], function() {
+  if (autoReload) {
+    $.livereload.listen();
+  }
+});
+
 // Watch for changes for scss files and rebuild.
 gulp.task('watch:css', ['build'], function () {
+  return gulp.watch(
+    [
+      options.theme.scss + '**/*.scss',
+      options.theme.components + '**/*.scss'
+    ],
+    options.gulpWatchOptions,
+    ['sass', 'components', 'drush:cc', 'lint']);
+});
+
+// Watch for changes for scss files and rebuild, including the styleguide.
+gulp.task('watch-styleguide:css', ['build-styleguide'], function () {
   return gulp.watch(
     [
       options.theme.scss + '**/*.scss',

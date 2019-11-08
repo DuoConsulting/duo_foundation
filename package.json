@@ -24,7 +24,8 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "watch-styleguide": "gulp watch-styleguide"
   },
   "private": true
 }

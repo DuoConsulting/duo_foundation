@@ -11795,6 +11795,11 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
   background-color: rgba(3, 218, 198, 0.6);
 }
 
+textarea,
+textarea[rows] {
+  height: 8.125rem;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   letter-spacing: -0.05em;
@@ -11938,6 +11943,22 @@ h1, h2, h3, h4, h5, h6,
 
 .cta__links .button {
   margin-bottom: 0;
+}
+
+.image {
+  overflow: hidden;
+}
+
+.image img {
+  -webkit-transition: -webkit-transform 300ms ease-in;
+  transition: -webkit-transform 300ms ease-in;
+  transition: transform 300ms ease-in;
+  transition: transform 300ms ease-in, -webkit-transform 300ms ease-in;
+}
+
+.image img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .fouc-js .dropdown.menu ul {
