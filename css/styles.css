@@ -8523,12 +8523,39 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
 }
 
-.region-highlighted:empty {
-  display: none;
+.toolbar-oriented .toolbar-bar,
+.toolbar-oriented .toolbar-tray {
+  top: auto;
 }
 
-.toolbar-tray a {
-  font-size: 13px;
+.admin-tasks {
+  position: relative;
+  z-index: 2;
+}
+
+.admin-tasks .button-group {
+  margin: 0;
+}
+
+#toolbar-item-administration-search .toolbar-icon {
+  background: url("/modules/custom/duo_admin_styles/images/search.svg") center bottom/cover no-repeat;
+}
+
+.toolbar-tab:nth-child(5) {
+  display: none !important;
+}
+
+@media screen and (max-width: 609px) {
+  .toolbar-oriented .toolbar-bar {
+    position: relative;
+  }
+  .user-logged-in {
+    padding-top: 0 !important;
+  }
+}
+
+.region-highlighted:empty {
+  display: none;
 }
 
 .toolbar .toolbar-toggle-orientation .toolbar-icon {
@@ -8544,7 +8571,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 .top-bar-section ul li a.is-active {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .no-js .top-bar {
@@ -8560,24 +8587,13 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
 }
 
-body.toolbar-fixed .sticky.is-stuck .top-bar {
-  margin-top: 39px;
-}
-
-body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .sticky.is-stuck .top-bar {
-  margin-top: 79px;
-}
-
-body.toolbar-fixed .sticky.is-stuck.is-at-top {
-  margin-top: 0 !important;
-}
-
-.top-bar .menu-item--collapsed, .top-bar .menu-item--expanded {
+.top-bar .menu-item--collapsed,
+.top-bar .menu-item--expanded {
   list-style: none;
 }
 
 .dropbutton-wrapper {
-  background-color: #008CBA;
+  background-color: #008cba;
   margin: 0 0 1.25rem;
 }
 
@@ -8585,16 +8601,6 @@ body.toolbar-fixed .sticky.is-stuck.is-at-top {
   margin-bottom: 0;
   width: 100%;
   text-align: left;
-}
-
-body.toolbar-fixed .position-left,
-body.toolbar-fixed .position-right {
-  top: 39px;
-}
-
-body.toolbar-fixed.toolbar-tray-open .position-left,
-body.toolbar-fixed.toolbar-tray-open .position-right {
-  top: 79px;
 }
 
 .layout .layout-builder__link,
@@ -8723,6 +8729,332 @@ body.toolbar-fixed.toolbar-tray-open .position-right {
 
 #drupal-off-canvas .ajax-progress-throbber .throbber {
   background-image: url("../images/loader.gif");
+}
+
+.block-local-tasks-block {
+  font-family: Arial;
+  z-index: 1;
+  padding: 0;
+}
+
+.block-local-tasks-block ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.block-local-tasks-block ul li {
+  margin: 0 5px;
+}
+
+.block-local-tasks-block .button-group {
+  margin: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .block-local-tasks-block .button-group {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+}
+
+.block-local-tasks-block a.button {
+  background-color: rgba(254, 254, 254, 0);
+  color: rgba(254, 254, 254, 0.7);
+  padding: 1em 1.3333em 0.8em 1.3333em !important;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+  border: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .block-local-tasks-block a.button {
+    font-size: 14px;
+  }
+}
+
+.block-local-tasks-block a.button:before {
+  display: none !important;
+}
+
+.block-local-tasks-block a.button:hover, .block-local-tasks-block a.button:focus {
+  color: #fefefe;
+  background-color: rgba(254, 254, 254, 0.3);
+}
+
+.block-local-tasks-block a.button.active {
+  color: #fefefe;
+  background-color: rgba(254, 254, 254, 0.2);
+}
+
+.path-user:not(.user-logged-in) {
+  background-color: #05071c;
+}
+
+.path-user:not(.user-logged-in) header {
+  background-color: transparent;
+}
+
+.path-user:not(.user-logged-in) .main-wrapper {
+  padding-top: 0 !important;
+  position: absolute;
+  width: 100%;
+}
+
+.path-user:not(.user-logged-in) .header-meta {
+  display: none;
+}
+
+.path-user:not(.user-logged-in) .header-top {
+  background-color: transparent;
+}
+
+.path-user:not(.user-logged-in) .header-top .site-branding {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.path-user:not(.user-logged-in) main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 3.5vmin 7vmin;
+  margin: 1rem auto 0 auto;
+  background: #05071c;
+}
+
+@media screen and (min-width: 600px) {
+  .path-user:not(.user-logged-in) main {
+    width: 85%;
+    border: 1px solid #666;
+    border-radius: 4px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .path-user:not(.user-logged-in) main {
+    margin: 10rem auto 0 auto;
+  }
+}
+
+.path-user:not(.user-logged-in) main div[aria-label='Error message'] {
+  color: magenta;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media screen and (min-width: 992px) {
+  .path-user:not(.user-logged-in) main div[aria-label='Error message'] {
+    font-size: 14px;
+  }
+}
+
+.path-user:not(.user-logged-in) h1 {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: #999;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .path-user:not(.user-logged-in) h1 {
+    font-size: 22px;
+  }
+}
+
+.path-user:not(.user-logged-in) form.user-login-form,
+.path-user:not(.user-logged-in) form.user-pass {
+  text-align: center;
+}
+
+.path-user:not(.user-logged-in) form.user-login-form label,
+.path-user:not(.user-logged-in) form.user-pass label {
+  font-family: sans-serif;
+  font-weight: normal;
+  color: #999;
+  text-align: left;
+  font-size: 12px;
+}
+
+.path-user:not(.user-logged-in) form.user-login-form label.form-required:after,
+.path-user:not(.user-logged-in) form.user-pass label.form-required:after {
+  color: yellow;
+}
+
+@media screen and (min-width: 992px) {
+  .path-user:not(.user-logged-in) form.user-login-form label,
+  .path-user:not(.user-logged-in) form.user-pass label {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .path-user:not(.user-logged-in) form.user-login-form label,
+  .path-user:not(.user-logged-in) form.user-pass label {
+    font-size: 16px;
+  }
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-item,
+.path-user:not(.user-logged-in) form.user-pass .form-item {
+  margin: 2.5vmin 0;
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text'],
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password'],
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='text'],
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='password'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 0;
+  border-bottom: 1px solid #666;
+  background: #05071c;
+  color: #999;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 0.25em 0.5em;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 2;
+  height: auto;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 992px) {
+  .path-user:not(.user-logged-in) form.user-login-form .form-item [type='text'],
+  .path-user:not(.user-logged-in) form.user-login-form .form-item [type='password'],
+  .path-user:not(.user-logged-in) form.user-pass .form-item [type='text'],
+  .path-user:not(.user-logged-in) form.user-pass .form-item [type='password'] {
+    font-size: 20px;
+  }
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text'].placeholder,
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password'].placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='text'].placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='password'].placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']:-moz-placeholder,
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']:-moz-placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']:-moz-placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']:-moz-placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']::-moz-placeholder,
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']::-moz-placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']::-moz-placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']::-moz-placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']:-ms-input-placeholder,
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']:-ms-input-placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']:-ms-input-placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']:-ms-input-placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']::-webkit-input-placeholder,
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']::-webkit-input-placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']::-webkit-input-placeholder,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']::-webkit-input-placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']:focus, .path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']:hover,
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']:focus,
+.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']:hover,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']:focus,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']:hover,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']:focus,
+.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']:hover {
+  border-color: #fff;
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-actions,
+.path-user:not(.user-logged-in) form.user-pass .form-actions {
+  margin: 7vmin auto 0 auto;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+@media screen and (min-width: 992px) {
+  .path-user:not(.user-logged-in) form.user-login-form .form-actions,
+  .path-user:not(.user-logged-in) form.user-pass .form-actions {
+    margin: 3.5vmin auto 0 auto;
+  }
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-actions input,
+.path-user:not(.user-logged-in) form.user-pass .form-actions input {
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 14px;
+  margin: 0;
+  padding: 0.8em 1.5em 0.9em 1.5em;
+  border: 0;
+  border-radius: 4px;
+  background: #666;
+  color: #fff;
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .form-actions input:hover,
+.path-user:not(.user-logged-in) form.user-pass .form-actions input:hover {
+  background: #999;
+  color: #fff;
+}
+
+.path-user:not(.user-logged-in) form.user-login-form .description,
+.path-user:not(.user-logged-in) form.user-pass .description {
+  display: none;
+}
+
+.path-user:not(.user-logged-in) form.user-login-form p,
+.path-user:not(.user-logged-in) form.user-pass p {
+  font-size: 12px;
+  margin: 0;
+  text-align: center;
+  padding: 0 10%;
+  font-family: sans-serif;
+  color: #666;
+}
+
+@media screen and (min-width: 1024px) {
+  .path-user:not(.user-logged-in) form.user-login-form p,
+  .path-user:not(.user-logged-in) form.user-pass p {
+    font-size: 16px;
+  }
+}
+
+.path-user:not(.user-logged-in) footer {
+  display: none;
+}
+
+.path-user:not(.user-logged-in) .block-local-tasks-block {
+  position: relative;
 }
 
 /*!
@@ -11974,6 +12306,10 @@ h1, h2, h3, h4, h5, h6,
 body:not(.user-logged-in).path-frontpage .header {
   position: fixed;
   width: 100%;
+}
+
+body:not(.user-logged-in).path-user .header.header--fixed {
+  position: relative;
 }
 
 body:not(.user-logged-in) .header.header--fixed {

@@ -1,0 +1,140 @@
+// Baseline styles for User Page display [ @site/user/* ].
+// Color scheme -- match to site branding.
+$title-color: red;
+$text-color: blue;
+$label-color: green;
+$user-page-bgd: #eee;
+
+$global-padding: 15px;
+
+// --> Dashboard style?
+// $is_dashboard: true;
+$is_dashboard: false;
+
+.section-user.user-logged-in {
+  background: $user-page-bgd;
+}
+
+@if ($is_dashboard) {
+  .user--view-mode-full {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      padding-top: 140px;
+    }
+
+    .group-header,
+    .group-footer {
+      width: 100%;
+    }
+
+    .group-header {
+      display: flex;
+      align-items: baseline;
+
+      p {
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+
+    .group-left {
+      flex: 1;
+
+      // User info...
+      .user-block {
+        display: flex;
+        align-items: center;
+
+        p {
+          margin-bottom: 0;
+          font-size: 12px;
+        }
+
+        h1 {
+          font-size: 14px;
+          color: $text-color;
+          margin: 0;
+
+          @media screen and (min-width: 1024px) {
+            font-size: 16px;
+          }
+        }
+
+        .user-picture {
+          // picture on left
+          border-radius: 50vh;
+          overflow: hidden;
+          max-width: 50px;
+          max-height: 50px;
+          margin: $global-padding auto;
+
+          @media screen and (min-width: 1024px) {
+            margin: 0 $global-padding 0 0;
+          }
+        }
+
+        .user-info {
+          flex: 2;
+        }
+      }
+
+      > div {
+        background-color: $white;
+        border: 1px solid #f2f2f2;
+        padding: 15px;
+        margin: $global-padding 0;
+        border-radius: 3px;
+
+        @media screen and (min-width: 1024px) {
+          margin-right: 15px;
+        }
+      }
+
+      nav {
+        ul {
+          li {
+            display: block;
+
+            a {
+              padding: 0;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    .group-right {
+      flex: 2;
+
+      > div {
+        background-color: $white;
+        border: 1px solid #f2f2f2;
+        padding: 15px;
+        margin: $global-padding 0;
+      }
+
+      .block-views {
+        margin: 0;
+
+        table {
+          margin: 0;
+        }
+      }
+    }
+
+    .group-left .field-label-above,
+    .group-right h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $text-color;
+      font-weight: bold;
+    }
+  }
+} @else {
+  // todo add basic style
+}

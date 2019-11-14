@@ -10,6 +10,9 @@ body:not(.user-logged-in).path-frontpage {
 
 // Assign styles to be used by the header up.down script.
 body:not(.user-logged-in) {
+  &.path-user .header.header--fixed {
+    position: relative;
+  }
   .header {
     &.header--fixed {
       position: fixed;
@@ -17,7 +20,7 @@ body:not(.user-logged-in) {
       transition: top 500ms ease-in-out, background 500ms ease-in-out;
       width: 100%;
       z-index: 1;
-    } 
+    }
 
     &.header--up {
       top: -100%;
@@ -27,7 +30,6 @@ body:not(.user-logged-in) {
       background: rgba(0, 0, 0, 0.75);
     }
   }
-
 }
 
 // Fixed, transparent header. This class is applied to the off-canvas-wrapper.
@@ -53,7 +55,6 @@ body:not(.user-logged-in) {
     }
   }
 }
-
 
 // User login
 .header-meta {

@@ -1,0 +1,64 @@
+// Admin tabs - sit below toolbar.
+// Variables - change to match theme as required:
+$tab-color: $white;
+$tab-font: Arial;
+$tab-font-weight: bold;
+$page-container: '.user-login-wrapper'; // defines wrapper - can be diff. per site.
+
+//
+// #{$page-container} {
+.block-local-tasks-block {
+  font-family: $tab-font;
+  z-index: 1;
+  padding: 0;
+
+  ul {
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 5px;
+    }
+  }
+
+  .button-group {
+    margin: 0;
+
+    @media screen and (min-width: 1024px) {
+      justify-content: left;
+    }
+  }
+
+  a.button {
+    background-color: rgba($tab-color, 0);
+    color: rgba($tab-color, 0.7);
+    padding: 1em 1.3333em 0.8em 1.3333em !important;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 12px;
+    font-weight: $tab-font-weight;
+    border: 0;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 14px;
+    }
+
+    &:before {
+      display: none !important;
+    }
+
+    &:hover,
+    &:focus {
+      color: $tab-color;
+      background-color: rgba($tab-color, 0.3);
+    }
+
+    &.active {
+      color: $tab-color;
+      background-color: rgba($tab-color, 0.2);
+    }
+  }
+}
+
+// }

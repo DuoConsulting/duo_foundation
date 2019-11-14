@@ -1,17 +1,47 @@
 // Place any Drupal-related quirks here.
 
+// This fixes top position coming from base module:
+.toolbar-oriented {
+  .toolbar-bar,
+  .toolbar-tray {
+    top: auto;
+  }
+}
+
+// Style admin tabs section.
+.admin-tasks {
+  position: relative;
+  z-index: 2;
+  .button-group {
+    margin: 0;
+  }
+}
+
+// Missing search svg icon
+// grabs image from module:
+#toolbar-item-administration-search .toolbar-icon {
+  background: url("/modules/custom/duo_admin_styles/images/search.svg") center
+    bottom / cover no-repeat;
+}
+// Hide empty tab (icon is a drop in circle) - this is very specific.
+.toolbar-tab:nth-child(5) {
+  display: none !important;
+}
+// Toolbar themes is not 100% responsive:
+@media screen and (max-width: 609px) {
+  .toolbar-oriented .toolbar-bar {
+    position: relative;
+  }
+  .user-logged-in {
+    padding-top: 0 !important;
+  }
+}
+
 // A fix for https://www.drupal.org/node/953034 - Themes currently cannot
 // determine if a region is empty
 
 .region-highlighted:empty {
   display: none;
-}
-
-// This has been an issue since 7.x, Foundation rules about list elements
-// affect Navbar sizing.
-
-.toolbar-tray a {
-  font-size: 13px;
 }
 
 // Remove Foundation's top margin from the toggle orientation button.
@@ -25,11 +55,10 @@
 }
 
 // Override styles from /core/modules/system/css/components/menu.theme.css
-
 .top-bar-section ul li {
   padding-top: 0;
   a.is-active {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 }
 
@@ -49,24 +78,11 @@
   }
 }
 
-// Offset the top bar if the Navbar (toolbar) is present.
-
-body.toolbar-fixed .sticky.is-stuck .top-bar {
-  margin-top: 39px;
-}
-
-body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .sticky.is-stuck .top-bar {
-  margin-top: 79px;
-}
-
-body.toolbar-fixed .sticky.is-stuck.is-at-top {
-  margin-top: 0 !important;
-}
-
 // Removes core arrow image from menu items.
 
 .top-bar {
-  .menu-item--collapsed,.menu-item--expanded {
+  .menu-item--collapsed,
+  .menu-item--expanded {
     list-style: none;
   }
 }
@@ -75,27 +91,12 @@ body.toolbar-fixed .sticky.is-stuck.is-at-top {
 
 .dropbutton-wrapper {
   // Sub-themes will have to override this color, unfortunately.
-  background-color: #008CBA;
+  background-color: #008cba;
   margin: 0 0 1.25rem;
   .button {
     margin-bottom: 0;
     width: 100%;
     text-align: left;
-  }
-}
-
-// Offset the off-canvas menu if toolbar is present.
-body.toolbar-fixed {
-  .position-left,
-  .position-right {
-    top: 39px;
-  }
-
-  &.toolbar-tray-open {
-    .position-left,
-    .position-right {
-      top: 79px;
-    }
   }
 }
 
@@ -182,7 +183,7 @@ body.toolbar-fixed {
         background-color: $light-gray;
         box-shadow: none;
       }
-    }    
+    }
   }
 
   select {
@@ -215,7 +216,7 @@ $throbber-bg: rgba(0, 0, 0, 0.05);
   width: rem-calc(150px);
 
   .throbber {
-    background-image: url('../images/loader.gif');
+    background-image: url("../images/loader.gif");
     display: block;
     height: 50px;
     padding: 0;
@@ -233,7 +234,7 @@ $throbber-bg: rgba(0, 0, 0, 0.05);
     }
 
     .throbber {
-      background-image: url('../images/loader.gif');
+      background-image: url("../images/loader.gif");
     }
   }
 }

@@ -44,6 +44,19 @@
  * @see html.html.twig
  */
 #}
+<section class="admin-tasks">
+  {% if page.tools|render|trim %}
+    <div class="tools">
+      {{ page.tools }}
+    </div>
+  {% endif %}
+
+        {% if page.messages|render|trim %}
+    <div class="messages">
+      {{ page.messages }}
+    </div>
+  {% endif %}
+</section>
 
 <div class="off-canvas-wrapper clear-header">
   {% if page.left_off_canvas %}
@@ -108,7 +121,7 @@
       {% if linked_site_name or linked_logo %}
         <div class="header-top">
           <div class="grid-container">
-            <div class="grid-x grid-margin-x align-middle">
+            <div class="grid-x grid-margin-x align-middle site-branding">
               {% if linked_logo %}
                 <div class="cell shrink">
                   {{ linked_logo }}
@@ -165,31 +178,34 @@
       {% endif %}
     </header>
 
-    <div class="main-wrapper">
-      {% if page.messages|render|trim %}
+    <section class="main-wrapper">
+      {# {% if page.messages|render|trim %}
         <div class="grid-container">
           {{ page.messages }}
         </div>
-      {% endif %}
+      {% endif %} #}
 
       {% if page.highlighted|render|trim %}
-        <div class="margin-top grid-container">
+        <div class="highlighted grid-container">
           {% spaceless %}
             {{ page.highlighted }}
           {% endspaceless %}
         </div>
       {% endif %}
 
-      {% if page.tools|render|trim %}
+      {# {% if page.tools|render|trim %}
         <div class="margin-top grid-container">
           {{ page.tools }}
         </div>
-      {% endif %}
+      {% endif %} #}
 
       {% if not fullscreen %}
         {# Normal, non-fullscreen pages #}
         <div class="grid-container">
           <div class="grid-x grid-margin-x">
+
+           {% block replaceable %}
+
             <main id="main" class="{{ main_grid }} cell">
               <a id="main-content"></a>
               {% if breadcrumb %} {{ breadcrumb }} {% endif %}
@@ -200,6 +216,8 @@
 
               {{ page.content }}
             </main>
+
+             {% endblock %}
             
             {% if page.sidebar_first %}
               <div id="sidebar-first" class="{{ sidebar_first_grid }} cell sidebar">
@@ -251,7 +269,7 @@
           {{ page.content }}
         </main>
       {% endif %}
-    </div>
+    </section>
 
     <footer class="footer">
       <div class="grid-container">

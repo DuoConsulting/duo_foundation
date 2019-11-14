@@ -1,0 +1,320 @@
+// Styles user login and password recovery pages.
+// Use the local variables to set colors, fonts to match theme:
+// ------------------------------------------------------
+// 1. defines page wrapper - may be diff. per site.
+$page-container: '.path-user';
+$global-padding: 7vmin;
+
+// 2. Set some basic page settings:
+// --> Field borders all 4 sides?
+$borders_all: true;
+// $borders_all: false;
+
+// --> Position tabs below form?
+$tabs_below: true;
+// $tabs_below: false;
+
+// --> Hide the footer?
+$hide_footer: true;
+// $hide_footer: false;
+
+// --> Style the tabs block?
+// $tabs_block-modify: true;
+$tabs_block-modify: false;
+
+// 3. Assign theme colors here:
+$login_page-header: transparent !default;
+$login_page-bgd-color: #05071c;
+$login_text-color-primary: #999;
+$login_text-color-secondary: #666;
+$login_box-bgd: #05071c;
+$login_box-border-color: #666;
+$login_box_radius: 4px;
+$login_font: sans-serif;
+$login_tab-color: #999;
+$login_tab-color-active: #fff;
+
+// 5. Specific form element attributes:
+$login_field-text-color: $login_text-color-primary;
+$login_field-bgd-color: $login_page-bgd-color;
+$login_border-color: $login_text-color-secondary;
+$login_border-color-focus: #fff;
+$login_button-text-color: #fff;
+$login_button-color: #666;
+$login_button-color-focus: #999;
+$login_field_radius: 4px;
+$login_button_radius: 4px;
+$login_error-color: magenta;
+$login_required-color: yellow;
+
+// 6. Mixin defines placeholder selector, do not change.
+@mixin login_input-placeholder {
+  &.placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+// Page display:
+#{$page-container}:not(.user-logged-in) {
+  background-color: $login_page-bgd-color;
+
+  header {
+    background-color: $login_page-header;
+  }
+
+  // Specific fix for this theme.
+  .main-wrapper {
+    padding-top: 0 !important;
+    position: absolute;
+    width: 100%;
+  }
+  .header-meta {
+    display: none;
+  }
+  .header-top {
+    background-color: $login_page-header;
+    .site-branding {
+      justify-content: center;
+    }
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: #{$global-padding * 0.5} $global-padding;
+    margin: 1rem auto 0 auto;
+    background: $login_box-bgd;
+
+    @media screen and (min-width: 600px) {
+      width: 85%;
+      border: 1px solid $login_box-border-color;
+      border-radius: $login_box_radius;
+    }
+
+    @media screen and (min-width: 992px) {
+      margin: 10rem auto 0 auto;
+    }
+
+    div[aria-label='Error message'] {
+      color: $login_error-color;
+      font-size: 12px;
+      text-align: center;
+
+      @media screen and (min-width: 992px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  h1 {
+    font-family: $login_font;
+    font-weight: normal;
+    font-size: 18px;
+    color: $login_text-color-primary;
+    text-align: center;
+    letter-spacing: 0;
+
+    @media screen and (min-width: 992px) {
+      font-size: 22px;
+    }
+  }
+
+  // Login and Password forms:
+  form.user-login-form,
+  form.user-pass {
+    text-align: center;
+
+    label {
+      font-family: $login_font;
+      font-weight: normal;
+      color: $login_text-color-primary;
+      text-align: left;
+      font-size: 12px;
+
+      &.form-required:after {
+        color: $login_required-color;
+      }
+
+      @media screen and (min-width: 992px) {
+        font-size: 14px;
+      }
+
+      @media screen and (min-width: 1100px) {
+        font-size: 16px;
+      }
+    }
+
+    .form-item {
+      margin: 2.5vmin 0;
+
+      [type='text'],
+      [type='password'] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: 0;
+        border-bottom: 1px solid $login_border-color;
+        background: $login_field-bgd-color;
+        color: $login_field-text-color;
+        box-shadow: none;
+        padding: 0.25em 0.5em;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 2;
+        height: auto;
+
+        @media screen and (min-width: 992px) {
+          font-size: 20px;
+        }
+
+        @if ($borders_all) {
+          border: 1px solid $login_border-color;
+          border-radius: $login_field_radius;
+        }
+
+        // IF placeholder
+        @include login_input-placeholder {
+          color: rgba($login_field-text-color, 0.75);
+        }
+
+        &:focus,
+        &:hover {
+          border-color: $login_border-color-focus;
+        }
+      }
+    }
+
+    .form-actions {
+      margin: $global-padding auto 0 auto;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+
+      @media screen and (min-width: 992px) {
+        margin: #{$global-padding * 0.5} auto 0 auto;
+      }
+
+      input {
+        position: relative;
+        cursor: pointer;
+        z-index: 2;
+        font-size: 14px;
+        margin: 0;
+        padding: 0.8em 1.5em 0.9em 1.5em;
+        border: 0;
+        border-radius: $login_button_radius;
+        background: $login_button-color;
+        color: $login_button-text-color;
+
+        &:hover {
+          background: $login_button-color-focus;
+          color: $login_button-text-color;
+        }
+      }
+    }
+
+    .description {
+      display: none;
+    }
+
+    p {
+      font-size: 12px;
+      margin: 0;
+      text-align: center;
+      padding: 0 10%;
+      font-family: $login_font;
+      color: $login_text-color-secondary;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  // Hiding footer keeps things clean.
+  @if ($hide_footer) {
+    footer {
+      display: none;
+    }
+  }
+
+  // This will style the Drupal --> Tabs block.
+  // Comment out for standard Drupal appearance.
+  @if ($tabs_block-modify) {
+    .block-local-tasks-block {
+      @if ($tabs_below) {
+        position: absolute;
+        top: 110%;
+        left: 0;
+        right: 0;
+
+        @media screen and (max-width: 760px) and (orientation: portrait) {
+          bottom: $global-padding * 0.5;
+          top: auto;
+          position: fixed;
+        }
+      }
+
+      nav {
+        margin: 0 auto;
+        text-align: center;
+
+        ul {
+          display: flex;
+          justify-content: center;
+
+          li {
+            margin: 0 5px;
+          }
+        }
+
+        a {
+          margin: 0.5em;
+          padding: 0.2em;
+          border: 0;
+          font-size: 12px;
+          font-weight: bold;
+          font-family: $login_font;
+          color: $login_tab-color;
+          border-bottom: 0px solid $login_border-color;
+
+          @media screen and (min-width: 1024px) {
+            font-size: 15px;
+          }
+
+          &:hover {
+            color: $login_text-color-secondary;
+            border-bottom: 1px solid $login_border-color;
+          }
+
+          &.is-active {
+            border-bottom: 1px solid $login_border-color;
+            color: $login_tab-color-active;
+          }
+        }
+      }
+    }
+  } @else {
+    .block-local-tasks-block {
+      position: relative;
+    }
+  }
+}
