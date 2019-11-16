@@ -44,6 +44,8 @@
  * @see html.html.twig
  */
 #}
+
+{# NOTE: Admin Tasks and Messages moved above page elements. #}
 <section class="admin-tasks">
   {% if page.tools|render|trim %}
     <div class="tools">
@@ -51,7 +53,7 @@
     </div>
   {% endif %}
 
-        {% if page.messages|render|trim %}
+  {% if page.messages|render|trim %}
     <div class="messages">
       {{ page.messages }}
     </div>
@@ -178,12 +180,7 @@
       {% endif %}
     </header>
 
-    <section class="main-wrapper">
-      {# {% if page.messages|render|trim %}
-        <div class="grid-container">
-          {{ page.messages }}
-        </div>
-      {% endif %} #}
+    <div class="main-wrapper">
 
       {% if page.highlighted|render|trim %}
         <div class="highlighted grid-container">
@@ -192,12 +189,6 @@
           {% endspaceless %}
         </div>
       {% endif %}
-
-      {# {% if page.tools|render|trim %}
-        <div class="margin-top grid-container">
-          {{ page.tools }}
-        </div>
-      {% endif %} #}
 
       {% if not fullscreen %}
         {# Normal, non-fullscreen pages #}
@@ -269,7 +260,7 @@
           {{ page.content }}
         </main>
       {% endif %}
-    </section>
+    </div>
 
     <footer class="footer">
       <div class="grid-container">
