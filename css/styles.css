@@ -8732,22 +8732,13 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 .block-local-tasks-block {
-  font-family: Arial;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans", arial, sans-serif;
   z-index: 1;
   padding: 0;
 }
 
-.block-local-tasks-block ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.block-local-tasks-block ul li {
-  margin: 0 5px;
+.block-local-tasks-block .contextual {
+  display: none;
 }
 
 .block-local-tasks-block .button-group {
@@ -8763,20 +8754,20 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 .block-local-tasks-block a.button {
-  background-color: rgba(254, 254, 254, 0);
-  color: rgba(254, 254, 254, 0.7);
+  background-color: rgba(102, 102, 102, 0);
+  color: rgba(102, 102, 102, 0.7);
   padding: 1em 1.3333em 0.8em 1.3333em !important;
   line-height: 1;
   text-transform: uppercase;
   margin: 0;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   border: 0;
 }
 
 @media screen and (min-width: 1024px) {
   .block-local-tasks-block a.button {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -8785,13 +8776,13 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 .block-local-tasks-block a.button:hover, .block-local-tasks-block a.button:focus {
-  color: #fefefe;
-  background-color: rgba(254, 254, 254, 0.3);
+  color: #666;
+  background-color: rgba(102, 102, 102, 0.3);
 }
 
 .block-local-tasks-block a.button.active {
-  color: #fefefe;
-  background-color: rgba(254, 254, 254, 0.2);
+  color: #666;
+  background-color: rgba(102, 102, 102, 0.2);
 }
 
 .path-user:not(.user-logged-in) {

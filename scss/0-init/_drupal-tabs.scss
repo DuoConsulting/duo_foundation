@@ -1,9 +1,10 @@
 // Admin tabs - sit below toolbar.
 // Variables - change to match theme as required:
-$tab-color: $white;
-$tab-font: Arial;
+$tab-color: #666;
+$tab-font: "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans",
+  arial, sans-serif;
 $tab-font-weight: bold;
-$page-container: '.user-login-wrapper'; // defines wrapper - can be diff. per site.
+$page-container: ".user-login-wrapper"; // defines wrapper - can be diff. per site.
 
 //
 // #{$page-container} {
@@ -12,13 +13,9 @@ $page-container: '.user-login-wrapper'; // defines wrapper - can be diff. per si
   z-index: 1;
   padding: 0;
 
-  ul {
-    display: flex;
-    justify-content: center;
-
-    li {
-      margin: 0 5px;
-    }
+  .contextual {
+    // Hide contextual on this block.
+    display: none;
   }
 
   .button-group {
@@ -36,12 +33,12 @@ $page-container: '.user-login-wrapper'; // defines wrapper - can be diff. per si
     line-height: 1;
     text-transform: uppercase;
     margin: 0;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: $tab-font-weight;
     border: 0;
 
     @media screen and (min-width: 1024px) {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     &:before {
