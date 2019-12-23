@@ -1,0 +1,22 @@
+// Accordion
+
+.is-active > .accordion-title::before {
+  content: '\f077';
+}
+
+.accordion-title {
+  color: $black;
+  font-weight: $global-weight-bold;
+
+  &:before {
+    @extend %fa;
+    color: $primary-color;
+    content: '\f078';
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $black;
+  }
+}

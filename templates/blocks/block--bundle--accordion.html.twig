@@ -1,0 +1,21 @@
+{% set extra_class = 'block--accordion' %}
+{% extends '@duo_blocks/block--default.html.twig' %}
+
+{% block content %}
+  {{ attach_library('duo_foundation/foundation.accordion') }}
+  {%
+    set classes = [
+      'block',
+      'block--accordion'
+    ]
+  %}
+  <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+    {# Render the accordion items without all the wrapping markup. #}
+    {% set count = content.field_accordion_items['#items'].getvalue|length - 1 %}
+    {% for i in 0..count %}
+      <li class="accordion-item" data-accordion-item>
+        {{ content.field_accordion_items[i] }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
