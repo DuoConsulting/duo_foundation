@@ -5820,8 +5820,8 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .accordion-title {
   position: relative;
   display: block;
-  padding: 1.25rem 1rem;
-  border: 1px solid #e6e6e6;
+  padding: 1.25rem 0rem;
+  border: 1px solid transparent;
   border-bottom: 0;
   font-size: 1rem;
   line-height: 1;
@@ -5829,7 +5829,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 :last-child:not(.is-active) > .accordion-title {
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid transparent;
   border-radius: 0 0 0 0;
 }
 
@@ -5851,15 +5851,15 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .accordion-content {
   display: none;
-  padding: 1rem;
-  border: 1px solid #e6e6e6;
+  padding: 1rem 0;
+  border: 1px solid transparent;
   border-bottom: 0;
   background-color: #fefefe;
   color: #0a0a0a;
 }
 
 :last-child > .accordion-content:last-child {
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid transparent;
 }
 
 .tabs {
@@ -12214,22 +12214,27 @@ h1, h2, h3, h4, h5, h6,
   padding-top: 1rem;
 }
 
+.accordion {
+  border-top: 1px solid #e6e6e6;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #e6e6e6;
+}
+
 .is-active > .accordion-title::before {
   content: '\f077';
 }
 
 .accordion-title {
-  color: #0a0a0a;
-  font-weight: bold;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
 }
 
 .accordion-title:before {
   color: #6200ee;
   content: '\f078';
-}
-
-.accordion-title:hover, .accordion-title:active, .accordion-title:focus {
-  color: #0a0a0a;
+  right: 0;
 }
 
 .statistic__icon {

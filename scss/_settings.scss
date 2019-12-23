@@ -105,6 +105,7 @@ $global-padding: 1rem;
 $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
+$global-weight-semibold: 600;
 $global-radius: 0;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
@@ -245,11 +246,11 @@ $accordion-plusminus: true;
 $accordion-title-font-size: rem-calc(16);
 $accordion-item-color: $primary-color;
 $accordion-item-background-hover: transparent;
-$accordion-item-padding: 1.25rem 1rem;
+$accordion-item-padding: 1.25rem 0rem;
 $accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
+$accordion-content-border: 1px solid transparent;
 $accordion-content-color: $body-font-color;
-$accordion-content-padding: 1rem;
+$accordion-content-padding: 1rem 0;
 
 // 8. Accordion Menu
 // -----------------
