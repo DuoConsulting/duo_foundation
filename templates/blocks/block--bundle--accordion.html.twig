@@ -1,15 +1,31 @@
-{% set extra_class = 'block--accordion' %}
+{% set format = content.field_accordion_format.0|render %}
+{% set extra_class = 'block--accordion accordion--' ~ format %}
 {% extends '@duo_blocks/block--default.html.twig' %}
 
 {% block content %}
   {{ attach_library('duo_foundation/foundation.accordion') }}
-  {%
-    set classes = [
-      'block',
-      'block--accordion'
-    ]
-  %}
-  <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+
+  {% if format == 'tabs' %}
+    {{ attach_library('duo_foundation/foundation.tabs') }}
+    <div class="show-for-medium">
+      <ul class="tabs" data-tabs id="tabs-{{ id }}">
+        {% for key, tab in tabs %}
+          <li class="tabs-title{% if loop.first %} is-active{% endif %}">
+             <a href="#tab_{{ id }}_{{ key }}"{% if loop.first %} aria-selected="true"{% endif %}>{{ tab.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="tabs-content" data-tabs-content="tabs-{{ id }}">
+        {% for key, tab in tabs %}
+          <div id="tab_{{ id }}_{{ key }}" class="tabs-panel{% if loop.first %} is-active{% endif %}">
+            {{ tab.content }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <ul class="accordion{% if format == 'tabs' %} hide-for-medium{% endif %}" data-accordion data-multi-expand="true" data-allow-all-closed="true">
     {# Render the accordion items without all the wrapping markup. #}
     {% set count = content.field_accordion_items['#items'].getvalue|length - 1 %}
     {% for i in 0..count %}
