@@ -93,11 +93,21 @@ For more information about KSS styleguide syntax, see https://github.com/kss-nod
 
 This theme is configured to work with a components library. Components can be defined in the `components` directory. A component includes a .twig template file, an associated SCSS or JS file (both are optional), and a .json file which provides sample content. See `components/card` as an example. The .twig file defined in the component can then be included by a .twig.html file in the `templates/` directory. See https://www.mediacurrent.com/blog/integrating-components-drupal-8-part-1/ for a thorough walkthrough of how this works.
 
-If you need to use Foundation mixins in your component partials, include the following in the partial:
+If you need to use Foundation mixins and/or your theme variables in your component partials, include the following in the partial:
 
-`@include 'foundation';`
+`@include 'settings';`
 
 ## How to compile CSS and create the styleguide
+
+If you are running the site locally via docksal, you can do the following to **WATCH** and compile your SASS using the same versions of node/npm used by the build process:
+
+    `$ fin bash` (to shell into the docksal container)
+
+    `$ cd /var/www/docroot/themes/custom/kettering` 
+
+    `$ npm run watch` or `$ npm run watch-styleguide` to compile both the theme CSS and the styleguide.
+
+If you are **NOT** running the site locally via docksal, you can do the following to compile directly on your local machine:
 
 This process has been tested with the following versions:
 
@@ -141,6 +151,6 @@ In your terminal, change to the theme's root directory. Run the following comman
 
 To have gulp automatically watch and compile your SASS files, and compile the styleguide run the following:
 
-  `gulp watch`
+  `gulp watch` or `gulp watch-styleguide` to compile both the theme CSS and the styleguide.
 
 Running `gulp watch` also sets up LiveReload so that your browser will be refreshed every time there's a change in the CSS. You'll need to install the LiveReload plugin for this to work: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en
