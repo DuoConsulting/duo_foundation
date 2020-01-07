@@ -64,7 +64,7 @@ All Foundation libraries are defined in duo_foundation.libraries.yml. Include th
 
 ## Styleguide
 
-The gulp file included with this theme is configured to compile a KSS styleguide (https://github.com/kss-node/kss-node) on `gulp watch`. The styleguide can be found in the `./styleguide` directory.
+The gulp file included with this theme is configured to compile a KSS styleguide (https://github.com/kss-node/kss-node) on `gulp watch-styleguide`. The styleguide can be found in the `./styleguide` directory.
 
 To add an entry to the styleguide, include a SCSS comment block in the following format in any partial:
 
@@ -95,7 +95,7 @@ This theme is configured to work with a components library. Components can be de
 
 If you need to use Foundation mixins and/or your theme variables in your component partials, include the following in the partial:
 
-`@include 'settings';`
+`@import 'settings';`
 
 ## How to compile CSS and create the styleguide
 
