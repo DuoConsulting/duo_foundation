@@ -78,10 +78,6 @@ body:not(.user-logged-in) {
   background-color: $bg-dark;
   padding: 1em 0;
 
-  a {
-    color: $white;
-  }
-
   .hamburger {
     @include hamburger($white, $light-gray, 20px, 12px, 1px, 3);
   }
@@ -103,32 +99,46 @@ body:not(.user-logged-in) {
   display: flex;
   justify-content: flex-end;
 
-  .menu {
+  .dropdown.menu {
     margin-right: rem-calc(20px);
 
     a {
       font-size: rem-calc(14px);
+    }
+
+    > li > a {
+      color: $white;
       font-weight: $global-weight-bold;
       position: relative;
       text-transform: uppercase;
 
-      &:after {
+      &:before {
         background-color: $primary-color;
-        bottom: 0;
         content: '';
         display: block;
         height: rem-calc(3px);
         left: get-side($global-menu-padding, left);
         position: absolute;
+        top: 0;
         transition: width 250ms ease-in;
         width: 0;
       }
 
       &:hover,
       &:focus {
-        &:after {
+        &:before {
           width: rem-calc(35px);
         }
+      }
+    }
+  }
+
+  .submenu {
+    a {
+      &:hover,
+      &:focus {
+        background-color: $dropdown-menu-item-color-active;
+        color: $dropdownmenu-submenu-background;
       }
     }
   }
@@ -140,6 +150,10 @@ body:not(.user-logged-in) {
 
 .header-site-name {
   margin-bottom: 0;
+
+  a {
+    color: $white;
+  }
 }
 
 .logo {

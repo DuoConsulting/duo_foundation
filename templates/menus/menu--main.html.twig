@@ -33,7 +33,7 @@
       {% endif %}
     {% else %}
       {% if menu_level == 0 %}
-        <ul{{ attributes.addClass('dropdown', 'menu') }} data-dropdown-menu>
+        <ul{{ attributes.addClass('dropdown', 'menu') }} data-dropdown-menu data-closing-time="100">
       {% else %}
         <ul class="menu">
       {% endif %}

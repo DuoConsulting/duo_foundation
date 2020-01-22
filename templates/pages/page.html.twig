@@ -67,6 +67,10 @@
         <span aria-hidden="true">&times;</span>
       </button>
 
+      {% if linked_site_name %}
+        <div class="header-site-name h3">{{ linked_site_name }}</div>
+      {% endif %}
+
       {{ page.left_off_canvas }}
     </aside>
   {% endif %}
@@ -77,30 +81,17 @@
         <span aria-hidden="true">&times;</span>
       </button>
 
+      {% if linked_logo %}
+        <div class="off-canvas__container off-canvas__logo">
+          {{ linked_logo }}
+        </div>
+      {% endif %}
+
       {{ page.right_off_canvas }}
     </aside>
   {% endif %}
 
-  <div class="off-canvas-content" data-off-canvas-content>
-    {# TODO Figure out best way to use top-bar and title-bar #}
-    {# See https://foundation.zurb.com/sites/docs/top-bar.html #}
-    {#
-    <div class="title-bar">
-      {% if page.left_off_canvas %}
-        <div class="title-bar-left">
-          <button class="menu-icon" type="button" data-open="left-off-canvas-menu"></button>
-        </div>
-      {% endif %}
-
-      {% if page.right_off_canvas %}
-        <div class="title-bar-right">
-          <button class="menu-icon" type="button" data-open="right-off-canvas-menu"></button>
-        </div>
-      {% endif %}
-    </div>
-    #}
-
-    
+  <div class="off-canvas-content" data-off-canvas-content>    
     <header role="banner" aria-label="{{ 'Site header'|t }}" class="header">
       <div class="header-meta">
         <div class="grid-container">

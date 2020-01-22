@@ -1,0 +1,36 @@
+// Off Canvas
+
+.off-canvas {
+  padding-top: rem-calc(16px);
+
+  &.position-right.is-transition-push {
+    box-shadow: inset 13px 0 10px -13px rgba(10, 10, 10, 0.25);
+  }
+
+  .close-button {
+    z-index: 10;
+  }
+
+  nav {
+    margin-left: rem-calc(16px);
+  }
+
+  .drilldown {
+    a {
+      color: $white;
+      padding-left: 0;
+      background: $primary-color;
+    }
+  }
+}
+.off-canvas__logo {
+  margin-bottom: rem-calc(16px);
+
+  a {
+    display: block;
+  }
+}
+
+.off-canvas__container {
+  padding: 0 rem-calc(16px);
+}
