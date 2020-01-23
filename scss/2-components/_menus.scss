@@ -1,0 +1,84 @@
+// Menus
+
+$submenu-border-color: rgba($primary-color, 0.5);
+
+.dropdown.menu {
+  .fouc-js & {
+    ul {
+      display: none;
+    }
+  }
+
+  .header-top__navigation & {
+    margin-right: rem-calc(20px);
+
+    a {
+      font-size: rem-calc(14px);
+    }
+
+    > li > a {
+      color: $white;
+      font-weight: $global-weight-bold;
+      position: relative;
+      text-transform: uppercase;
+
+      &:before {
+        background-color: $primary-color;
+        content: '';
+        display: block;
+        height: rem-calc(3px);
+        left: get-side($global-menu-padding, left);
+        position: absolute;
+        top: 0;
+        transition: width 250ms ease-in;
+        width: 0;
+      }
+
+      &:hover,
+      &:focus {
+        &:before {
+          width: rem-calc(35px);
+        }
+      }
+    }
+  }
+
+  .submenu {
+    a {
+      &:hover,
+      &:focus {
+        background-color: $dropdown-menu-item-color-active;
+        color: $dropdownmenu-submenu-background;
+      }
+    }
+  }
+
+  > li > .submenu {
+    &:before {
+      @include css-triangle(rem-calc(5px), $white, up);
+      position: absolute;
+      top: rem-calc(-5px);
+      left: rem-calc(15px);
+    }
+
+    .submenu {
+      border-left: 1px solid $submenu-border-color;
+    }
+
+    .is-dropdown-submenu-parent {
+      &:before {
+        @include css-triangle(rem-calc(5px), $primary-color, right);
+        position: absolute;
+        top: 50%;
+        right: rem-calc(5px);
+        transform: translateY(-50%);
+      }
+
+      &.is-active {
+        &:before {
+          @include css-triangle(rem-calc(5px), $dropdownmenu-submenu-background, right);  
+        }
+      }
+    }
+  }
+}

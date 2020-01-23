@@ -1,13 +1,14 @@
 // Admin tabs - sit below toolbar.
 // Variables - change to match theme as required:
 $tab-color: #666;
-$tab-font: "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans",
-  arial, sans-serif;
+$tab-font: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', 'Lucida Sans', arial, sans-serif;
 $tab-font-weight: bold;
-$page-container: ".user-login-wrapper"; // defines wrapper - can be diff. per site.
+$page-container: '.user-login-wrapper'; // defines wrapper - can be diff. per site.
+$tab-button-bg: rgba($tab-color, 0);
+$tab-button-color: rgba($tab-color, 0.7);
+$tab-button-bg-hover: rgba($tab-color, 0.3);
+$tab-button-bg-active: rgba($tab-color, 0.2);
 
-//
-// #{$page-container} {
 .block-local-tasks-block {
   font-family: $tab-font;
   z-index: 1;
@@ -26,10 +27,10 @@ $page-container: ".user-login-wrapper"; // defines wrapper - can be diff. per si
     }
   }
 
-  a.button {
-    background-color: rgba($tab-color, 0);
-    color: rgba($tab-color, 0.7);
-    padding: 1em 1.3333em 0.8em 1.3333em !important;
+  .button {
+    background-color: $tab-button-bg;
+    color: $tab-button-color;
+    padding: 1em 1.3333em 0.8em !important;
     line-height: 1;
     text-transform: uppercase;
     margin: 0;
@@ -48,14 +49,12 @@ $page-container: ".user-login-wrapper"; // defines wrapper - can be diff. per si
     &:hover,
     &:focus {
       color: $tab-color;
-      background-color: rgba($tab-color, 0.3);
+      background-color: $tab-button-bg-hover;
     }
 
     &.active {
       color: $tab-color;
-      background-color: rgba($tab-color, 0.2);
+      background-color: $tab-button-bg-active;
     }
   }
 }
-
-// }

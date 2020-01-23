@@ -8,6 +8,6 @@
 @import 'form-elements-doc';
 
 textarea,
-textarea[rows] {
+textarea[rows] { // sass-lint:disable-line no-qualifying-elements
   height: rem-calc(130px);
 }

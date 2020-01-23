@@ -1,5 +1,7 @@
 // Accordions and tabs
 
+$accordion-title-color: rgba($body-font-color, 0.65);
+
 // Tabs
 .tabs-title {
   margin-right: rem-calc(20px);
@@ -11,7 +13,7 @@
   a {
     border-bottom: 2px solid transparent;
     font-weight: $global-weight-semibold;
-    color: rgba($body-font-color, 0.65);
+    color: $accordion-title-color;
 
     &[aria-selected='true'] {
       border-bottom-color: $primary-color;

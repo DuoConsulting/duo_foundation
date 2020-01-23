@@ -9,6 +9,13 @@
 // Import button documentation
 @import 'button-doc';
 
+$button-trp-light: rgba(255, 255, 255, 0.2);
+$button-trp-light-hover: rgba(255, 255, 255, 0.3);
+$button-trp-dark: rgba(0, 0, 0, 0.2);
+$button-trp-dark-hover: rgba(0, 0, 0, 0.3);
+$button-trp-secondary: rgba($secondary-color, 0.5);
+$button-trp-secondary-hover: rgba($secondary-color, 0.6);
+
 .button {
   font-weight: $global-weight-bold;
   text-transform: uppercase;
@@ -20,29 +27,29 @@
   }
 
   &.semi-transparent-light {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: $button-trp-light;
 
     &:hover,
     &:focus {
-      background-color: rgba(255, 255, 255, 0.3);      
+      background-color: $button-trp-light-hover;      
     }
   }
 
   &.semi-transparent-dark {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: $button-trp-dark;
 
     &:hover,
     &:focus {
-      background-color: rgba(0, 0, 0, 0.3);      
+      background-color: $button-trp-dark-hover;      
     }
   }
 
   &.semi-transparent-secondary {
-    background-color: rgba($secondary-color, 0.5);
+    background-color: $button-trp-secondary;
 
     &:hover,
     &:focus {
-      background-color: rgba($secondary-color, 0.6);      
+      background-color: $button-trp-secondary-hover;      
     }
   }
 }

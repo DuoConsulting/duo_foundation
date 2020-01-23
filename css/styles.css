@@ -209,7 +209,7 @@ body {
   background: #fefefe;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  line-height: 1.2;
+  line-height: 1.5;
   color: #0a0a0a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -287,7 +287,7 @@ textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
-  height: 2.1375rem;
+  height: 2.4375rem;
   margin: 0 0 1rem;
   padding: 0.5rem;
   border: 1px solid #cacaca;
@@ -298,7 +298,7 @@ textarea {
   font-family: inherit;
   font-size: 1rem;
   font-weight: normal;
-  line-height: 1.2;
+  line-height: 1.5;
   color: #0a0a0a;
   -webkit-transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
   transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
@@ -351,6 +351,10 @@ input[type='search'] {
 }
 
 ::-webkit-input-placeholder {
+  color: #cacaca;
+}
+
+::-moz-placeholder {
   color: #cacaca;
 }
 
@@ -525,7 +529,7 @@ legend {
 }
 
 select {
-  height: 2.1375rem;
+  height: 2.4375rem;
   margin: 0 0 1rem;
   padding: 0.5rem;
   -webkit-appearance: none;
@@ -537,7 +541,7 @@ select {
   font-family: inherit;
   font-size: 1rem;
   font-weight: normal;
-  line-height: 1.2;
+  line-height: 1.5;
   color: #0a0a0a;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>");
   background-origin: content-box;
@@ -589,6 +593,10 @@ select[multiple] {
 }
 
 .is-invalid-input:not(:focus)::-webkit-input-placeholder {
+  color: #cc4b37;
+}
+
+.is-invalid-input:not(:focus)::-moz-placeholder {
   color: #cc4b37;
 }
 
@@ -647,7 +655,7 @@ td {
 p {
   margin-bottom: 1rem;
   font-size: inherit;
-  line-height: 1.2;
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
 }
 
@@ -785,7 +793,7 @@ ol,
 dl {
   margin-bottom: 1rem;
   list-style-position: outside;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 li {
@@ -822,7 +830,7 @@ blockquote {
 }
 
 blockquote, blockquote p {
-  line-height: 1.2;
+  line-height: 1.5;
   color: #8a8a8a;
 }
 
@@ -6683,7 +6691,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   z-index: 1;
   display: none;
   min-width: 200px;
-  border: 1px solid #e6e6e6;
+  border: 0;
   background: #fefefe;
 }
 
@@ -6692,7 +6700,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 .is-dropdown-submenu .is-dropdown-submenu {
-  margin-top: -1px;
+  margin-top: 0;
 }
 
 .is-dropdown-submenu > li {
@@ -8510,10 +8518,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
 }
 
-.block-local-tasks-block a.button {
+.block-local-tasks-block .button {
   background-color: rgba(102, 102, 102, 0);
   color: rgba(102, 102, 102, 0.7);
-  padding: 1em 1.3333em 0.8em 1.3333em !important;
+  padding: 1em 1.3333em 0.8em !important;
   line-height: 1;
   text-transform: uppercase;
   margin: 0;
@@ -8523,21 +8531,21 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 @media screen and (min-width: 1024px) {
-  .block-local-tasks-block a.button {
+  .block-local-tasks-block .button {
     font-size: 12px;
   }
 }
 
-.block-local-tasks-block a.button:before {
+.block-local-tasks-block .button:before {
   display: none !important;
 }
 
-.block-local-tasks-block a.button:hover, .block-local-tasks-block a.button:focus {
+.block-local-tasks-block .button:hover, .block-local-tasks-block .button:focus {
   color: #666;
   background-color: rgba(102, 102, 102, 0.3);
 }
 
-.block-local-tasks-block a.button.active {
+.block-local-tasks-block .button.active {
   color: #666;
   background-color: rgba(102, 102, 102, 0.2);
 }
@@ -8582,7 +8590,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   width: 100%;
   max-width: 500px;
   padding: 3.5vmin 7vmin;
-  margin: 1rem auto 0 auto;
+  margin: 1rem auto 0;
   background: #05071c;
 }
 
@@ -8596,18 +8604,18 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 @media screen and (min-width: 992px) {
   .path-user:not(.user-logged-in) main {
-    margin: 10rem auto 0 auto;
+    margin: 10rem auto 0;
   }
 }
 
-.path-user:not(.user-logged-in) main div[aria-label='Error message'] {
-  color: magenta;
+.path-user:not(.user-logged-in) main [aria-label='Error message'] {
+  color: #f0f;
   font-size: 12px;
   text-align: center;
 }
 
 @media screen and (min-width: 992px) {
-  .path-user:not(.user-logged-in) main div[aria-label='Error message'] {
+  .path-user:not(.user-logged-in) main [aria-label='Error message'] {
     font-size: 14px;
   }
 }
@@ -8627,13 +8635,13 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
 }
 
-.path-user:not(.user-logged-in) form.user-login-form,
-.path-user:not(.user-logged-in) form.user-pass {
+.path-user:not(.user-logged-in) .user-login-form,
+.path-user:not(.user-logged-in) .user-pass {
   text-align: center;
 }
 
-.path-user:not(.user-logged-in) form.user-login-form label,
-.path-user:not(.user-logged-in) form.user-pass label {
+.path-user:not(.user-logged-in) .user-login-form label,
+.path-user:not(.user-logged-in) .user-pass label {
   font-family: sans-serif;
   font-weight: normal;
   color: #999;
@@ -8641,34 +8649,34 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   font-size: 12px;
 }
 
-.path-user:not(.user-logged-in) form.user-login-form label.form-required:after,
-.path-user:not(.user-logged-in) form.user-pass label.form-required:after {
-  color: yellow;
+.path-user:not(.user-logged-in) .user-login-form label.form-required:after,
+.path-user:not(.user-logged-in) .user-pass label.form-required:after {
+  color: #ff0;
 }
 
 @media screen and (min-width: 992px) {
-  .path-user:not(.user-logged-in) form.user-login-form label,
-  .path-user:not(.user-logged-in) form.user-pass label {
+  .path-user:not(.user-logged-in) .user-login-form label,
+  .path-user:not(.user-logged-in) .user-pass label {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width: 1100px) {
-  .path-user:not(.user-logged-in) form.user-login-form label,
-  .path-user:not(.user-logged-in) form.user-pass label {
+  .path-user:not(.user-logged-in) .user-login-form label,
+  .path-user:not(.user-logged-in) .user-pass label {
     font-size: 16px;
   }
 }
 
-.path-user:not(.user-logged-in) form.user-login-form .form-item,
-.path-user:not(.user-logged-in) form.user-pass .form-item {
+.path-user:not(.user-logged-in) .user-login-form .form-item,
+.path-user:not(.user-logged-in) .user-pass .form-item {
   margin: 2.5vmin 0;
 }
 
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text'],
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password'],
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='text'],
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='password'] {
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='text'],
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='password'],
+.path-user:not(.user-logged-in) .user-pass .form-item [type='text'],
+.path-user:not(.user-logged-in) .user-pass .form-item [type='password'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 0;
@@ -8686,102 +8694,102 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   border-radius: 4px;
 }
 
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='text'].placeholder,
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='password'].placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='text'].placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='password'].placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='text']:-moz-placeholder,
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='password']:-moz-placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='text']:-moz-placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='password']:-moz-placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='text']::-moz-placeholder,
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='password']::-moz-placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='text']::-moz-placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='password']::-moz-placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='text']:-ms-input-placeholder,
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='password']:-ms-input-placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='text']:-ms-input-placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='password']:-ms-input-placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='text']::-webkit-input-placeholder,
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='password']::-webkit-input-placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='text']::-webkit-input-placeholder,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='password']::-webkit-input-placeholder {
+  color: rgba(153, 153, 153, 0.75);
+}
+
 @media screen and (min-width: 992px) {
-  .path-user:not(.user-logged-in) form.user-login-form .form-item [type='text'],
-  .path-user:not(.user-logged-in) form.user-login-form .form-item [type='password'],
-  .path-user:not(.user-logged-in) form.user-pass .form-item [type='text'],
-  .path-user:not(.user-logged-in) form.user-pass .form-item [type='password'] {
+  .path-user:not(.user-logged-in) .user-login-form .form-item [type='text'],
+  .path-user:not(.user-logged-in) .user-login-form .form-item [type='password'],
+  .path-user:not(.user-logged-in) .user-pass .form-item [type='text'],
+  .path-user:not(.user-logged-in) .user-pass .form-item [type='password'] {
     font-size: 20px;
   }
 }
 
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text'].placeholder,
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password'].placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='text'].placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='password'].placeholder {
-  color: rgba(153, 153, 153, 0.75);
-}
-
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']:-moz-placeholder,
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']:-moz-placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']:-moz-placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']:-moz-placeholder {
-  color: rgba(153, 153, 153, 0.75);
-}
-
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']::-moz-placeholder,
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']::-moz-placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']::-moz-placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']::-moz-placeholder {
-  color: rgba(153, 153, 153, 0.75);
-}
-
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']:-ms-input-placeholder,
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']:-ms-input-placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']:-ms-input-placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']:-ms-input-placeholder {
-  color: rgba(153, 153, 153, 0.75);
-}
-
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']::-webkit-input-placeholder,
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']::-webkit-input-placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']::-webkit-input-placeholder,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']::-webkit-input-placeholder {
-  color: rgba(153, 153, 153, 0.75);
-}
-
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']:focus, .path-user:not(.user-logged-in) form.user-login-form .form-item [type='text']:hover,
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']:focus,
-.path-user:not(.user-logged-in) form.user-login-form .form-item [type='password']:hover,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']:focus,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='text']:hover,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']:focus,
-.path-user:not(.user-logged-in) form.user-pass .form-item [type='password']:hover {
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='text']:focus, .path-user:not(.user-logged-in) .user-login-form .form-item [type='text']:hover,
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='password']:focus,
+.path-user:not(.user-logged-in) .user-login-form .form-item [type='password']:hover,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='text']:focus,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='text']:hover,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='password']:focus,
+.path-user:not(.user-logged-in) .user-pass .form-item [type='password']:hover {
   border-color: #fff;
 }
 
-.path-user:not(.user-logged-in) form.user-login-form .form-actions,
-.path-user:not(.user-logged-in) form.user-pass .form-actions {
-  margin: 7vmin auto 0 auto;
+.path-user:not(.user-logged-in) .user-login-form .form-actions,
+.path-user:not(.user-logged-in) .user-pass .form-actions {
+  margin: 7vmin auto 0;
   text-align: center;
   position: relative;
   display: inline-block;
 }
 
 @media screen and (min-width: 992px) {
-  .path-user:not(.user-logged-in) form.user-login-form .form-actions,
-  .path-user:not(.user-logged-in) form.user-pass .form-actions {
-    margin: 3.5vmin auto 0 auto;
+  .path-user:not(.user-logged-in) .user-login-form .form-actions,
+  .path-user:not(.user-logged-in) .user-pass .form-actions {
+    margin: 3.5vmin auto 0;
   }
 }
 
-.path-user:not(.user-logged-in) form.user-login-form .form-actions input,
-.path-user:not(.user-logged-in) form.user-pass .form-actions input {
+.path-user:not(.user-logged-in) .user-login-form .form-actions input,
+.path-user:not(.user-logged-in) .user-pass .form-actions input {
   position: relative;
   cursor: pointer;
   z-index: 2;
   font-size: 14px;
   margin: 0;
-  padding: 0.8em 1.5em 0.9em 1.5em;
+  padding: 0.8em 1.5em 0.9em;
   border: 0;
   border-radius: 4px;
   background: #666;
   color: #fff;
 }
 
-.path-user:not(.user-logged-in) form.user-login-form .form-actions input:hover,
-.path-user:not(.user-logged-in) form.user-pass .form-actions input:hover {
+.path-user:not(.user-logged-in) .user-login-form .form-actions input:hover,
+.path-user:not(.user-logged-in) .user-pass .form-actions input:hover {
   background: #999;
   color: #fff;
 }
 
-.path-user:not(.user-logged-in) form.user-login-form .description,
-.path-user:not(.user-logged-in) form.user-pass .description {
+.path-user:not(.user-logged-in) .user-login-form .description,
+.path-user:not(.user-logged-in) .user-pass .description {
   display: none;
 }
 
-.path-user:not(.user-logged-in) form.user-login-form p,
-.path-user:not(.user-logged-in) form.user-pass p {
+.path-user:not(.user-logged-in) .user-login-form p,
+.path-user:not(.user-logged-in) .user-pass p {
   font-size: 12px;
   margin: 0;
   text-align: center;
@@ -8791,8 +8799,8 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 @media screen and (min-width: 1024px) {
-  .path-user:not(.user-logged-in) form.user-login-form p,
-  .path-user:not(.user-logged-in) form.user-pass p {
+  .path-user:not(.user-logged-in) .user-login-form p,
+  .path-user:not(.user-logged-in) .user-pass p {
     font-size: 16px;
   }
 }
@@ -12099,6 +12107,88 @@ h1, h2, h3, h4, h5, h6,
   display: none;
 }
 
+.header-top__navigation .dropdown.menu {
+  margin-right: 1.25rem;
+}
+
+.header-top__navigation .dropdown.menu a {
+  font-size: 0.875rem;
+}
+
+.header-top__navigation .dropdown.menu > li > a {
+  color: #fefefe;
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.header-top__navigation .dropdown.menu > li > a:before {
+  background-color: #5919b5;
+  content: '';
+  display: block;
+  height: 0.1875rem;
+  left: 1rem;
+  position: absolute;
+  top: 0;
+  -webkit-transition: width 250ms ease-in;
+  transition: width 250ms ease-in;
+  width: 0;
+}
+
+.header-top__navigation .dropdown.menu > li > a:hover:before, .header-top__navigation .dropdown.menu > li > a:focus:before {
+  width: 2.1875rem;
+}
+
+.dropdown.menu .submenu a:hover, .dropdown.menu .submenu a:focus {
+  background-color: #5919b5;
+  color: #fefefe;
+}
+
+.dropdown.menu > li > .submenu:before {
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 0.3125rem;
+  content: '';
+  border-top-width: 0;
+  border-bottom-style: solid;
+  border-color: transparent transparent #fefefe;
+  position: absolute;
+  top: -0.3125rem;
+  left: 0.9375rem;
+}
+
+.dropdown.menu > li > .submenu .submenu {
+  border-left: 1px solid rgba(89, 25, 181, 0.5);
+}
+
+.dropdown.menu > li > .submenu .is-dropdown-submenu-parent:before {
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 0.3125rem;
+  content: '';
+  border-right-width: 0;
+  border-left-style: solid;
+  border-color: transparent transparent transparent #5919b5;
+  position: absolute;
+  top: 50%;
+  right: 0.3125rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.dropdown.menu > li > .submenu .is-dropdown-submenu-parent.is-active:before {
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 0.3125rem;
+  content: '';
+  border-right-width: 0;
+  border-left-style: solid;
+  border-color: transparent transparent transparent #fefefe;
+}
+
 .footer {
   background-color: #0a0a0a;
   color: #fefefe;
@@ -12222,43 +12312,6 @@ body:not(.user-logged-in) .header.header--down {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-}
-
-.header-top__navigation .dropdown.menu {
-  margin-right: 1.25rem;
-}
-
-.header-top__navigation .dropdown.menu a {
-  font-size: 0.875rem;
-}
-
-.header-top__navigation .dropdown.menu > li > a {
-  color: #fefefe;
-  font-weight: bold;
-  position: relative;
-  text-transform: uppercase;
-}
-
-.header-top__navigation .dropdown.menu > li > a:before {
-  background-color: #5919b5;
-  content: '';
-  display: block;
-  height: 0.1875rem;
-  left: 1rem;
-  position: absolute;
-  top: 0;
-  -webkit-transition: width 250ms ease-in;
-  transition: width 250ms ease-in;
-  width: 0;
-}
-
-.header-top__navigation .dropdown.menu > li > a:hover:before, .header-top__navigation .dropdown.menu > li > a:focus:before {
-  width: 2.1875rem;
-}
-
-.header-top__navigation .submenu a:hover, .header-top__navigation .submenu a:focus {
-  background-color: #5919b5;
-  color: #fefefe;
 }
 
 .header-top__navigation .button {

@@ -1,21 +1,19 @@
 // Baseline styles for User Page display [ @site/user/* ].
 // Color scheme -- match to site branding.
-$title-color: red;
-$text-color: blue;
-$label-color: green;
+$user-page-text-color: #00f;
 $user-page-bgd: #eee;
-
-$global-padding: 15px;
+$user-page-global-padding: 15px;
+$user-page-borders: #eee;
 
 // --> Dashboard style?
-// $is_dashboard: true;
-$is_dashboard: false;
+// $is-dashboard: true;
+$is-dashboard: false;
 
 .section-user.user-logged-in {
   background: $user-page-bgd;
 }
 
-@if ($is_dashboard) {
+@if ($is-dashboard) {
   .user--view-mode-full {
     display: flex;
     flex-direction: column;
@@ -56,7 +54,7 @@ $is_dashboard: false;
 
         h1 {
           font-size: 14px;
-          color: $text-color;
+          color: $user-page-text-color;
           margin: 0;
 
           @media screen and (min-width: 1024px) {
@@ -70,10 +68,10 @@ $is_dashboard: false;
           overflow: hidden;
           max-width: 50px;
           max-height: 50px;
-          margin: $global-padding auto;
+          margin: $user-page-global-padding auto;
 
           @media screen and (min-width: 1024px) {
-            margin: 0 $global-padding 0 0;
+            margin: 0 $user-page-global-padding 0 0;
           }
         }
 
@@ -84,9 +82,9 @@ $is_dashboard: false;
 
       > div {
         background-color: $white;
-        border: 1px solid #f2f2f2;
+        border: 1px solid $user-page-borders;
         padding: 15px;
-        margin: $global-padding 0;
+        margin: $user-page-global-padding 0;
         border-radius: 3px;
 
         @media screen and (min-width: 1024px) {
@@ -113,9 +111,9 @@ $is_dashboard: false;
 
       > div {
         background-color: $white;
-        border: 1px solid #f2f2f2;
+        border: 1px solid $user-page-borders;
         padding: 15px;
-        margin: $global-padding 0;
+        margin: $user-page-global-padding 0;
       }
 
       .block-views {
@@ -131,10 +129,12 @@ $is_dashboard: false;
     .group-right h3 {
       font-size: 12px;
       text-transform: uppercase;
-      color: $text-color;
+      color: $user-page-text-color;
       font-weight: bold;
     }
   }
-} @else {
+}
+@else {
+  // sass-lint:disable-block no-empty-rulesets
   // todo add basic style
 }

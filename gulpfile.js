@@ -52,14 +52,6 @@ options.scssComponents = {
   ],
 };
 
-// Define which browsers to add vendor prefixes for.
-options.autoprefixer = {
-  browsers: [
-    'last 2 versions',
-    'ie >= 11'
-  ]
-};
-
 // If gulp-config.js exists, load that config and override the options object.
 if (fs.existsSync(options.rootPath.project + "/gulp-config.js")) {
   var config = {};
@@ -139,7 +131,7 @@ gulp.task('sass', ['clean:css'], function () {
       noCache: true,
       outputStyle: options.scss.outputStyle
     }, options.scss)).on('error', $.sass.logError))
-    .pipe($.autoprefixer(options.autoprefixer))
+    .pipe($.autoprefixer())
     .pipe($.rename({dirname: ''}))
     .pipe($.size({showFiles: true}))
     .pipe($.sourcemaps.write('./maps'))
@@ -156,7 +148,7 @@ gulp.task('components', ['clean:css'], function () {
       noCache: true,
       outputStyle: options.scss.outputStyle
     }, options.scssComponents)).on('error', $.sass.logError))
-    .pipe($.autoprefixer(options.autoprefixer))
+    .pipe($.autoprefixer())
     .pipe($.rename({dirname: ''}))
     .pipe($.size({showFiles: true}))
     .pipe($.sourcemaps.write('../maps'))

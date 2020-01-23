@@ -1,10 +1,12 @@
 // Off Canvas
 
+$off-canvas-box-shadow-color: rgba(10, 10, 10, 0.25);
+
 .off-canvas {
   padding-top: rem-calc(16px);
 
   &.position-right.is-transition-push {
-    box-shadow: inset 13px 0 10px -13px rgba(10, 10, 10, 0.25);
+    box-shadow: inset 13px 0 10px -13px $off-canvas-box-shadow-color;
   }
 
   .close-button {
@@ -23,6 +25,7 @@
     }
   }
 }
+
 .off-canvas__logo {
   margin-bottom: rem-calc(16px);
 
