@@ -48,22 +48,22 @@
   <article>
   
     
-                <div id="kssref-base-text-dl" class="kss-section kss-section--depth-3 is-fullscreen">
+                <div id="kssref-base-text-textsizes" class="kss-section kss-section--depth-3 is-fullscreen">
         <div class="kss-style">
                     <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-base-text-dl">
+            <a class="kss-title__permalink" href="#kssref-base-text-textsizes">
               <span class="kss-title__ref">
-                2.2.8
+                2.2.3
                 <span class="kss-title__permalink-hash">
-                  base.text.dl
+                  base.text.textsizes
                 </span>
               </span>
-              Definition Lists
+              Text Sizes
             </a>
           </h3>
 
                       <p class="kss-toolbar">
-              <a class="kss-toolbar__newwindow" href="item-base-text-dl.html" target="_blank">
+              <a class="kss-toolbar__newwindow" href="item-base-text-textsizes.html" target="_blank">
                 <span class="kss-toolbar__tooltip">Open in new window</span>
                 <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                   <rect x="0" y="20" width="40" height="44" fill="#fff"/>
@@ -74,7 +74,7 @@
                   <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
                 </svg>
               </a>
-              <a class="kss-toolbar__guides" href="#kssref-base-text-dl" data-kss-guides="true">
+              <a class="kss-toolbar__guides" href="#kssref-base-text-textsizes" data-kss-guides="true">
                 <span class="kss-toolbar__tooltip">Toggle example guides</span>
                 <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                   <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -98,9 +98,7 @@
             </p>
           
                       <div class="kss-description">
-              <p>A definition list is used to display name-value pairs, like metadata
-or a dictionary definition. Each term is paired with one or more
-definitions.</p>
+              <p>Add classes for additional text sizes.</p>
 
             </div>
           
@@ -113,29 +111,21 @@ definitions.</p>
 
             
             <div class="kss-modifier__example">
-              <dl>
-  <dt>Time</dt>
-  <dd>The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.</dd>
-  <dt>Space</dt>
-  <dd>A continuous area or expanse that is free, available, or unoccupied.</dd>
-  <dd>The dimensions of height, depth, and width within which all things exist and move.</dd>
-</dl>
+              <p class="text--large">This is large text.</p>
+<p class="text--medium">This is medium text.</p>
+<p class="text--small">This is small text.</p>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
                       </div>
                       <div class="kss-markup kss-style">
-              <pre class="hljs"><code class="language-twig"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dl</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Time<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Space<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>A continuous area or expanse that is free, available, or unoccupied.<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>The dimensions of height, depth, and width within which all things exist and move.<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span></span></code></pre>
+              <pre class="hljs"><code class="language-twig"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text--large"</span>&gt;</span>This is large text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text--medium"</span>&gt;</span>This is medium text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text--small"</span>&gt;</span>This is small text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
             </div>
                   
                   <div class="kss-source kss-style">
-            Source: <code>1-base/_text-doc.scss</code>, line 118
+            Source: <code>1-base/_text-doc.scss</code>, line 37
           </div>
               </div>
         </article>

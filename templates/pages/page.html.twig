@@ -185,52 +185,31 @@
         {# Normal, non-fullscreen pages #}
         <div class="grid-container">
           <div class="grid-x grid-margin-x">
+             {% block replaceable %}
+              <main id="main" class="{{ main_grid }} cell">
+                <a id="main-content"></a>
+                {% if breadcrumb %} {{ breadcrumb }} {% endif %}
 
-           {% block replaceable %}
+                {% if page.title and not hide_title %}  
+                  {{ page.title }}
+                {% endif %}
 
-            <main id="main" class="{{ main_grid }} cell">
-              <a id="main-content"></a>
-              {% if breadcrumb %} {{ breadcrumb }} {% endif %}
-
-              {% if page.title and not hide_title %}  
-                {{ page.title }}
-              {% endif %}
-
-              {{ page.content }}
-            </main>
-
-             {% endblock %}
+                {{ page.content }}
+              </main>
+            {% endblock %}
             
             {% if page.sidebar_first %}
               <div id="sidebar-first" class="{{ sidebar_first_grid }} cell sidebar">
                 {{ page.sidebar_first }}
               </div>
             {% endif %}
+            
             {% if page.sidebar_second %}
               <div id="sidebar-second" class="{{ sidebar_sec_grid }} cell sidebar">
                 {{ page.sidebar_second }}
               </div>
             {% endif %}
           </div>
-          {% if page.footer_first or page.footer_middle or page.footer_last %}
-            <footer class="grid-x grid-margin-x">
-              {% if page.footer_first %}
-                <div id="footer-first" class="large-4 cell">
-                  {{ page.footer_first }}
-                </div>
-              {% endif %}
-              {% if page.footer_middle %}
-                <div id="footer-middle" class="large-4 cell">
-                  {{ page.footer_middle }}
-                </div>
-              {% endif %}
-              {% if page.footer_last %}
-                <div id="footer-last" class="large-4 cell">
-                  {{ page.footer_last }}
-                </div>
-              {% endif %}
-            </footer>
-          {% endif %}
         </div>
       {% else %}
         {# Fullscreen pages, e.g. layout pages #}
@@ -254,28 +233,41 @@
     </div>
 
     <footer class="footer">
-      <div class="grid-container">
-        <div class="grid-x grid-margin-x">
-        {% if page.footer_first %}
-          <div id="footer-first" class="large-4 cell">
-            {{ page.footer_first }}
-          </div>
-        {% endif %}
+      <div class="footer__top">
+        <div class="grid-container">
+          <div class="grid-x grid-margin-x">
+            {% if page.footer_first %}
+              <div id="footer-first" class="medium-4 cell footer__top-menu">
+                {{ page.footer_first }}
+              </div>
+            {% endif %}
 
-        {% if page.footer_middle %}
-          <div id="footer-middle" class="large-4 cell">
-            {{ page.footer_middle }}
-          </div>
-        {% endif %}
+            {% if page.footer_middle %}
+              <div id="footer-middle" class="medium-4 cell footer__top-menu">
+                {{ page.footer_middle }}
+              </div>
+            {% endif %}
 
-        {% if page.footer_last %}
-          <div id="footer-last" class="large-4 cell">
-            {{ page.footer_last }}
+            {% if page.footer_last %}
+              <div id="footer-last" class="medium-4 cell footer__top-menu">
+                {{ page.footer_last }}
+              </div>
+            {% endif %}
           </div>
-        {% endif %}
+        </div>
+      </div>
 
-        <div class="cell">
-          &copy; {{ "now"|date('Y') }} {{ site_name }} {{ 'All rights reserved.'|t }}
+      <div class="footer__aux">
+        <div class="grid-container">
+          <div class="footer__aux-inner">
+            {% if page.footer_aux %}
+              {{ page.footer_aux }}
+            {% endif %}
+            
+            <div class="footer__aux-copy">
+              &copy; {{ "now"|date('Y') }} {{ site_name }} {{ 'All rights reserved.'|t }}
+            </div>
+          </div>
         </div>
       </div>
     </footer>

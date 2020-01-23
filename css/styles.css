@@ -770,7 +770,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #4d169c;
+  color: #7529e1;
 }
 
 a img {
@@ -11857,6 +11857,17 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.footer a,
+.link--white {
+  color: #fefefe;
+}
+
+.footer a:hover, .footer a:focus,
+.link--white:hover,
+.link--white:focus {
+  color: #b2b2b2;
+}
+
 .button {
   font-weight: bold;
   text-transform: uppercase;
@@ -11954,6 +11965,22 @@ h1, h2, h3, h4, h5, h6,
 .text-dark * .field--type-text-with-summary a,
 .text-dark * .links a {
   text-decoration: underline;
+}
+
+
+.text--large {
+  font-size: 2rem;
+}
+
+
+.text--medium {
+  font-size: 1.5rem;
+}
+
+.footer__top .menu .menu-item > a,
+.footer__top .menu .menu-item > span,
+.text--small {
+  font-size: 0.875rem;
 }
 
 @media print, screen and (min-width: 48.0625em) {
@@ -12103,6 +12130,12 @@ h1, h2, h3, h4, h5, h6,
           transform: scale(1.05);
 }
 
+.menu-item > span {
+  display: block;
+  line-height: 1;
+  padding: 0.7rem 1rem;
+}
+
 .fouc-js .dropdown.menu ul {
   display: none;
 }
@@ -12192,7 +12225,67 @@ h1, h2, h3, h4, h5, h6,
 .footer {
   background-color: #0a0a0a;
   color: #fefefe;
+}
+
+.footer__top {
   padding: 4rem 0;
+}
+
+.footer__top .menu-title {
+  font-weight: bold;
+}
+
+.footer__top .menu {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__top .menu .menu-item > a,
+.footer__top .menu .menu-item > span {
+  padding: 0.35em 0;
+}
+
+.footer__top-menu + .footer__top-menu {
+  margin-top: 1.25em;
+}
+
+@media print, screen and (min-width: 48.0625em) {
+  .footer__top-menu + .footer__top-menu {
+    margin-top: 0;
+  }
+}
+
+.footer__aux {
+  background-color: #303030;
+  padding: 1rem 0;
+}
+
+.footer__aux .navigation + .footer__aux-copy {
+  border-left: 1px solid #fefefe;
+  margin-left: 1rem;
+  padding-left: 2rem;
+}
+
+.footer__aux-inner {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.footer__aux-inner .menu a {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 body:not(.user-logged-in).path-frontpage .header {

@@ -28,6 +28,7 @@ regions:
   footer_first: 'Footer First Column'
   footer_middle: 'Footer Middle Column'
   footer_last: 'Footer Last Column'
+  footer_aux: 'Footer Auxiliary'
   left_off_canvas: 'Left Off Canvas'
   right_off_canvas: 'Right Off Canvas'
 regions_hidden:

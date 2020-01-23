@@ -6,3 +6,13 @@
 // Weight: 1
 //
 // Styleguide base
+
+%link--white,
+.link--white {
+  color: $white;
+
+  &:hover,
+  &:focus {
+    color: $white-hover;
+  }
+}

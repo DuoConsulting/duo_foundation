@@ -1,7 +1,66 @@
 // Footer styles
 
+$footer-aux-bg: lighten($bg-dark, 15%);
+
 .footer {
   background-color: $bg-dark;
   color: $white;
+
+  a {
+    @extend %link--white;
+  }
+}
+
+.footer__top {
   padding: 4rem 0;
+
+  .menu-title {
+    font-weight: $global-weight-bold;
+  }
+
+  .menu {
+    @include menu-direction(vertical);
+
+    .menu-item {
+      > a,
+      > span {
+        @extend %text--small;
+        padding: 0.35em 0;
+      }
+    }
+  }
+}
+
+.footer__top-menu {
+  + .footer__top-menu {
+    @include breakpoint(medium) {
+      margin-top: 0;
+    }
+    margin-top: 1.25em;
+  }
+}
+
+.footer__aux {
+  background-color: $footer-aux-bg;
+  padding: 1rem 0;
+
+  .navigation + .footer__aux-copy {
+    border-left: 1px solid $white;
+    margin-left: get-side($global-menu-padding, right);
+    padding-left: 2 * get-side($global-menu-padding, right);
+  }
+}
+
+.footer__aux-inner {
+  align-items: center;
+  display: flex;
+  font-size: rem-calc(12px);
+  justify-content: flex-end;
+
+  .menu {
+    a {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
 }

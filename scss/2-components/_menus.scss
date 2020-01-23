@@ -2,6 +2,15 @@
 
 $submenu-border-color: rgba($primary-color, 0.5);
 
+.menu-item {
+  // Empty links should get padding just link anchors.
+  > span {
+    display: block;
+    line-height: 1;
+    padding: $global-menu-padding;
+  }
+}
+
 .dropdown.menu {
   .fouc-js & {
     ul {
