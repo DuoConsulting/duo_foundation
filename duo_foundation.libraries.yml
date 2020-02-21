@@ -24,6 +24,17 @@ card:
   dependencies:
     - core/jquery
 
+slick:
+  css:
+    theme:
+      '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css': { type: external }
+      "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css": { type: external }
+  js:
+    "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js": { type: external }
+    js/slick.js: {}
+  dependencies:
+    - core/jquery
+
 ################################################################################
 # Vendor plugins
 ################################################################################
