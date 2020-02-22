@@ -39,7 +39,7 @@
 #}
 {%
   set classes = [
-    'slide',
+    'figcaption',
   ]
 %}
 {%
@@ -58,18 +58,18 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
+      <figcaption>
+        <div class="figcaption__inner">{{ item.content }}</div></figcaption>
     {% endfor %}
   {% endif %}
 {% else %}
-
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% if multiple %}
       <div class="field__items">
     {% endif %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>
