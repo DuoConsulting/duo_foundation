@@ -25,11 +25,7 @@
           dots: true,
           fade: true,
           asNavFor: $(this).find(".slick-hero-nav-thumbnails")
-        })
-          // All slides same height.
-          .on('setPosition', function (event, slick) {
-            slick.$slides.css('height', slick.$slideTrack.height() + 'px');
-          });
+        });
 
         //  Slick navigation 
         $(this).find(".slick-hero-nav-thumbnails").slick({
@@ -39,11 +35,7 @@
           arrows: false,
           dots: false,
           focusOnSelect: true
-        })
-          // All slides same height.
-          .on('setPosition', function (event, slick) {
-            slick.$slides.css('height', slick.$slideTrack.height() + 'px');
-          });
+        });
 
         // Slick with dots
         $(this).find(".slick-with-dots").slick({
@@ -53,12 +45,13 @@
           dots: true,
           arrows: true,
           fade: true
-        })
-          // All slides same height.
-          .on('setPosition', function (event, slick) {
-            slick.$slides.css('height', slick.$slideTrack.height() + 'px');
-          });
-      });
+        });
+      })
+        // All slides same height.
+        .on('setPosition', function (event, slick) {
+          slick.$slides.css('height', slick.$slideTrack.height() + 'px');
+          console.log("bo");
+        });
     }
   };
 

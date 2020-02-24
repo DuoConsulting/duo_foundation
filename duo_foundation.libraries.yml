@@ -27,10 +27,10 @@ card:
 slick:
   css:
     theme:
-      '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css': { type: external }
-      "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css": { type: external }
+      js/vendors/slick/slick.css: {}
+      js/vendors/slick/slick-theme.css: {}
   js:
-    "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js": { type: external }
+    js/vendors/slick/slick.min.js: {}
     js/slick.js: {}
   dependencies:
     - core/jquery
