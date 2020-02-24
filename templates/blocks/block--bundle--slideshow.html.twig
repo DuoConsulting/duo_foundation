@@ -27,19 +27,39 @@
 
     {# Main slideshow  #}
     <div class="slick-hero">
-      {{ content|without('field_slideshow_thumbnails') }}
+      {% for i in content.field_slideshow_slide['#items']|keys %}
+        <div>
+          <figure>
+            {{ content.field_slideshow_slide[i]|without('field_slide_text') }}
+            <figcaption>
+            {{ content.field_slideshow_slide[i]|without('field_slide_media') }}
+            </figcaption>
+          </figure>
+        </div>
+      {% endfor %}
     </div>
 
     {# Thumbnail navigation #}
     <div class="slick-hero-nav-thumbnails">
-      {{ content|without('field_slideshow_thumbnails') }}
+      {% for i in content.field_slideshow_slide['#items']|keys %}
+        <div>{{ content.field_slideshow_slide[i]|without('field_slide_text') }}</div>
+      {% endfor %}
     </div>
 
   {% else %}
 
     {# Main slideshow  #}
     <div class="slick-with-dots">
-      {{ content|without('field_slideshow_thumbnails') }}
+      {% for i in content.field_slideshow_slide['#items']|keys %}
+        <div>
+          <figure>
+            {{ content.field_slideshow_slide[i]|without('field_slide_text') }}
+            <figcaption>
+            {{ content.field_slideshow_slide[i]|without('field_slide_media') }}
+            </figcaption>
+          </figure>
+        </div>
+      {% endfor %}
     </div>
 
   {% endif %}

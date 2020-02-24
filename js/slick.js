@@ -14,7 +14,7 @@
       // Find all slideshows on page...
       $(".slideshow").each(function (index) {
 
-        var totalSlides = $(this).find(".slick-hero .slide").length;
+        var totalSlides = $(this).find(".slick-hero article").length;
 
         // Slick hero
         $(this).find(".slick-hero").slick({
