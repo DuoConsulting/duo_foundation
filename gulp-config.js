@@ -1,4 +1,5 @@
-// Override gulp options here rather than in gulpfile.js.
+// Override gulp options here rather than in gulpfile.js. This file is barely
+// used and can safely be ignored.
 
 // Set a drush alias if required to run locally, i.e.:
 // '@multisite.local --uri=multisitename'

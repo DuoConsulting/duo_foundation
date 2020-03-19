@@ -1,2 +1,0 @@
-add default content for sticky top bar to template
-add something to readme about sass-lint

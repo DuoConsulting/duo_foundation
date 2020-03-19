@@ -1,6 +1,8 @@
 # Duo Foundation
 
-A custom starter theme for Drupal 8 that incorporates a component library and living style guide, and is based on Foundation 6.5.3.
+A custom starter theme for Drupal 8 that incorporates a component library and living style guide, and is based on **Foundation 6.5.3**. When developing a new theme, clone this theme and rename it appropriately for the new site. Search for all filenames that include `duo_foundation` and all instances of code that include the string `duo_foundation` and replace them with your new theme machine name.
+
+This theme is **not intended to be used as a parent theme**, so it is not necessary to have a copy of this theme in your project once you have cloned it.
 
 ## Foundation
 
@@ -26,6 +28,8 @@ The following styles are included by default:
 * [Top bar](https://foundation.zurb.com/sites/docs/top-bar.html)
 * [Float](https://foundation.zurb.com/sites/docs/float-classes.html), [flexbox](https://foundation.zurb.com/sites/docs/flexbox-utilities.html) and [visibility](https://foundation.zurb.com/sites/docs/visibility.html) classes
 
+The default values for all the various Foundation variables can be found in `./scss/_settings.scss.` All the variables defined there are built-in to Foundation, with the exception of a handful of custom colors and fonts which appear at the very top of the file. That should be the first place you go to update basic styles for the theme, before creating your own custom styles.
+
 The following JavaScript libraries are included globally (on all pages) by default:
 
 * Foundation core
@@ -35,7 +39,9 @@ The following JavaScript libraries are included globally (on all pages) by defau
 
 ### Add or remove Foundation styles
 
-Include or exclude styles by commenting or uncommenting the Foundation includes in scss/styles.scss
+Include or exclude Foundation styles by commenting or uncommenting the includes in `./scss/styles.scss`. For example, if you would like to include the CSS required to style  Foundation badges, then you should uncomment this line in `styles.scss`:
+
+`@include foundation-badge;`
 
 ### Add or remove Foundation JavaScript libraries
 
@@ -43,18 +49,21 @@ All Foundation libraries are defined in duo_foundation.libraries.yml. Include th
 
 `{{ attach_library('duo_foundation/foundation.accordion') }}`
 
+### Foundation and NPM
+The Foundation framework is included as an NPM package in the `./node_modules` directory. It will be installed when you run `npm ci` for the first time (see Compiling CSS further down). The gulpfile for this project specifies the path to Foundation in the array of include paths to use when compiling the CSS. This is what enables gulp/sass to find all the Foundation mixins that you will use in the theme, including the mixins in `styles.scss` which pull in the styles for the various Foundation components.
+
 ### Block placement
 
-*WORK IN PROGRESS*. To get started, try placing the following blocks in the following regions:
-* Top Bar Left
+To get started, try placing the following blocks in the following regions:
+* Header
   * Main navigation
 * Messages
   * Status messages
 * Highlighted
   * Help
 * Tools
-  * Tabs
   * Primary admin actions
+  * Tabs
 * Page Title
   * Page title
 * Content
@@ -64,7 +73,7 @@ All Foundation libraries are defined in duo_foundation.libraries.yml. Include th
 
 ## Styleguide
 
-The gulp file included with this theme is configured to compile a KSS styleguide (https://github.com/kss-node/kss-node) on `gulp watch-styleguide`. The styleguide can be found in the `./styleguide` directory.
+The gulp file included with this theme is configured to compile a KSS styleguide (https://github.com/kss-node/kss-node) on `gulp watch-styleguide` (or `npm run watch-styleguide` within a docker container). The styleguide can be found in the `./styleguide` directory.
 
 To add an entry to the styleguide, include a SCSS comment block in the following format in any partial:
 
@@ -87,6 +96,8 @@ To add an entry to the styleguide, include a SCSS comment block in the following
 // Styleguide base.button.basic
 ```
 
+If you would like to update the look/feel of the styleguide itself, you can edit the twig templates and SCSS in `./styleguide-config/duo-kss-builder`.
+
 For more information about KSS styleguide syntax, see https://github.com/kss-node/kss/blob/spec/SPEC.md.
 
 ## Components library
@@ -97,17 +108,40 @@ If you need to use Foundation mixins and/or your theme variables in your compone
 
 `@import 'settings';`
 
-## How to compile CSS and create the styleguide
+## Gulp
 
-If you are running the site locally via docksal, you can do the following to **WATCH** and compile your SASS using the same versions of node/npm used by the build process:
+CSS is compiled for this theme via Gulp. All gulp tasks are defined in `./gulpfile.js`. The following build tasks are defined:
 
-    `$ fin bash` (to shell into the docksal container)
+* `gulp` - Kicks off `gulp build`, below.
+* `gulp build` - Compile the global CSS and components CSS and run the lint tool.
+* `gulp watch` - Same as above but continue watching for changes to SCSS files.
+* `gulp build-styleguide` - Same as `gulp build` but it also generates the styleguide. Note that this task takes a little longer to compile.
+* `gulp watch-styleguide` - Same as above but continue watching for changes to SCSS files.
 
-    `$ cd /var/www/docroot/themes/custom/kettering` 
+There are a handful of NPM tasks defined in package.json which correlate to these gulp tasks. You can use these NPM tasks within a Docker container to compile CSS:
 
-    `$ npm run watch` or `$ npm run watch-styleguide` to compile both the theme CSS and the styleguide.
+* `npm run start` - Kicks off `gulp build`.
+* `npm run build` - Kicks off `gulp build-styleguide`.
+* `npm run watch` - Kicks off `gulp watch`.
+* `npm run watch-styleguide` - Kicks off `gulp watch-styleguide`.
 
-If you are **NOT** running the site locally via docksal, you can do the following to compile directly on your local machine:
+## Linting
+
+All the gulp tasks include a step to test using Sass Lint (https://github.com/sasstools/sass-lint/tree/master). See `./.sass-lint.yml` for a complete list of which lint rules are enabled and disabled. The default configuration is just a recommendation and can be adjusted as needed per project. Disabling rules for a single line or block (and sometimes an entire partial) is ok as long as you're not "cheating." An example is if you're including CSS from a vendor plugin and you do not want to rewrite all the CSS to conform to our linting rules.
+
+## Compile CSS and Create the Styleguide
+
+If you are running the site locally via docksal (recommended), you can do the following to **WATCH** and compile your SASS using the same versions of node/npm used by the build process:
+
+    $ fin bash (to SSH into the docker container)
+
+    $ cd /var/www/docroot/themes/custom/duo_foundation
+
+    $ npm ci (you only need to do this once)
+
+    $ npm run watch, or $ npm run watch-styleguide to compile both the theme CSS and the styleguide.
+
+If you are **NOT** running the site locally via docksal, you can follow the steps below to compile directly on your local machine, though this is more prone to error due to inconsistent versions of nodejs/npm/gulp cli on different machines.
 
 This process has been tested with the following versions:
 
@@ -152,5 +186,3 @@ In your terminal, change to the theme's root directory. Run the following comman
 To have gulp automatically watch and compile your SASS files, and compile the styleguide run the following:
 
   `gulp watch` or `gulp watch-styleguide` to compile both the theme CSS and the styleguide.
-
-Running `gulp watch` also sets up LiveReload so that your browser will be refreshed every time there's a change in the CSS. You'll need to install the LiveReload plugin for this to work: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en
