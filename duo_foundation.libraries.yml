@@ -24,6 +24,17 @@ card:
   dependencies:
     - core/jquery
 
+slick:
+  css:
+    theme:
+      js/vendors/slick/slick.css: {}
+      js/vendors/slick/slick-theme.css: {}
+  js:
+    js/vendors/slick/slick.min.js: {}
+    js/slick.js: {}
+  dependencies:
+    - core/jquery
+
 ################################################################################
 # Vendor plugins
 ################################################################################

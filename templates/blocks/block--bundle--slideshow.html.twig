@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * Theme override to display a block -- slideshow.
+ *
+ */
+#}
+{%
+  set classes = [
+    'slideshow',
+  ]
+%}
+
+{{ attach_library('duo_foundation/slick') }}
+
+<section{{ attributes.addClass(classes) }}>
+  
+  {{ title_prefix }}
+  {% if label %}
+    <h2 {{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% block content %}
+
+  {% if content.field_slideshow_thumbnails['#items'].value == '1' %}
+
+    {# Main slideshow  #}
+    <div class="slick-hero">
+      {% for i in content.field_slideshow_slide['#items']|keys %}
+        <div>
+          <figure>
+            {{ content.field_slideshow_slide[i]|without('field_slide_text') }}
+            <figcaption>
+            {{ content.field_slideshow_slide[i]|without('field_slide_media') }}
+            </figcaption>
+          </figure>
+        </div>
+      {% endfor %}
+    </div>
+
+    {# Thumbnail navigation #}
+    <div class="slick-hero-nav-thumbnails">
+      {% for i in content.field_slideshow_slide['#items']|keys %}
+        <div>{{ content.field_slideshow_slide[i]|without('field_slide_text') }}</div>
+      {% endfor %}
+    </div>
+
+  {% else %}
+
+    {# Main slideshow  #}
+    <div class="slick-with-dots">
+      {% for i in content.field_slideshow_slide['#items']|keys %}
+        <div>
+          <figure>
+            {{ content.field_slideshow_slide[i]|without('field_slide_text') }}
+            <figcaption>
+            {{ content.field_slideshow_slide[i]|without('field_slide_media') }}
+            </figcaption>
+          </figure>
+        </div>
+      {% endfor %}
+    </div>
+
+  {% endif %}
+
+  {% endblock %}
+
+</section>
