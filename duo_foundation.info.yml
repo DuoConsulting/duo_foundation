@@ -1,6 +1,7 @@
 name: Duo Foundation
 description: "A starter theme for Duo that incorporates a component library and living style guide, and is based on Foundation."
 core: 8.x
+core_version_requirement: ^8 || ^9
 type: theme
 base theme:
 
