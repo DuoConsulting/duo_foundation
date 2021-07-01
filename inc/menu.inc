@@ -17,13 +17,13 @@ function duo_foundation_menu_local_tasks(&$variables) {
     $variables['primary']['#prefix'] = '<h2 class="visually-hidden">' . t('Primary tabs') . '</h2>';
     $variables['primary']['#prefix'] .= '<div class="button-group">';
     $variables['primary']['#suffix'] = '</div>';
-    $output .= drupal_render($variables['primary']);
+    $output .= \Drupal::service('renderer')->render($variables['primary']);
   }
   if (!empty($variables['secondary'])) {
     $variables['secondary']['#prefix'] = '<h2 class="visually-hidden">' . t('Secondary tabs') . '</h2>';
     $variables['secondary']['#prefix'] .= '<div class="button-group">';
     $variables['secondary']['#suffix'] = '</div>';
-    $output .= drupal_render($variables['secondary']);
+    $output .= \Drupal::service('renderer')->render($variables['secondary']);
   }
 
   return $output;
